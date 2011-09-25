@@ -1,0 +1,249 @@
+body {
+	background: none repeat scroll 0 0 #222;
+	color: #DDD;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+}
+a:hover { text-decoration: underline; }
+a:active { text-decoration: underline; }
+
+ul {
+	list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6, #fn, .yellow {
+	color: #FB4;
+}
+
+#ln,
+.post-date,
+.blue {
+	color: #1BF;
+}
+
+
+#main {
+	width: 960px;
+	margin: 0 auto;
+}
+
+#nav {
+	width: 200px;
+	border-right: 1px solid #DDD;
+	padding-right: 39px;
+	font-size: 16px;
+	text-align: right;
+	line-height: 150%;
+	color: #DDD;
+	position: fixed;
+	top: 200px;
+}
+
+#nav h1 a:hover { text-decoration: none; }
+
+#nav .addthis_toolbox {
+	float: right;
+}
+
+.content {
+	margin-top: 200px;
+	margin-left: 280px;
+	margin-bottom: 200px;
+	width: 500px;
+	line-height: 150%;
+}
+
+.content a:link,
+.content a:visited,
+#details p  a:link,
+#details p  a:visited { color: #FB4; }
+
+.content blockquote {
+	border-left: 1px solid #DDD;
+	padding-left: 20px;
+}
+
+#content-home h3 { color: #FFF; }
+
+.tweet-date, .gh-date { font-size: 12px; }
+
+#content-cv {
+	margin-top: 100px;
+	margin-left: 280px;
+	line-height: normal;
+}
+
+#content-blog hr { margin: 40px 0px; }
+
+#content-post {
+	margin-bottom: 200px;
+}
+
+#content-contact img,
+#content-home img {
+	vertical-align: middle;
+	margin: 5px 10px 5px 0px;
+}
+
+#content-contact a:link,
+#content-contact a:visited { color: #DDD; }
+
+#content-contact a:hover { 
+	text-decoration: none; 
+	color: #FB4;
+}
+
+#cv-header { width: 400px; }
+
+#filters {
+	width: 400px;
+	color: #DDD;
+	font-size: 14px;
+}
+
+#filters a:first-child:link { text-decoration: underline; }
+
+#isotope {
+	width: 400px;
+	margin-top: 20px;
+}
+
+.item {
+	margin: 5px;
+	border-radius: 5px;
+}
+
+.education {
+	width: 90px;
+	height: 90px;
+	text-align: center;
+}
+
+#ucla,
+#mikeygeecom {
+	background: none repeat scroll 0 0 #FB4;
+}
+
+#lab {
+	background: none repeat scroll 0 0 #FFF;
+}
+
+#ucla-logo,
+#lab-logo
+{
+	margin-top: 16px;
+}
+
+.work {
+	text-align: center;
+}
+
+#cis,
+#informatica,
+#wdi {
+	padding: 5px;
+	background: none repeat scroll 0 0 #FFF;
+
+}
+
+.box {
+	width: 80px;
+	height: 80px;
+	color: #333;
+	padding: 5px;
+	text-align: center;
+}
+
+.title {
+	font-size: 42px;
+	font-weight: bold;
+}
+
+.description {
+	font-size: 14px;
+}
+
+#javascript {
+	background: #43FF0F;
+}
+
+#c {
+	background: #4CF;
+}
+
+#c .description {
+	font-size: 13px;
+}
+
+#sql, #nflive {
+	background: #FF7F4D;
+}
+
+#sql .title {
+	font-size: 36px;
+}
+
+#html {
+	background: #FF4287;
+}
+
+#nflive,
+#mikeygeecom {
+	width: 140px;
+	height: 40px;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#details {
+	float: right;
+	width: 220px;
+	padding-left: 19px;
+	border-left: 1px solid #DDD;
+	color: #DDD;
+	font-size: 12px;
+	line-height: 150%;
+}
+
+.details-title {
+	color: #FB4;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.details-subtitle {
+	color: #1BF;
+	font-size: 14px;
+}
+
+.details-dates {
+	color: #42FFBA;
+	font-size: 12px;
+}
+
+.isotope,
+.isotope .isotope-item {
+  /* change duration value to whatever you like */
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+          transition-property:         transform, opacity;
+}
