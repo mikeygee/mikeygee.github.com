@@ -5,7 +5,7 @@ $(document).ready(function() {
 		{ screen_name: "geeplusplus", count: 3, include_entities: true, include_rts: true },
 		function(data) {
 			for(var i = 0, len = data.length; i < len; i++) {
-				var date = new Date(data[i].created_at);
+				var date = new Date(data[i].created_at.replace("+0000 ",""));
 				data[i].date = date.toDateString().slice(4);
 				if(data[i].entities.urls.length > 0)
 					data[i].url = data[i].entities.urls[0].url;

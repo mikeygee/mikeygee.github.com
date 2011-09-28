@@ -14,6 +14,8 @@ a:link, a:visited {
 a:hover { text-decoration: underline; }
 a:active { text-decoration: underline; }
 
+a img { border: none; }
+
 ul {
 	list-style: none;
 }
@@ -197,7 +199,7 @@ h1, h2, h3, h4, h5, h6, #fn, .yellow {
 #nflive,
 #mikeygeecom {
 	width: 140px;
-	height: 40px;
+	height: 36px;
 	font-size: 24px;
 	font-weight: bold;
 }
