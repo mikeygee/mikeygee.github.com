@@ -23,20 +23,21 @@ $(document).ready(function() {
 				var d2 = new Date(b.pushed_at);
 				return d2 - d1
 			});
-			var messages = [];
-			for(var i = 0, len = (data.repositories.length < 3) ? data.repositories.length : 3; i < len; i++) {
+			
+			// get/set latest commit message for each repo
+			var len = (data.repositories.length < 3) ? data.repositories.length : 3;
+			var count = 0;
+			var addMessage = function(index) {
+				return function(commitData) {
+					data.repositories[index].message = commitData.commits[0].message;
+					if(++count == len)
+						$("#gh-template").tmpl(data.repositories).appendTo("#gh-activity");
+				}
+			}
+			for(var i = 0; i < len; i++) {
 				var repo = data.repositories[i];
 				repo.date = (new Date(repo.pushed_at)).toDateString().slice(4);
-				$.getJSON("http://github.com/api/v2/json/commits/list/mikeygee/" + repo.name + "/master?callback=?", 
-					function(commitData) {
-						messages.push(commitData.commits[0].message);
-						if(messages.length == len) {
-							for(var i = 0; i < len; i++)
-								data.repositories[i].message = messages[i];
-							$("#gh-template").tmpl(data.repositories).appendTo("#gh-activity");
-						}
-					}
-				);
+				$.getJSON("http://github.com/api/v2/json/commits/list/mikeygee/" + repo.name + "/master?callback=?", addMessage(i));
 			}
 		}
 	);
