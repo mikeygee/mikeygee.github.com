@@ -11,10 +11,10 @@ title: Mikey Gee | Home
 		{{ post.date | date_to_string }} &nbsp; <a href="{{ post.url }}">{{ post.title }}</a><br>
 	{% endfor %}
 	<br>
-	<a href="http://twitter.com/geeplusplus"><img src="images/twitter-logo.png"/></a>
+	<a href="http://twitter.com/geeplusplus" target="_blank"><img src="images/twitter-logo.png"/></a>
 	<div id="tweets">
 	</div>
-	<a href="http://github.com/mikeygee"><img src="images/github-logo.png"/></a>
+	<a href="http://github.com/mikeygee" target="_blank"><img src="images/github-logo.png"/></a>
 	<div id="gh-activity">
 	</div>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
@@ -22,13 +22,13 @@ title: Mikey Gee | Home
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/x-jquery-tmpl" id="tweet-template">
 		<p>
-			<a href="${url}"><span class="yellow">${text}</span></a>&nbsp;
+			<a href="${url}" target="_blank"><span class="yellow">${text}</span></a>&nbsp;
 			<span class="tweet-date">${date}</span><br>
 		</p>
 	</script>
 	<script type="text/x-jquery-tmpl" id="gh-template">
 		<p>
-			<a href="${url}"><span class="yellow">${owner}/${name}</span></a> : ${message}
+			<a href="${url}" target="_blank"><span class="yellow">${owner}/${name}</span></a> : ${message}
 			<span class="gh-date">${date}</span><br>
 		</p>
 	</script>

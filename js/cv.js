@@ -44,7 +44,7 @@ $(document).ready(function() {
 			"subtitle" : ["Student Assistant / Technician", "Los Angeles, CA"],
 			"link" : "http://www.cis.ucla.edu",
 			"dates" : "May 2003 - June 2006",
-			"items" : ["During my college years at UCLA, I worked part time at CIS, which provides various technical support for primarily administrative staff. The job had several responsibilities, and I learned a lot about technical and customer support.", "As a technician, I provided first level support for Windows workstations. Common tasks included swapping out defective hardware, requesting replacement hardware, reimaging workstations, installing software, and general user assistance with Microsoft Windows and Office.", "As a support representative for the <a href='http://my.ucla.edu'>MyUCLA</a> web portal, I answered phone and email questions from users regarding use of the site. I also served as a forums moderator to enforce policies and respond to user feedback.", "As the front desk receptionist, I greeted visitors, answered / directed phone calls, and provided general assistance to full time staff."]
+			"items" : ["During my college years at UCLA, I worked part time at CIS, which provides various technical support for primarily administrative staff. The job had several responsibilities, and I learned a lot about technical and customer support.", "As a technician, I provided first level support for Windows workstations. Common tasks included swapping out defective hardware, requesting replacement hardware, reimaging workstations, installing software, and general user assistance with Microsoft Windows and Office.", "As a support representative for the <a href='http://my.ucla.edu' target='_blank'>MyUCLA</a> web portal, I answered phone and email questions from users regarding use of the site. I also served as a forums moderator to enforce policies and respond to user feedback.", "As the front desk receptionist, I greeted visitors, answered / directed phone calls, and provided general assistance to full time staff."]
 		},
 		"wdi" : {
 			"title" : "Walt Disney Imagineering",
@@ -58,21 +58,21 @@ $(document).ready(function() {
 			"subtitle" : ["Web application"],
 			"link" : "https://github.com/mikeygee/RoboTag",
 			"dates" : "Mar 2011 - present",
-			"items" : ["RoboTag is a head to head AI strategy game for Javascript programmers. You compete by programming a virtual robot to play a game of tag. The idea behind this personal project is to create a simple, but challenging and competitive game for programmers of any skill level. Check out the <a href='https://github.com/mikeygee/RoboTag'>github page</a> for more details.", "RoboTag was my first web app and greatly improved my proficiency with web development. I gained valuable experience using HTML/CSS including HTML5 canvas, Javascript, jquery/jquery-ui, jquery templates, node.js / express, and mongodb."]
+			"items" : ["RoboTag is a head to head AI strategy game for Javascript programmers. You compete by programming a virtual robot to play a game of tag. The idea behind this personal project is to create a simple, but challenging and competitive game for programmers of any skill level. Check out the <a href='https://github.com/mikeygee/RoboTag' target='_blank'>github page</a> for more details.", "RoboTag was my first web app and greatly improved my proficiency with web development. I gained valuable experience using HTML/CSS including HTML5 canvas, Javascript, jquery/jquery-ui, jquery templates, node.js / express, and mongodb."]
 		},
 		"nflive" : {
 			"title" : "nflive",
 			"subtitle" : ["Web application"],
 			"link" : "http://www.nflive.net",
 			"dates" : "Aug 2011",
-			"items" : ["nflive is a web app that implements the popular survivor / knockout / suicide game for NFL football. Each week, you pick one team to win, but you can only pick each team once. Whoever lasts the longest without an incorrect pick wins.", "The app was primarily written by two of my friends using LAMP with the Code Igniter framework. I contributed a <a href='https://github.com/mikeygee/miscellaneous/blob/master/nfl_scrape.php'>php script</a> to scrape scores and odds from the web and write them to the database, so results could be determined automatically."]
+			"items" : ["nflive is a web app that implements the popular survivor / knockout / suicide game for NFL football. Each week, you pick one team to win, but you can only pick each team once. Whoever lasts the longest without an incorrect pick wins.", "The app was primarily written by two of my friends using LAMP with the Code Igniter framework. I contributed a <a href='https://github.com/mikeygee/miscellaneous/blob/master/nfl_scrape.php' target='_blank'>php script</a> to scrape scores and odds from the web and write them to the database, so results could be determined automatically."]
 		},
 		"mikeygeecom" : {
 			"title" : "mikeygee.com",
 			"subtitle" : ["Web site"],
 			"link" : "http://mikeygee.com",
 			"dates" : "Aug 2011 - present",
-			"items" : ["mikeygee.com is my personal web site / portfolio that you are looking at right now. It is hosted on <a href='http://pages.github.com'>github pages</a> and generated by <a href='https://github.com/mojombo/jekyll'>Jekyll</a>. The CV uses the <a href='http://isotope.metafizzy.co/'>isotope</a> jquery plugin."]
+			"items" : ["mikeygee.com is my personal web site / portfolio that you are looking at right now. It is hosted on <a href='http://pages.github.com'>github pages</a> and generated by <a href='https://github.com/mojombo/jekyll' target='_blank'>Jekyll</a>. This CV uses the <a href='http://isotope.metafizzy.co/'>isotope</a> jquery plugin."]
 		},
 		"informatica" : {
 			"title" : "Informatica",
@@ -92,7 +92,7 @@ $(document).ready(function() {
 			"subtitle" : ["Programming Language"],
 			"link" : "http://www.php.net",
 			"dates" : "Aug 2011",
-			"items" : ["To help with the nflive project, I learned PHP by doing a quick crash course on the official documentation. I wrote a couple of functions to scrape football scores and odds from a web page (with the help of an <a href='http://simplehtmldom.sourceforge.net'>HTML parser</a>), and write it to a MySQL database. It was a fun <a href='https://github.com/mikeygee/miscellaneous/blob/master/nfl_scrape.php'>mini project</a>, and gave me a good overview of PHP."]
+			"items" : ["To help with the nflive project, I learned PHP by doing a quick crash course on the official documentation. I wrote a couple of functions to scrape football scores and odds from a web page (with the help of an <a href='http://simplehtmldom.sourceforge.net' target='_blank'>HTML parser</a>), and write it to a MySQL database. It was a fun <a href='https://github.com/mikeygee/miscellaneous/blob/master/nfl_scrape.php' target='_blank'>mini project</a>, and gave me a good overview of PHP."]
 		},
 		"javascript" : {
 			"title" : "Javascript",
