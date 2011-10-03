@@ -110,7 +110,7 @@ $(document).ready(function() {
 			"title" : "C/C++/Objective-C",
 			"subtitle" : ["Programming Language"],
 			"dates" : "2002 - 2006, 2011",
-			"items" : ["I wrote my first program in C++ during my senior year of high school. This is what inspired me to major in computer science and pursue a career in programming. The final assignment for the class was to write a casino program, which you can download <a href='files/casino.zip'>here</a> (Windows only).", "I continued to use C and C++ throughout college courses. Assignments included writing a command line shell, a file system, a web server, and a udp client / server.", "In 2011, I started exploring Cocoa / Objective-C programming for Mac OSX and iOS. So far, I've browsed a book and gone through some basic exercises."]
+			"items" : ["I wrote my first program in C++ during my senior year of high school. This is what inspired me to major in computer science and pursue a career in programming. The final assignment for the class was to write a casino program, which you can download <a href='casino.zip'>here</a> (Windows only).", "I continued to use C and C++ throughout college courses. Assignments included writing a command line shell, a file system, a web server, and a udp client / server.", "In 2011, I started exploring Cocoa / Objective-C programming for Mac OSX and iOS. So far, I've browsed a book and gone through some basic exercises."]
 		},
 		"html" : {
 			"title" : "HTML/CSS",

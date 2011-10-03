@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6, #fn, .yellow {
 	line-height: 150%;
 	color: #DDD;
 	position: fixed;
-	top: 200px;
+	top: 100px;
 }
 
 #nav h1 a:hover { text-decoration: none; }
@@ -55,9 +55,7 @@ h1, h2, h3, h4, h5, h6, #fn, .yellow {
 }
 
 .content {
-	margin-top: 200px;
-	margin-left: 280px;
-	margin-bottom: 200px;
+	margin: 100px 0px 200px 280px;
 	width: 500px;
 	line-height: 150%;
 }
