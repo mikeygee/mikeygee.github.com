@@ -3,6 +3,8 @@ body {
 	color: #DDD;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 14px;
+	margin: 0;
+	padding: 0;
 }
 
 a:link, a:visited {
@@ -11,29 +13,24 @@ a:link, a:visited {
 	font-size: inherit;
 	font-weight: inherit;
 }
+
 a:hover { text-decoration: underline; }
 a:active { text-decoration: underline; }
 
 a img { border: none; }
 
-ul {
-	list-style: none;
-}
+ul { list-style: none; }
 
-h1, h2, h3, h4, h5, h6, #fn, .yellow {
-	color: #FB4;
-}
+h1, h2, h3, h4, h5, h6, #fn { color: #FB4; }
 
-#ln,
-.post-date,
-.blue {
-	color: #1BF;
-}
-
+#ln, .post-date { color: #1BF; }
 
 #main {
 	width: 960px;
-	margin: 0 auto;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #nav {
@@ -43,27 +40,21 @@ h1, h2, h3, h4, h5, h6, #fn, .yellow {
 	font-size: 16px;
 	text-align: right;
 	line-height: 150%;
-	color: #DDD;
 	position: fixed;
-	top: 100px;
 }
 
 #nav h1 a:hover { text-decoration: none; }
 
-#nav .addthis_toolbox {
-	float: right;
-}
-
 .content {
-	margin: 100px 0px 200px 280px;
-	width: 500px;
+	margin-left: 280px;
+	width: 540px;
 	line-height: 150%;
 }
 
 .content a:link,
 .content a:visited,
-#details p  a:link,
-#details p  a:visited { color: #FB4; }
+#details p a:link,
+#details p a:visited { color: #FB4; }
 
 .content blockquote {
 	border-left: 1px solid #DDD;
@@ -75,16 +66,11 @@ h1, h2, h3, h4, h5, h6, #fn, .yellow {
 .tweet-date, .gh-date { font-size: 12px; }
 
 #content-cv {
-	margin-top: 100px;
 	margin-left: 280px;
 	line-height: normal;
 }
 
 #content-blog hr { margin: 40px 0px; }
-
-#content-post {
-	margin-bottom: 200px;
-}
 
 #content-contact img,
 #content-home img {
@@ -100,7 +86,12 @@ h1, h2, h3, h4, h5, h6, #fn, .yellow {
 	color: #FB4;
 }
 
-#cv-header { width: 400px; }
+#cv-header {
+	width: 400px;
+	color: #FB4;
+}
+
+#dlpdf { float: right; }
 
 #filters {
 	width: 400px;
@@ -128,11 +119,11 @@ h1, h2, h3, h4, h5, h6, #fn, .yellow {
 
 #ucla,
 #mikeygeecom {
-	background: none repeat scroll 0 0 #FB4;
+	background-color: #FB4;
 }
 
 #lab {
-	background: none repeat scroll 0 0 #FFF;
+	background-color: #FFF;
 }
 
 #ucla-logo,
@@ -149,7 +140,7 @@ h1, h2, h3, h4, h5, h6, #fn, .yellow {
 #informatica,
 #wdi {
 	padding: 5px;
-	background: none repeat scroll 0 0 #FFF;
+	background-color: #FFF;
 
 }
 
@@ -171,11 +162,11 @@ h1, h2, h3, h4, h5, h6, #fn, .yellow {
 }
 
 #javascript {
-	background: #43FF0F;
+	background-color: #43FF0F;
 }
 
 #c {
-	background: #4CF;
+	background-color: #4CF;
 }
 
 #c .description {
@@ -183,7 +174,7 @@ h1, h2, h3, h4, h5, h6, #fn, .yellow {
 }
 
 #sql, #nflive {
-	background: #FF7F4D;
+	background-color: #FF7F4D;
 }
 
 #sql .title {
@@ -191,7 +182,7 @@ h1, h2, h3, h4, h5, h6, #fn, .yellow {
 }
 
 #html {
-	background: #FF4287;
+	background-color: #FF4287;
 }
 
 #nflive,

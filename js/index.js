@@ -6,7 +6,7 @@ $(document).ready(function() {
 		function(data) {
 			for(var i = 0, len = data.length; i < len; i++) {
 				var date = new Date(data[i].created_at.replace("+0000 ",""));
-				data[i].date = date.toDateString().slice(4);
+				data[i].date = date.toDateString().slice(4).replace(/\s/g,"&nbsp;");
 				if(data[i].entities.urls.length > 0)
 					data[i].url = data[i].entities.urls[0].url;
 				else
@@ -36,7 +36,7 @@ $(document).ready(function() {
 			}
 			for(var i = 0; i < len; i++) {
 				var repo = data.repositories[i];
-				repo.date = (new Date(repo.pushed_at)).toDateString().slice(4);
+				repo.date = (new Date(repo.pushed_at)).toDateString().slice(4).replace(/\s/g,"&nbsp;");
 				$.getJSON("http://github.com/api/v2/json/commits/list/mikeygee/" + repo.name + "/master?callback=?", addMessage(i));
 			}
 		}
