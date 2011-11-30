@@ -53,6 +53,20 @@ $(document).ready(function() {
 			"dates" : "June 2004 - Sept 2004",
 			"items" : ["In the summer of 2004, I had the opportunity to do an internship at the happiest place on earth. I worked with an audio/video engineer and learned a lot about the backstage operations of Disneyland.", "My primary task was to gather information and video clips for all CCTV surveillance cameras in Disneyland attractions and create a Microsoft Access database application to store and display the information. To obtain the data, I examined cameras in several attractions and captured video from each one. The application allowed for easy data entry, search, and display of camera information (specs, location, etc) and enabled the user to see sample images and a video clip from each camera.", "I also assisted with a regulatory audio safety check, by recording and analyzing audio from Disneyland attractions, ensuring volumes were at safe levels."]
 		},
+		"ou" : {
+			"title" : "OmniUpdate, Inc.",
+			"subtitle" : ["Software Development", "Front End Web Developer", "Camarillo, CA"],
+			"link" : "http://omniupdate.com",
+			"dates" : "Nov 2011 - present",
+			"items" : ["Custom web development", "UI/UX"]
+		},
+		"blinktag" : {
+			"title" : "Blinktag, Inc.",
+			"subtitle" : ["Consultant", "San Francisco, CA"],
+			"link" : "http://blinktag.com",
+			"dates" : "Oct 2011 - present",
+			"items" : ["Custom web development", "General programming"]
+		},
 		"robotag" : {
 			"title" : "RoboTag",
 			"subtitle" : ["Web application"],

@@ -5,7 +5,7 @@ title: Mikey Gee | Home
 
 <div id="content-home" class="content">
 	<h3>Hi there. I'm Mikey, and this is my online portfolio.</h3>
-	<p>Here you can find out <a href="about.html">about</a> me, what I've <a href="cv.html">done</a>, and what's <a href="blog.html">on my mind.</a> Feel free to <a href="contact.html">contact</a> me if you have any questions or comments.</p>
+	<p>Here you can find out <a href="/about">about</a> me, what I've <a href="/cv">done</a>, and what's <a href="/blog">on my mind.</a> Feel free to <a href="/contact">contact</a> me if you have any questions or comments.</p>
 	<h3>Latest</h3>
 	{% for post in site.posts limit:3 %}
 		{{ post.date | date_to_string }} &nbsp; <a href="{{ post.url }}">{{ post.title }}</a><br>
