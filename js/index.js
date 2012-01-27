@@ -23,6 +23,8 @@ $(document).ready(function() {
 				var d2 = new Date(b.pushed_at);
 				return d2 - d1
 			});
+			if(data.repositories.length > 3)
+				data.repositories = data.repositories.slice(0,3);
 			
 			// get/set latest commit message for each repo
 			var len = (data.repositories.length < 3) ? data.repositories.length : 3;
