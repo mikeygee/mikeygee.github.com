@@ -5,7 +5,7 @@ title: Mikey Gee | Blog
 
 <div id="content-blog" class="content">
 	<div style="float:right"><a href="#archive">archive &darr;</a></div>
-	<h2>blog</h2><hr>
+	<h2>blog &nbsp;&nbsp;<a href="atom.xml"><img id="feed" src="/images/feed-24x24.png" alt="feed"/></a></h2><hr>
 	{% for post in site.posts limit:10 %}
 		<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
 		<span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>

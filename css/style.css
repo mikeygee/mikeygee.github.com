@@ -72,6 +72,18 @@ h1, h2, h3, h4, h5, h6, #fn { color: #FB4; }
 
 #content-blog hr { margin: 40px 0px; }
 
+#content-post code {
+	display: block;
+	background: #444;
+	padding: 10px;
+}
+
+#content-post img {
+	max-width: 540px;
+}
+
+#feed { vertical-align: top; }
+
 #content-contact img,
 #content-home img {
 	vertical-align: middle;
