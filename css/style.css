@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5, h6, #fn { color: #FB4; }
 	padding: 10px;
 }
 
-#content-post img {
+#content-post img, #content-blog img {
 	max-width: 540px;
 }
 
