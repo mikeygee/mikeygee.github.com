@@ -1,36 +1,91 @@
 ---
 layout: default
+name: home
 title: Mikey Gee | Home
 ---
 
-<div id="content-home" class="content">
-	<h3>Hi there. I'm Mikey, and this is my online portfolio.</h3>
+<div id="content-home" class="container main">
+	<h3>Hi there! I'm Mikey, and this is my online portfolio.</h3>
 	<p>Here you can find out <a href="/about">about</a> me, what I've <a href="/cv">done</a>, and what's <a href="/blog">on my mind.</a> Feel free to <a href="/contact">contact</a> me if you have any questions or comments.</p>
+	<div class="left-column">
 	<h3>Latest</h3>
-	{% for post in site.posts limit:3 %}
-		{{ post.date | date_to_string }} &nbsp; <a href="{{ post.url }}">{{ post.title }}</a><br>
-	{% endfor %}
-	<br>
-	<a href="http://twitter.com/geeplusplus" target="_blank"><img src="images/twitter-logo.png"/></a>
-	<div id="tweets">
+		{% for post in site.posts limit:3 %}
+			{{ post.date | date_to_string }} &nbsp; <a href="{{ post.url }}">{{ post.title }}</a><br>
+		{% endfor %}
+		<br>
+		<a href="http://twitter.com/geeplusplus" target="_blank"><img src="images/twitter-logo.png"/></a>
+		<div id="tweets">
+		</div>
+		<a href="http://github.com/mikeygee" target="_blank"><img src="images/github-logo.png"/></a>
+		<div id="gh-activity">
+		</div>
 	</div>
-	<a href="http://github.com/mikeygee" target="_blank"><img src="images/github-logo.png"/></a>
-	<div id="gh-activity">
+	<div class="right-column">
+		<h3>tunes</h3>
+		<iframe src="https://embed.spotify.com/?uri=spotify:user:geeplusplus:playlist:4zDFe7Bk8TALE71x3s4OpB" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
 	</div>
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
-	<script type="text/x-jquery-tmpl" id="tweet-template">
-		<p>
-			<a href="${url}" target="_blank"><span class="yellow">${text}</span></a>&nbsp;
-			<span class="tweet-date">${date}</span><br>
-		</p>
-	</script>
-	<script type="text/x-jquery-tmpl" id="gh-template">
-		<p>
-			<a href="${url}" target="_blank"><span class="yellow">${owner}/${name}</span></a> : ${message}
-			<span class="gh-date">${date}</span><br>
-		</p>
-	</script>
 </div>
-
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/underscore-min.js"></script>
+<script type="text/template" id="tweet-template">
+	<% _.each(context.items, function(item) { %>
+	<p>
+		<a href="<%= item.url %>" target="_blank"><span class="yellow"><%= item.text %></span></a>&nbsp;
+		<span class="tweet-date"><%= item.date %></span><br>
+	</p>
+	<% }); %>
+</script>
+<script type="text/template" id="gh-template">
+	<% _.each(context.items, function(item) { %>
+	<p>
+		<a href="<%= item.url %>" target="_blank"><span class="yellow"><%= item.owner %>/<%= item.name %></span></a> : <%= item.message %>
+		<span class="gh-date"><%= item.date %></span><br>
+	</p>
+	<% }); %>
+</script>
+<script type="text/javascript">
+// get latest activity from twitter and github
+$(document).ready(function() {
+	$.getJSON("http://api.twitter.com/1/statuses/user_timeline.json?callback=?",
+		{ screen_name: "geeplusplus", count: 3, include_entities: true, include_rts: true },
+		function(data) {
+			for(var i = 0, len = data.length; i < len; i++) {
+				var date = new Date(data[i].created_at.replace("+0000 ",""));
+				data[i].date = date.toDateString().slice(4).replace(/\s/g,"&nbsp;");
+				if(data[i].entities.urls.length > 0)
+					data[i].url = data[i].entities.urls[0].url;
+				else
+					data[i].url = "http://twitter.com/" + data[i].user.screen_name;
+			}
+			$(_.template($("#tweet-template").html(), { items : data }, { variable : "context" })).appendTo("#tweets");
+		}
+	);
+	$.getJSON("http://github.com/api/v2/json/repos/show/mikeygee?callback=?",
+		function(data) {
+			data.repositories.sort(function(a,b) {
+				var d1 = new Date(a.pushed_at);
+				var d2 = new Date(b.pushed_at);
+				return d2 - d1
+			});
+			if(data.repositories.length > 3)
+				data.repositories = data.repositories.slice(0,3);
+			
+			// get/set latest commit message for each repo
+			var len = (data.repositories.length < 3) ? data.repositories.length : 3;
+			var count = 0;
+			var addMessage = function(index) {
+				return function(commitData) {
+					data.repositories[index].message = commitData.commits[0].message;
+					if(++count == len)
+						$(_.template($("#gh-template").html(), { items : data.repositories }, { variable : "context" })).appendTo("#gh-activity");
+				}
+			}
+			for(var i = 0; i < len; i++) {
+				var repo = data.repositories[i];
+				repo.date = (new Date(repo.pushed_at)).toDateString().slice(4).replace(/\s/g,"&nbsp;");
+				$.getJSON("http://github.com/api/v2/json/commits/list/mikeygee/" + repo.name + "/master?callback=?", addMessage(i));
+			}
+		}
+	);
+});
+</script>

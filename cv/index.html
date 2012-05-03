@@ -1,132 +1,301 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-		<meta name="author" content="Mikey Gee"/>
-		<link type="text/css" rel="stylesheet" href="/css/style.css"/>
-		<link rel="shortcut icon" href="/favicon.ico"/>
-		<title>Mikey Gee | CV</title>
-	</head>
-	<body>
-		<div id="main">
-			<div id="nav">
-				<h1><a href="/"><span id="fn">mikey</span><span id="ln">GEE</span></a></h1>
-				<ul>
-					<li><a href="/cv">cv</a></li>
-					<li><a href="/blog">blog</a></li>
-					<li><a href="/about">about</a></li>
-					<li><a href="/contact">contact</a></li>
-				</ul>
-			</div>
-			<div id="content-cv">
-				<div id="cv-header">
-					<div id="dlpdf"><a href="cv.pdf">download pdf</a></div>
-					<h2>cv</h2>
-				</div>
-				<div id="filters">
-					<a href="#" filter="*">all</a>&nbsp;&nbsp;|&nbsp;
-					<a href="#" filter=".education">education</a>&nbsp;&nbsp;|&nbsp;
-					<a href="#" filter=".work">work</a>&nbsp;&nbsp;|&nbsp;
-					<a href="#" filter=".project">projects</a>&nbsp;&nbsp;|&nbsp;
-					<a href="#" filter=".skill">skills</a>
-				</div>
-				<div id="isotope">
-					<div id="ucla" class="item education">
-						<img id="ucla-logo" src="/images/UCLA_Bruins_Logo.png"/>
-					</div>
-					<div id="lab" class="item education">
-						<img id="lab-logo" src="/images/lab.jpg"/>
-					</div>
-					<div id="amgen" class="item work">
-						<img id="amgen-logo" src="/images/amgen.png"/>
-					</div>
-					<div id="wdi" class="item work">
-						<img id="wdi-logo" src="/images/wdi_logo.jpg"/>
-					</div>
-					<div id="cis" class="item work">
-						<img id="cis-logo" src="/images/cis_logo.gif"/>
-					</div>
-					<div id="ou" class="item work">
-						<img id="ou-logo" src="/images/omniupdate.png"/>
-					</div>
-					<div id="blinktag" class="item work">
-						<img id="blinktag-logo" src="/images/blinktag.jpg"/>
-					</div>
-					<div id="robotag" class="item project">
-						<img id="robotag-logo" src="/images/robotag.png"/>
-					</div>
-					<div id="nflive" class="item project box">
-						nflive.net	
-					</div>
-					<div id="mikeygeecom" class="item project box">
-						mikeygee	
-					</div>
-					<div id="java" class="item skill">
-						<img id="java-logo" src="/images/java.png"/>
-					</div>
-					<div id="php" class="item skill">
-						<img id="php-logo" src="/images/PHP-logo.png"/>
-					</div>
-					<div id="apple" class="item skill">
-						<img id="apple-logo" src="/images/apple.png"/>
-					</div>
-					<div id="windows" class="item skill">
-						<img id="windows-logo" src="/images/windows.png"/>
-					</div>
-					<div id="linux" class="item skill">
-						<img id="linux-logo" src="/images/tux.png"/>
-					</div>
-					<div id="informatica" class="item skill">
-						<img id="informatica-logo" src="/images/informatica.gif"/>
-					</div>
-					<div id="javascript" class="item skill box">
-						<span class="title">Js</span><br>
-						<span class="description">Javascript<span>
-					</div>
-					<div id="c" class="item skill box">
-						<span class="title">C</span><br>
-						<span class="description">C/C++/Obj-C<span>
-					</div>
-					<div id="sql" class="item skill box">
-						<span class="title">SQL</span><br>
-						<span class="description">databases<span>
-					</div>
-					<div id="html" class="item skill box">
-						<span class="title">HC</span><br>
-						<span class="description">HTML/CSS<span>
-					</div>
-				</div>
-			</div>
+---
+layout: default
+name: cv
+title: Mikey Gee | CV
+---
+<div id="content-cv" class="container">
+	<div id="cv-left">
+	<div id="cv-header">
+		<a id="dlpdf" href="cv.pdf">download pdf</a>
+		<div id="filters">
+			<a filter="*" class="active">all</a>
+			<a filter=".education">education</a>
+			<a filter=".work">work</a>
+			<a filter=".project">projects</a>
+			<a filter=".skill">skills</a>
 		</div>
-		<script type="text/javascript" src="/js/jquery.min.js"></script>
-		<script type="text/javascript" src="/js/jquery.isotope.min.js"></script>
-		<script type="text/javascript" src="/js/jquery.tmpl.min.js"></script>
-		<script type="text/javascript" src="/js/cv.js"></script>
-		<script type="text/x-jquery-tmpl" id="details-template">
-			<div id="details">
-				<span class="details-title">
-				{{if link}}
-					<a href=${link} target="_blank">${title}</a>
-				{{else}}
-					${title}
-				{{/if}}
-				</span><br>
+	</div>
+	<div id="isotope">
+		<div id="ucla" class="item education">
+			<img id="ucla-logo" src="/images/UCLA_Bruins_Logo.png"/>
+		</div>
+		<div id="lab" class="item education">
+			<img id="lab-logo" src="/images/lab.jpg"/>
+		</div>
+		<div id="amgen" class="item work">
+			<img id="amgen-logo" src="/images/amgen.png"/>
+		</div>
+		<div id="wdi" class="item work">
+			<img id="wdi-logo" src="/images/wdi_logo.jpg"/>
+		</div>
+		<div id="cis" class="item work">
+			<img id="cis-logo" src="/images/cis_logo.gif"/>
+		</div>
+		<div id="ou" class="item work">
+			<img id="ou-logo" src="/images/omniupdate.png"/>
+		</div>
+		<div id="blinktag" class="item work">
+			<img id="blinktag-logo" src="/images/blinktag.jpg"/>
+		</div>
+		<div id="robotag" class="item project">
+			<img id="robotag-logo" src="/images/robotag.png"/>
+		</div>
+		<div id="picksmash" class="item project box">
+			picksmash	
+		</div>
+		<div id="mikeygeecom" class="item project box">
+			mikeygee	
+		</div>
+		<div id="java" class="item skill">
+			<img id="java-logo" src="/images/java.png"/>
+		</div>
+		<div id="php" class="item skill">
+			<img id="php-logo" src="/images/PHP-logo.png"/>
+		</div>
+		<div id="apple" class="item skill">
+			<img id="apple-logo" src="/images/apple.png"/>
+		</div>
+		<div id="windows" class="item skill">
+			<img id="windows-logo" src="/images/windows.png"/>
+		</div>
+		<div id="linux" class="item skill">
+			<img id="linux-logo" src="/images/tux.png"/>
+		</div>
+		<div id="javascript" class="item skill box">
+			<span class="title">Js</span><br>
+			<span class="description">Javascript<span>
+		</div>
+		<div id="c" class="item skill box">
+			<span class="title">C</span><br>
+			<span class="description">C/C++<span>
+		</div>
+		<div id="sql" class="item skill box">
+			<span class="title">SQL</span><br>
+			<span class="description">databases<span>
+		</div>
+		<div id="html" class="item skill box">
+			<span class="title">HC</span><br>
+			<span class="description">HTML/CSS<span>
+		</div>
+		<div id="vim" class="item skill">
+			<img id="vim-logo" src="/images/vim.png"/>
+		</div>
+		<div id="git" class="item skill">
+			<img id="git-logo" src="/images/git.png"/>
+		</div>
+	</div>
+	</div>
+</div>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="/js/underscore-min.js"></script>
+<script type="text/template" id="details-template">
+<div id="details">
+<div class="details-title">
+<% if (context.link) { %>
+	<a href="<%= context.link %>" target="_blank"><%= context.title %></a>
+<% } else { %>
+	<%= context.title %>
+<% } %>
+</div>
+<div class="details-subtitle">
+<% _.each(context.subtitle, function(el, index, list) { 
+	print(el);
+	if(index != list.length)
+		print("<br>");
+}); %>
+</div>
+<% if (context.dates) { %>
+<div class="details-dates"><%= context.dates %></div>
+<% } %>
+<%= context.description %>
+</div>
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+	var container = $("#isotope");
+	container.imagesLoaded(function() {
+		container.isotope({
+			itemSelector : ".item",
+			layoutMode : "masonry",
+			masonry: { columnWidth: 50 }
+		});
+		container.isotope("shuffle");
+	});
 
-				<span class="details-subtitle">
-				{{each subtitle}}
-					${$value}<br>
-				{{/each}}
-				</span>
-				
-				{{if dates}}
-				<span class="details-dates">${dates}</span>
-				{{/if}}
+	$("#filters a").click(function() {
+		$("#filters a").removeClass("active");
+		$(this).addClass("active");
+		var selector = $(this).attr("filter");
+		container.isotope({ filter: selector });
+		container.isotope("shuffle");
+	});
 
-				{{each items}}
-					<p>{{html $value}}</p>
-				{{/each}}
-			</div>
-		</script>
-	</body>
-</html>
+	var items = {
+		"ucla" : {
+			"title" : "UCLA",
+			"subtitle" : ["University of California, Los Angeles", "Go Bruins!"],
+			"link" : "http://www.ucla.edu",
+			"dates" : "Sept 2002 - June 2006",
+			"description" : "<p>B.S. Computer Science</p><p>Technical Minor in Economics</p><p>GPA : 3.28</p>"
+		},
+		"lab" : {
+			"title" : "LA Baptist",
+			"subtitle" : ["Los Angeles Baptist Jr/Sr High School"],
+			"link" : "http://www.labaptist.org",
+			"dates" : "Sept 1997 - June 2002",
+			"description" : "<p>GPA : 4.25</p><p>Class of 2002 Valedictorian</p><p>Varsity cross country, track & field, and basketball</p>"
+		},
+		"amgen" : {
+			"title" : "Amgen Inc.",
+			"subtitle" : ["Sr. Associate IS Analyst", "Enterprise Business Intelligence", "Thousand Oaks, CA"],
+			"link" : "http://www.amgen.com",
+			"dates" : "July 2006 - Jan 2011",
+			"description" : "<p>In my first full time position at Amgen, I took on various roles within the data integration team and learned a lot about databases and IT at a large company.</p><p>As an application developer, I designed and implemented data marts for several business areas. I worked with several data sources and targets (e.g. Oracle, Teradata, SQL Server, XML) and used <a href='http://www.informatica.com' target='_blank'>Informatica PowerCenter</a> for ETL. I also worked on improving existing ETL processes, in many cases significantly improving run times.</p><p>As system owner of the PowerCenter environment, I handled admin tasks such as installation, configuration, system maintenance, account management, change and release control, monitoring, and support for 100+ users. I also defined and documented standard procedures for the regulated environments and led an offshore support team to ensure a consistent operating environment.</p>"
+		},
+		"cis" : {
+			"title" : "UCLA College Information Services",
+			"subtitle" : ["Student Assistant / Technician", "Los Angeles, CA"],
+			"link" : "http://www.cis.ucla.edu",
+			"dates" : "May 2003 - June 2006",
+			"description" : "<p>During my college years at UCLA, I worked part time at CIS, which provides various technical support for primarily administrative staff. The job had several responsibilities, and I learned a lot about technical and customer support.</p><p>As a technician, I provided first level support for Windows workstations. Common tasks included swapping out defective hardware, requesting replacement hardware, reimaging workstations, installing software, and general user assistance with Microsoft Windows and Office.</p><p>As a support representative for the <a href='http://my.ucla.edu' target='_blank'>MyUCLA</a> web portal, I answered phone and email questions from users regarding use of the site. I also served as a forums moderator to enforce policies and respond to user feedback.</p><p>As the front desk receptionist, I greeted visitors, answered / directed phone calls, and provided general assistance to full time staff.</p>"
+		},
+		"wdi" : {
+			"title" : "Walt Disney Imagineering",
+			"subtitle" : ["Undergraduate Intern", "Scientific Systems - Audio/Video", "Anaheim, CA"],
+			"link" : "http://corporate.disney.go.com/careers/who_imagineering.html",
+			"dates" : "June 2004 - Sept 2004",
+			"description" : "<p>In the summer of 2004, I had the opportunity to do an internship at the happiest place on earth. I worked with an audio/video engineer and learned a lot about the backstage operations of Disneyland.</p><p>My primary task was to gather information and video clips for all CCTV surveillance cameras in Disneyland attractions and create a Microsoft Access database application to store and display the information. To obtain the data, I examined cameras in several attractions and captured video from each one. The application allowed for easy data entry, search, and display of camera information (specs, location, etc) and enabled the user to see sample images and a video clip from each camera.</p><p>I also assisted with a regulatory audio safety check, by recording and analyzing audio from Disneyland attractions, ensuring volumes were at safe levels.</p>"
+		},
+		"ou" : {
+			"title" : "OmniUpdate, Inc.",
+			"subtitle" : ["Front End Web Developer", "Software Development", "Camarillo, CA"],
+			"link" : "http://omniupdate.com",
+			"dates" : "Nov 2011 - present",
+			"description" : "<p>At OmniUpdate, I work on the front end development of OU Campus, the leading web content management system for higher education. I focus on Javascript programming and HTML/CSS to build slick web interfaces and create a top notch user experience.</p><p>We use a variety of modern, open technologies and tools to get our work done, including Java, Tomcat, MySQL, XML/XSL, Javascript (including jquery, prototype, backbone.js, handlebars templating), HTML/CSS (also LESS and bootstrap by twitter), git, github, and bugzilla.</p>"
+		},
+		"blinktag" : {
+			"title" : "Blinktag, Inc.",
+			"subtitle" : ["Consultant", "San Francisco, CA"],
+			"link" : "http://blinktag.com",
+			"dates" : "Oct 2011 - present",
+			"description" : "<p>Blinktag provides web development services in the fields of transportation and city planning. As a consultant, I help out with the development of various web projects.</p><p>For the <a href='http://tripgenie.org' target='_blank'>Tripgenie</a> project, I contributed a php script to import trip data from a spreadsheet into a Wordpress database. I also implemented the rate generation and comparison pages with php and Javascript/jquery.</p><p>On a project for <a href='http://511contracosta.org' target='_blank'>511 Contra Costa</a>, I enhanced an online children's book with better page animations and navigation. I used the <a href='https://github.com/suhinini/jPageFlipper' target='_blank'>jPageFlipper</a> library with some of my own <a href='https://github.com/mikeygee/jPageFlipper' target='_blank'>modifications</a> to create a canvas based flip book. Check it out - <a href='http://511contracosta.org/hydrogencars/' target='_blank'>Why Don't Hydrogen Cars Fly Away?</a></p>"
+		},
+		"robotag" : {
+			"title" : "RoboTag",
+			"subtitle" : ["Web application"],
+			"link" : "https://github.com/mikeygee/RoboTag",
+			"dates" : "Mar 2011 - present",
+			"description" : "<p>RoboTag is a head to head AI strategy game for Javascript programmers. You compete by programming a virtual robot to play a game of tag. The idea behind this personal project is to create a simple, but challenging and competitive game for programmers of any skill level. Check it out on <a href='https://github.com/mikeygee/RoboTag' target='_blank'>github</a> for more details.</p><p>RoboTag was my first web app and greatly improved my proficiency with web development. I gained valuable experience using HTML/CSS including HTML5 canvas, Javascript, and jquery. I am still working on building a back end with node.js, express, and mongodb. The end goal is to be able to host competitions primarily for education, but also for the general public.</p>"
+		},
+		"picksmash" : {
+			"title" : "picksmash",
+			"subtitle" : ["Web application"],
+			"link" : "http://www.picksmash.com",
+			"dates" : "Aug 2011, Mar 2012",
+			"description" : "<p>picksmash is a web app that implements the popular survivor / knockout / suicide game for several pro sports leagues including NFL football and NBA basketball. Each week, you pick one team to win, but you can only pick each team once. Whoever lasts the longest without an incorrect pick wins.</p><p>The app was primarily written by two of my friends using LAMP with the Code Igniter framework. I contributed a couple of <a href='https://github.com/mikeygee/miscellaneous/blob/master/nfl_scrape.php' target='_blank'>php</a> <a href='https://github.com/mikeygee/miscellaneous/blob/master/nba_scrape.php' target='_blank'>scripts</a> to scrape scores and odds from the web and write them to the database, so results could be determined automatically.</p>"
+		},
+		"mikeygeecom" : {
+			"title" : "mikeygee.com",
+			"subtitle" : ["Web site"],
+			"link" : "http://mikeygee.com",
+			"dates" : "Aug 2011 - present",
+			"description" : "<p>mikeygee.com is my personal web site / blog / portfolio that you are looking at right now. It is built with the <a href='https://github.com/mojombo/jekyll' target='_blank'>Jekyll</a> static site generator via <a href='http://pages.github.com' target='_blank'>github pages</a>, which makes it real easy to check out the <a href='https://github.com/mikeygee/mikeygee.github.com' target='_blank'>source</a>. This CV uses the <a href='http://isotope.metafizzy.co/' target='_blank'>isotope</a> jquery plugin and <a href='http://documentcloud.github.com/underscore/' target='_blank'>underscore</a> micro templates.</p>"
+		},
+		"informatica" : {
+			"title" : "Informatica",
+			"subtitle" : ["PowerCenter developer and administrator"],
+			"link" : "http://www.informatica.com",
+			"dates" : "July 2006 - Jan 2011",
+			"description" : "<p>During my time at Amgen, I primarily worked with the Informatica PowerCenter data integration software, both as a developer and administrator. I had formal training and extensive hands on experience.</p><p>As a developer, I created hundreds of mappings and workflows to do automated ETL (extract, transform, load) jobs. Some of the jobs were for loading data marts, and others were for data quality checking, monitoring, and alerts.</p><p>As an administrator, I managed and configured the environment to support 100+ users. This involved things like setting up application servers and databases, user accounts and LDAP integration, user/group permissions, domains and repositories, logging and monitoring, daily backups, software updates, and troubleshooting with vendor support.</p>"
+		},
+		"sql" : {
+			"title" : "SQL",
+			"subtitle" : ["Databases"],
+			"dates" : "July 2006 - present",
+			"description" : "<p>I have extensive experience with relational databases. As an ETL developer at Amgen, I designed and implemented data marts using Ralph Kimball's dimensional modeling techniques. I worked with several source and target databases, primarily Oracle, and also Teradata and SQL Server. I wrote many complex queries to pull required data and verify results. I wrote DDL scripts for creating tables, views, and indexes in our target data marts. I also occasionally used PL/SQL for functions or stored procedures, and ran explain plans for tuning and optimization.</p><p>At OmniUpdate, we use MySQL for our SaaS system, and also support SQL Server.</p><p>For the Tripgenie project at Blinktag, I worked with a Wordpress MySQL database to import and query data.</p><p>For the picksmash project, I worked with a MySQL database, and wrote a couple of PHP scripts to update scores and odds.</p><p>Finally, I have been exploring NoSQL databases for my own projects, primarily mongodb for simpler storage of JSON-style objects.</p>"
+		},
+		"php" : {
+			"title" : "PHP",
+			"subtitle" : ["Programming Language"],
+			"link" : "http://www.php.net",
+			"dates" : "Aug 2011 - present",
+			"description" : "<p>To help with the picksmash project, I learned PHP by doing a quick crash course on the official documentation. I contributed a couple of functions to scrape sports scores and odds from a web page (with the help of an <a href='http://simplehtmldom.sourceforge.net' target='_blank'>HTML parser</a>), and write it to a MySQL database. It was a fun <a href='https://github.com/mikeygee/miscellaneous/blob/master/nfl_scrape.php' target='_blank'>mini project</a>, and gave me a good overview of PHP.</p><p>For the Tripgenie project at Blinktag, I contributed a php script to import trip data from a spreadsheet into a Wordpress database. I also implemented a few php pages within Wordpress to create a rate generation and comparison tool.</p>"
+		},
+		"javascript" : {
+			"title" : "Javascript",
+			"subtitle" : ["Programming Language"],
+			"dates" : "2010 - present",
+			"description" : "<p>I &hearts; Javascript. It's by far my favorite and strongest programming language. I love the functional programming features, the excellent libraries, and it's been a joy to use compared to every other language I've tried. I learned mostly on my own while building my RoboTag project.</p><p>As a front end developer at OmniUpdate, I specialize in writing the Javascript code for our web CMS product. I've learned a ton working on this project, and continue to learn a lot more every day. I spend a lot of time experimenting in the console, reading and learning from open source code, browser testing, and researching issues via google, stack overflow, etc.</p><p>Recently, I've been learning to make single page Javascript apps on top of RESTful API's. My toolkit of choice is jQuery, backbone.js / underscore.js, and handlebars.js. I also have some experience with prototype, jquery-ui, and google maps api. On the server side, I am a big fan of node.js and hope to use it on future projects.</p>"
+		},
+		"java" : {
+			"title" : "Java",
+			"subtitle" : ["Programming Language"],
+			"dates" : "2005 - 2006, 2011 - present",
+			"description" : "<p>I learned Java during my 3rd year of college, and used it for several school projects.</p><p>For my software engineering class, my team worked with MatchCraft, a search engine marketing company, to write a Java servlet application that scans any web page and determines what keywords and phrases should be bought and how much to bid based on the company's research data.</p><p>For my compiler class, we wrote a compiler in Java to convert a subset of Java into an assembly language. I also did something similar for a hardware design class, converting a higher level language to a lower level one.</p><p>At OmniUpdate, our web CMS is a Java web server application and runs on all major platforms. While I primarily work on the front end, I do some occassional work with the server application." 
+		},
+		"c" : {
+			"title" : "C/C++",
+			"subtitle" : ["Programming Language"],
+			"dates" : "2002 - 2006",
+			"description" : "<p>I wrote my first ever computer program in C++ during my senior year of high school. This is what inspired me to major in computer science and pursue a career in programming. The final assignment for the class was to write a casino program. This was my first somewhat cool program that I was really proud of, and I haved it saved <a href='casino.zip'>here</a> (Windows only). I like to go back and play it every once in a while to reminisce.</p><p>I continued to use C and C++ throughout college courses. Assignments included writing a command line shell, a file system, a web server, and a udp client / server.</p>"
+		},
+		"html" : {
+			"title" : "HTML/CSS",
+			"subtitle" : ["Markup/Style Language"],
+			"dates" : "2010 - present",
+			"description" : "<p>I learned HTML and CSS by reading online documentation and hand coding my own web sites. I always hand code and have never used a WYSIWYG editor.</p><p>I gained a lot of experience building RoboTag, as well as this personal web site. I am familiar with the latest standards including HTML5 and CSS3, and using polyfills for cross browser compatibility. I use firebug and web inspector extensively to help with adjusting layout and style, and also to learn how other web sites accomplish their look and feel.</p><p>At OmniUpdate, I work on the front end HTML and CSS for our web CMS product OU Campus. I build many new pages from scratch and use client side <a href='http://ejohn.org/blog/javascript-micro-templating/'>micro templates</a> with javascript to generate dynamic views on the fly. I also use <a href='http://lesscss.org'>LESS</a> in conjunction with twitter's <a href='http://twitter.github.com/bootstrap'>bootstrap</a> framework to make styling even easier.</p>"
+		},
+		"apple" : {
+			"title" : "Apple",
+			"subtitle" : ["Operating System, Platforms"],
+			"dates" : "2009 - present",
+			"description" : "<p>Mac is my computing platform of choice. I switched over completely in 2009. My essential apps are Firefox + Firebug, Chrome + web inspector, MacVim, Terminal, git, Dropbox, VirtualBox, spotify, VLC, and LibreOffice. I am also an iPhone and iPad user.</p><p>I've done small amounts of Objective-C Cocoa programming for Mac, and have a lot of interest in exploring iOS, but haven't quite gotten to it yet.</p>"
+		},
+		"linux" : {
+			"title" : "Unix / Linux",
+			"subtitle" : ["Operating System"],
+			"dates" : "2005 - present",
+			"description" : "<p>My first experience with Unix and Linux was in college courses at UCLA. The lab computers had Fedora, and we used gcc to build C programs in operating systems and networking classes.</p><p>At Amgen, most of the Informatica infrastructure ran on Solaris servers, and I interacted with these fairly often.</p><p>For personal use, I primarily use Mac OSX and have also used Ubuntu Linux.</p>"
+		},
+		"windows" : {
+			"title" : "Microsoft Windows",
+			"subtitle" : ["Operating System"],
+			"dates" : "1990's - present",
+			"description" : "<p>I have been using Windows as long as I can remember, starting with 3.1 as a child, up to the current Windows 7. Before switching to Mac, I mostly used Windows on custom built computers.</p><p>I have a lot of work experience with both clients and servers. At my job with UCLA CIS, I supported Windows XP workstations, both hardware and software. With WDI, I built an Access database application. And at Amgen, part of our Informatica infrastructure ran on Windows 2003 servers.</p>"
+		},
+		"vim" : {
+			"title" : "Vim",
+			"link" : "http://www.vim.org/",
+			"subtitle" : ["Text Editor"],
+			"dates" : "Jan 2011 - present",
+			"description" : "<p>I code at lightning speed with Vim, my text editor of choice. I prefer Vim over any IDE. I was way late to the game on this one, but once I learned it, I can't go back to a regular editor. It has increased my coding speed and efficiency by several orders of magnitude. The only problem is now I find myself trying to use vi commands in every text entry area.</p>"
+		},
+		"git" : {
+			"title" : "git",
+			"link" : "http://www.git-scm.com/",
+			"subtitle" : ["Version Control"],
+			"dates" : "Jun 2011 - present",
+			"description" : "<p>git is my version control system of choice. I learned mostly from <a href='http://progit.org'>Pro Git</a> and from getting my code onto github. It is also one of our core tools at OmniUpdate.</p>"
+		},
+		"cloud" : {
+			"title" : "Cloud",
+			"subtitle" : ["Application Hosting"],
+			"dates" : "2011",
+			"description" : "<p></p>"
+		}
+	};
 
+	var templateDetails = _.template($("#details-template").html(), false, { variable : "context" });
+	var prevId;
+	$("#isotope div").mouseenter(function() {
+		var id = $(this).attr("id");
+		if(items[id] && id != prevId) {
+			$("#details").remove();
+			$(templateDetails(items[id])).appendTo("#content-cv").hide().fadeIn();
+			prevId = id;
+		}
+	});
+
+});
+</script>

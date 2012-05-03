@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-		<meta name="author" content="Mikey Gee"/>
-		<meta name="google-site-verification" content="-Bik-MXY2y0fuHTumctNNNwCN1N6PEJ-tg0Re1TCacI" />
-		<link type="text/css" rel="stylesheet" href="/css/style.css"/>
-		<link rel="shortcut icon" href="/favicon.ico"/>
-		<title>{{ page.title }}</title>
-	<!-- google analytics -->
-		<script type="text/javascript">
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-25946924-1']);
-		  _gaq.push(['_trackPageview']);
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<meta name="author" content="Mikey Gee"/>
+	<link type="text/css" rel="stylesheet" href="/css/style.css"/>
+	<link rel="shortcut icon" href="/favicon.ico"/>
+	<title>{{ page.title }}</title>
+<!-- google analytics -->
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-25946924-1']);
+	  _gaq.push(['_trackPageview']);
 
-		  (function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-		</script>
-	</head>
-	<body>
-		<div id="main">
-			<div id="nav">
-				<h1><a href="/"><span id="fn">mikey</span><span id="ln">GEE</span></a></h1>
-				<ul>
-					<li><a href="/cv">cv</a></li>
-					<li><a href="/blog">blog</a></li>
-					<li><a href="/about">about</a></li>
-					<li><a href="/contact">contact</a></li>
-				</ul>
-			</div>
-			{{ content }}
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body>
+<div id="nav">
+	<div class="container">
+		<h1><a href="/"><span id="fn">mikey</span><span id="ln">GEE</span></a></h1>
+		<div id="tabs-wrapper">
+		<div id="tabs">
+			<a href="/"{% if page.name == 'home' %} class="active"{% endif %}>home</a>
+			<a href="/cv"{% if page.name == 'cv' %} class="active"{% endif %}>cv</a>
+			<a href="/blog"{% if page.name == 'blog' %} class="active"{% endif %}>blog</a>
+			<a href="/about"{% if page.name == 'about' %} class="active"{% endif %}>about</a>
+			<a href="/contact"{% if page.name == 'contact' %} class="active"{% endif %}>contact</a>
 		</div>
-	</body>
+		</div>
+	</div>
+</div>
+{{ content }}
+</body>
 </html>
