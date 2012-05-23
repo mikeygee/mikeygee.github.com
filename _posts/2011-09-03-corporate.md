@@ -31,3 +31,5 @@ But I'm not bitter or anything. I started as a clueless college graduate and lea
 [essays]: http://www.paulgraham.com/articles.html
 [How to Make Wealth]: http://www.paulgraham.com/wealth.html
 [You Weren't Meant to Have a Boss]: http://www.paulgraham.com/boss.html
+
+<!--end-->
