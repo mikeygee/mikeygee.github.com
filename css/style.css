@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6, #fn { color: #FB4; }
 	float: left;
 	margin-left: 20px;
 	height: 22px;
-	width: 643px;
+	width: 635px;
 	border-bottom: 1px solid #ddd;
 }
 
@@ -299,7 +299,7 @@ a#dlpdf {
 	padding-left: 20px;
 }
 
-#content-post code {
+#content-post code, #content-blog code {
 	display: block;
 	background: #444;
 	padding: 10px;

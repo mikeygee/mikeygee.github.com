@@ -13,6 +13,8 @@ There is very little creative brain power required for coporate IT. Big companie
 #### The standard procedure  
 Procedures are a necessary evil in corporate IT to keep things organized, but they often get more attention than the actual task at hand. You end up focusing more on clawing your way through the procedure than building what the client needs. Another problem is that they try to use one common procedure for too many things, and they err on the side of being more careful and going slower. It feels like trying to push a square shaped project through a circle shaped procedure. There are so many things you end up doing that make no sense and just waste time. Every project is unique and needs some flexibility to get it done in a way that makes sense.
 
+<!--break-->
+
 #### Red tape  
 There is so much red tape around every little thing. Making changes and trying new things turns into an interrogation. There is always this sense of fear of breaking something instead of trusting that good people can handle themselves. You're only allowed to touch things that your specialized role allows you to, which is not much. Everything else requires a formal request, which takes who knows how long and just makes it a hassle to get anything done.
 
