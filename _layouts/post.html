@@ -4,6 +4,7 @@
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
 	<meta name="author" content="Mikey Gee"/>
 	<link type="text/css" rel="stylesheet" href="/css/style.css"/>
+	<link type="text/css" rel="stylesheet" href="/css/prettify.css"/>
 	<link rel="shortcut icon" href="/favicon.ico"/>
 	<title>Mikey Gee | Blog | {{ page.title }}</title>
 <!-- google analytics -->
@@ -19,7 +20,7 @@
 	  })();
 	</script>
 </head>
-<body>
+<body onload="prettyPrint()">
 <div id="nav">
 	<div class="container">
 		<h1><a href="/"><span id="fn">mikey</span><span id="ln">GEE</span></a></h1>
@@ -39,6 +40,7 @@
 	<div class="post-date">{{ page.date | date: "%B %d, %Y" }}</div>
 	{{ content }}
 </div>
+<script type="text/javascript" src="/google-code-prettify/prettify.js"></script>
 </body>
 </html>
 

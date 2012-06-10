@@ -299,12 +299,6 @@ a#dlpdf {
 	padding-left: 20px;
 }
 
-#content-post code, #content-blog code {
-	display: block;
-	background: #444;
-	padding: 10px;
-}
-
 #content-post img, #content-blog img {
 	max-width: 800px;
 }
