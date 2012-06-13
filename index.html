@@ -41,7 +41,7 @@ title: Mikey Gee | Home
 <script type="text/template" id="gh-template">
 	<% _.each(context.items, function(item) { %>
 	<p>
-		<a href="<%= item.url %>" target="_blank"><span class="yellow"><%= item.owner %>/<%= item.name %></span></a> : <%= item.message %>
+		<a href="<%= item.html_url %>" target="_blank"><span class="yellow"><%= item.owner.login %>/<%= item.name %></span></a> : <%= item.message %>
 		<span class="gh-date"><%= item.date %></span><br>
 	</p>
 	<% }); %>
@@ -49,46 +49,49 @@ title: Mikey Gee | Home
 <script type="text/javascript">
 // get latest activity from twitter and github
 $(document).ready(function() {
-	$.getJSON("http://api.twitter.com/1/statuses/user_timeline.json?callback=?",
-		{ screen_name: "geeplusplus", count: 3, include_entities: true, include_rts: true },
-		function(data) {
-			for(var i = 0, len = data.length; i < len; i++) {
-				var date = new Date(data[i].created_at.replace("+0000 ",""));
-				data[i].date = date.toDateString().slice(4).replace(/\s/g,"&nbsp;");
-				if(data[i].entities.urls.length > 0)
-					data[i].url = data[i].entities.urls[0].url;
-				else
-					data[i].url = "http://twitter.com/" + data[i].user.screen_name;
-			}
-			$(_.template($("#tweet-template").html(), { items : data }, { variable : "context" })).appendTo("#tweets");
+
+$.getJSON("http://api.twitter.com/1/statuses/user_timeline.json?callback=?",
+	{ screen_name: "geeplusplus", count: 3, include_entities: true, include_rts: true },
+	function(data) {
+		for(var i = 0, len = data.length; i < len; i++) {
+			var date = new Date(data[i].created_at.replace("+0000 ",""));
+			data[i].date = date.toDateString().slice(4).replace(/\s/g,"&nbsp;");
+			if(data[i].entities.urls.length > 0)
+				data[i].url = data[i].entities.urls[0].url;
+			else
+				data[i].url = "http://twitter.com/" + data[i].user.screen_name;
 		}
-	);
-	$.getJSON("http://github.com/api/v2/json/repos/show/mikeygee?callback=?",
-		function(data) {
-			data.repositories.sort(function(a,b) {
-				var d1 = new Date(a.pushed_at);
-				var d2 = new Date(b.pushed_at);
-				return d2 - d1
-			});
-			if(data.repositories.length > 3)
-				data.repositories = data.repositories.slice(0,3);
-			
-			// get/set latest commit message for each repo
-			var len = (data.repositories.length < 3) ? data.repositories.length : 3;
-			var count = 0;
-			var addMessage = function(index) {
-				return function(commitData) {
-					data.repositories[index].message = commitData.commits[0].message;
-					if(++count == len)
-						$(_.template($("#gh-template").html(), { items : data.repositories }, { variable : "context" })).appendTo("#gh-activity");
-				}
+		$(_.template($("#tweet-template").html(), { items : data }, { variable : "context" })).appendTo("#tweets");
+	}
+);
+
+$.getJSON("https://api.github.com/users/mikeygee/repos?callback=?", function(data) {
+	data = window.data = data.data;
+	data.sort(function(a,b) {
+		var d1 = new Date(a.pushed_at);
+		var d2 = new Date(b.pushed_at);
+		return d2 - d1
+	});
+	if(data.length > 3)
+		data = data.slice(0,3);
+
+	var count = 0;
+	for(var i = 0; i < data.length; i++) {
+		var repo = data[i];
+		repo.date = (new Date(repo.pushed_at)).toDateString().slice(4).replace(/\s/g,"&nbsp;");
+		$.ajax({
+			url: "https://api.github.com/repos/mikeygee/" + repo.name + "/commits",
+			type: "GET",
+			dataType: "jsonp",
+			index : i,
+			success: function(commits) {
+				data[this.index].message = commits.data[0].commit.message;
+				if(++count == data.length)
+					$(_.template($("#gh-template").html(), { items : data} , { variable : "context" })).appendTo("#gh-activity");
 			}
-			for(var i = 0; i < len; i++) {
-				var repo = data.repositories[i];
-				repo.date = (new Date(repo.pushed_at)).toDateString().slice(4).replace(/\s/g,"&nbsp;");
-				$.getJSON("http://github.com/api/v2/json/commits/list/mikeygee/" + repo.name + "/master?callback=?", addMessage(i));
-			}
-		}
-	);
+		});
+	}
+});
+
 });
 </script>
