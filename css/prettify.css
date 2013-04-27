@@ -10,7 +10,7 @@ pre .atn, code .atn { color: #bdb76b; } /* html/xml attribute name  - khaki */
 pre .atv, code .atv { color: #65B042; } /* html/xml attribute value - green */
 pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
 
-.prettyprint {
+.prettyprint, .prettyprint code {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   font-size: 12px;
   white-space: pre-wrap;

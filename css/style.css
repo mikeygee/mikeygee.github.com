@@ -3,6 +3,7 @@ body {
 	color: #DDD;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 14px;
+	font-weight: 200;
 	line-height: 21px;
 	margin: 0;
 	padding: 0;
@@ -303,3 +304,11 @@ a#dlpdf {
 	max-width: 800px;
 }
 
+#content-post ul > li, #content-blog ul > li {
+	list-style: circle;
+}
+
+#content-about img#me {
+	float: left;
+	margin-right: 18px;
+}

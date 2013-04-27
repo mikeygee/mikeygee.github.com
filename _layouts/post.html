@@ -20,7 +20,7 @@
 	  })();
 	</script>
 </head>
-<body onload="prettyPrint()">
+<body>
 <div id="nav">
 	<div class="container">
 		<h1><a href="/"><span id="fn">mikey</span><span id="ln">GEE</span></a></h1>
@@ -41,6 +41,19 @@
 	{{ content }}
 </div>
 <script type="text/javascript" src="/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+	var codeBlocks = document.getElementsByTagName("pre");
+	var syntax = document.getElementById("syntax");
+	syntax && (syntax = syntax.innerHTML.split(","));
+	for(var i = 0; i < codeBlocks.length; i++) {
+		codeBlocks[i].className = "prettyprint ";
+		if(syntax && syntax.length == 1)	
+			codeBlocks[i].className += syntax[0];
+		else if(syntax && syntax.length > 1)
+			codeBlocks[i].className += syntax[i];
+	}
+	prettyPrint();
+</script>
 </body>
 </html>
 

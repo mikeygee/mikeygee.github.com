@@ -13,11 +13,13 @@ title: Mikey Gee | Home
 			{{ post.date | date_to_string }} &nbsp; <a href="{{ post.url }}">{{ post.title }}</a><br>
 		{% endfor %}
 		<br>
-		<a href="http://twitter.com/geeplusplus" target="_blank"><img src="images/twitter-logo.png"/></a>
-		<div id="tweets">
-		</div>
 		<a href="http://github.com/mikeygee" target="_blank"><img src="images/github-logo.png"/></a>
 		<div id="gh-activity">
+		</div>
+		<div id="tweets">
+			<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/geeplusplus" data-widget-id="286761231627456512">Tweets by @geeplusplus</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			
 		</div>
 	</div>
 	<div class="right-column">
@@ -30,14 +32,6 @@ title: Mikey Gee | Home
 <script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
 -->
 <script type="text/javascript" src="/js/underscore-min.js"></script>
-<script type="text/template" id="tweet-template">
-	<% _.each(context.items, function(item) { %>
-	<p>
-		<a href="<%= item.url %>" target="_blank"><span class="yellow"><%= item.text %></span></a>&nbsp;
-		<span class="tweet-date"><%= item.date %></span><br>
-	</p>
-	<% }); %>
-</script>
 <script type="text/template" id="gh-template">
 	<% _.each(context.items, function(item) { %>
 	<p>
@@ -49,21 +43,6 @@ title: Mikey Gee | Home
 <script type="text/javascript">
 // get latest activity from twitter and github
 $(document).ready(function() {
-
-$.getJSON("http://api.twitter.com/1/statuses/user_timeline.json?callback=?",
-	{ screen_name: "geeplusplus", count: 3, include_entities: true, include_rts: true },
-	function(data) {
-		for(var i = 0, len = data.length; i < len; i++) {
-			var date = new Date(data[i].created_at.replace("+0000 ",""));
-			data[i].date = date.toDateString().slice(4).replace(/\s/g,"&nbsp;");
-			if(data[i].entities.urls.length > 0)
-				data[i].url = data[i].entities.urls[0].url;
-			else
-				data[i].url = "http://twitter.com/" + data[i].user.screen_name;
-		}
-		$(_.template($("#tweet-template").html(), { items : data }, { variable : "context" })).appendTo("#tweets");
-	}
-);
 
 $.getJSON("https://api.github.com/users/mikeygee/repos?callback=?", function(data) {
 	data = window.data = data.data;
