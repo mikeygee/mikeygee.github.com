@@ -10,4 +10,4 @@ Steve, you've been an inspiration and role model to me and countless others. Tha
 ![steve jobs apple icon][2]
 
 [1]: http://www.apple.com/pr/library/2011/10/05Apple-Media-Advisory.html
-[2]: http://24.media.tumblr.com/tumblr_lqhr46trpa1qz9917o1_500.png
+[2]: http://i1154.photobucket.com/albums/p526/mikey-gee/jonathan-mak-apple-design_zps9a59bfe4.png

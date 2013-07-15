@@ -1,0 +1,173 @@
+.img-amgen, .img-apple, .img-blinktag, .img-cis, .img-email-icon, .img-facebook-icon, .img-feed-icon, .img-git-logo, .img-github-icon, .img-github-logo, .img-google-icon, .img-icloud, .img-informatica, .img-java, .img-lab, .img-linkedin-icon, .img-me, .img-omniupdate, .img-php, .img-robotag, .img-tux, .img-twitter-icon, .img-twitter-logo, .img-ucla, .img-vim, .img-wdi, .img-windows, .img-coursera {
+	background: url('/images/sprites.png') no-repeat;
+	display: inline-block;
+}
+
+.img-amgen {
+	background-position: 0 -261px ;
+	width: 157px;
+	height: 40px;
+}
+
+.img-apple {
+	background-position: -341px -88px ;
+	width: 33px;
+	height: 40px;
+}
+
+.img-blinktag {
+	background-position: 0 -337px ;
+	width: 170px;
+	height: 40px;
+}
+
+.img-cis {
+	background-position: 0 -79px ;
+	width: 130px;
+	height: 77px;
+}
+
+.img-email-icon {
+	background-position: -344px -305px ;
+	width: 24px;
+	height: 24px;
+}
+
+.img-facebook-icon {
+	background-position: -253px -305px ;
+	width: 24px;
+	height: 24px;
+}
+
+.img-feed-icon {
+	background-position: -284px -305px ;
+	width: 24px;
+	height: 24px;
+}
+
+.img-git-logo {
+	background-position: -262px -162px ;
+	width: 90px;
+	height: 33px;
+}
+
+.img-github-icon {
+	background-position: -163px -306px ;
+	width: 24px;
+	height: 24px;
+}
+
+.img-github-logo {
+	background-position: -264px -203px ;
+	width: 54px;
+	height: 24px;
+}
+
+.img-google-icon {
+	background-position: -314px -305px ;
+	width: 24px;
+	height: 24px;
+}
+
+.img-icloud {
+	background-position: 0 -164px ;
+	width: 90px;
+	height: 90px;
+}
+
+.img-informatica {
+	background-position: -180px -340px ;
+	width: 130px;
+	height: 33px;
+}
+
+.img-java {
+	background-position: -202px -158px ;
+	width: 49px;
+	height: 90px;
+}
+
+.img-lab {
+	background-position: -251px -68px ;
+	width: 80px;
+	height: 62px;
+}
+
+.img-linkedin-icon {
+	background-position: -223px -305px ;
+	width: 24px;
+	height: 24px;
+}
+
+.img-me {
+	background-position: -140px 0;
+	width: 100px;
+	height: 100px;
+}
+
+.img-omniupdate {
+	background-position: 0 -304px ;
+	width: 150px;
+	height: 27px;
+}
+
+.img-php {
+	background-position: -140px -109px ;
+	width: 75px;
+	height: 40px;
+}
+
+.img-robotag {
+	background-position: -166px -262px ;
+	width: 190px;
+	height: 36px;
+}
+
+.img-tux {
+	background-position: -339px -41px ;
+	width: 34px;
+	height: 40px;
+}
+
+.img-twitter-icon {
+	background-position: -193px -306px ;
+	width: 24px;
+	height: 24px;
+}
+
+.img-twitter-logo {
+	background-position: -262px -138px ;
+	width: 97px;
+	height: 18px;
+}
+
+.img-ucla {
+	background-position: -250px 0;
+	width: 80px;
+	height: 59px;
+}
+
+.img-vim {
+	background-position: -101px -166px ;
+	width: 90px;
+	height: 82px;
+}
+
+.img-wdi {
+	background-position: 0 0;
+	width: 130px;
+	height: 72px;
+}
+
+.img-windows {
+	background-position: -338px -1px ;
+	width: 40px;
+	height: 35px;
+}
+
+.img-coursera {
+	background-position: -263px -233px ;
+	width: 108px;
+	height: 17px;
+}
+

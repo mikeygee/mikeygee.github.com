@@ -25,7 +25,10 @@ a img { border: none; }
 
 ul { list-style: none; }
 
-h1, h2, h3, h4, h5, h6, #fn { color: #FB4; }
+h1, h2, h3, h4, h5, h6, #fn {
+	color: #FB4;
+	font-weight: bold;
+}
 
 #ln, .post-date { color: #1BF; }
 
@@ -42,6 +45,7 @@ h1, h2, h3, h4, h5, h6, #fn { color: #FB4; }
 #nav h1 {
 	float: left;
 	font-size: 28px;
+	font-weight: bold;
 	margin: 0;
 }
 
@@ -92,10 +96,15 @@ h1, h2, h3, h4, h5, h6, #fn { color: #FB4; }
 #dlpdf { color: #fb4; }
 
 #content-home h3 { color: #FFF; }
+
+#content-contact {
+	line-height: 36px;
+}
 #content-home img,
-#content-contact img {
+#content-contact div.img {
+	display: inline-block;
 	vertical-align: middle;
-	margin: 5px 10px 5px 0px;
+	margin-right: 6px;
 }
 .tweet-date, .gh-date { font-size: 12px; }
 
@@ -205,10 +214,22 @@ a#dlpdf {
 	background-color: #FFF;
 }
 
-#ucla-logo,
-#lab-logo
-{
-	margin-top: 16px;
+#coursera {
+	width: 140px;
+	height: 36px;
+	background-color: #fff;
+}
+
+#coursera > div {
+	margin: 10px auto;
+}
+
+#ucla > div {
+	margin: 15px auto;
+}
+
+#lab > div {
+	margin: 12px auto;
 }
 
 .work {
@@ -288,8 +309,8 @@ a#dlpdf {
           transition-property:         transform, opacity;
 }
 
-#feed {
-	vertical-align: top;
+.img-feed-icon {
+	vertical-align: middle;
 	margin-right: 4px;
 }
 
@@ -298,6 +319,12 @@ a#dlpdf {
 #content-post blockquote, #content-blog blockquote {
 	border-left: 1px solid #DDD;
 	padding-left: 20px;
+}
+
+#content-post p > code {
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	background-color: #555;
+	padding: 0px 6px 0px 3px;
 }
 
 #content-post img, #content-blog img {
