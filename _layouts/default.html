@@ -3,6 +3,9 @@
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
 	<meta name="author" content="Mikey Gee"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/icomoon/style.css" />
 	<link type="text/css" rel="stylesheet" href="/css/style.css"/>
 	<link type="text/css" rel="stylesheet" href="/css/prettify.css"/>
 	<link type="text/css" rel="stylesheet" href="/css/sprites.css"/>
@@ -22,20 +25,42 @@
 	</script>
 </head>
 <body>
-<div id="nav">
-	<div class="container">
-		<h1><a href="/"><span id="fn">mikey</span><span id="ln">GEE</span></a></h1>
-		<div id="tabs-wrapper">
-		<div id="tabs">
-			<a href="/"{% if page.name == 'home' %} class="active"{% endif %}>home</a>
-			<a href="/cv"{% if page.name == 'cv' %} class="active"{% endif %}>cv</a>
-			<a href="/blog"{% if page.name == 'blog' %} class="active"{% endif %}>blog</a>
-			<a href="/about"{% if page.name == 'about' %} class="active"{% endif %}>about</a>
-			<a href="/contact"{% if page.name == 'contact' %} class="active"{% endif %}>contact</a>
-		</div>
-		</div>
-	</div>
-</div>
-{{ content }}
+    <header>
+        <div class="container">
+            <h1 id="brand"><a href="/"><span id="fn">M</span><span id="ln">G</span></a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/about"{% if page.id == 'about' %} class="active"{% endif %}>About</a></li>
+                    <li><a href="/cv"{% if page.id == 'cv' %} class="active"{% endif %}>CV</a></li>
+                    <li><a href="/blog"{% if page.id == 'blog' %} class="active"{% endif %}>Blog</a></li>
+                </ul>
+            </nav>
+            <br style="clear:both;">
+        </div>
+    </header>
+    {{ content }}
+    <footer>
+        <div class="container">
+            <small>© 2014, Mikey Gee<span style="margin-left: 30px;"><a id="theme-switcher" href="javascript:;">Switch to light theme</a></span></small>
+        </div>
+    </footer>
+<!-- theme switching -->
+    <script type="text/javascript">
+        (function () {
+            var theme = (localStorage && localStorage.getItem('theme')) || 'dark';
+            document.body.className = 'theme-' + theme;
+            window.onload = function () {
+                var $themeLink = document.getElementById('theme-switcher');
+                $themeLink.innerHTML = 'Switch to ' + (theme === 'light' ? 'dark' : 'light') + ' theme';
+
+                $themeLink.onclick = function () {
+                    $themeLink.innerHTML = 'Switch to ' + theme + ' theme';
+                    theme = (theme === 'light' ? 'dark' : 'light');
+                    localStorage && localStorage.setItem('theme', theme);
+                    document.body.className = 'theme-' + theme;
+                }
+            }
+        })();
+    </script>
 </body>
 </html>

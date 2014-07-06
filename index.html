@@ -1,76 +1,28 @@
 ---
 layout: default
 name: home
-title: Mikey Gee | Home
+title: Mikey Gee | Front End Engineer | Los Angeles, CA
 ---
 
-<div id="content-home" class="container main">
-	<h3>Hi there! I'm Mikey, and this is my online portfolio.</h3>
-	<p>Here you can find out <a href="/about">about</a> me, what I've <a href="/cv">done</a>, and what's <a href="/blog">on my mind.</a> Feel free to <a href="/contact">contact</a> me if you have any questions or comments.</p>
-	<div class="left-column">
-	<h3>Latest</h3>
-		{% for post in site.posts limit:3 %}
-			{{ post.date | date_to_string }} &nbsp; <a href="{{ post.url }}">{{ post.title }}</a><br>
-		{% endfor %}
-		<br>
-		<a href="http://github.com/mikeygee" target="_blank"><div class="img-github-logo"></div></a>
-		<div id="gh-activity">
-		</div>
-		<div id="tweets">
-			<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/geeplusplus" data-widget-id="286761231627456512">Tweets by @geeplusplus</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-			
-		</div>
-	</div>
-	<div class="right-column">
-		<h3>tunes</h3>
-		<iframe src="https://embed.spotify.com/?uri=spotify:user:geeplusplus:playlist:4zDFe7Bk8TALE71x3s4OpB" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-	</div>
+<div id="content-home" class="container">
+    <div class="big-name" style="padding:8px">
+        <div class="letter-box" style="background:#fb4;">m</div>
+        <div class="letter-box" style="background:#4cf;">i</div>
+        <div class="letter-box" style="background:#ff4287;">k</div>
+        <div class="letter-box" style="background:#43ff0f;">e</div>
+        <div class="letter-box" style="background:#ff7f4d;">y</div>
+        <div class="letter-box" style="background:#988cd8;">G</div>
+        <div class="letter-box" style="background:#5ed0bd;">E</div>
+        <div class="letter-box" style="background:#bf9956;">E</div>
+        <br style="clear:both;">
+    </div>
+    <div class="subtitle">
+        Front End Engineer <br> Los Angeles, CA
+    </div>
+    <div class="contact">
+        <a href="&#109;&#097;&#105;&#108;&#116;&#111;&#58;&#109;&#105;&#107;&#101;&#121;&#064;&#109;&#105;&#107;&#101;&#121;&#103;&#101;&#101;&#046;&#099;&#111;&#109;"><i class="icon-mail2"></i></a>
+        <a href="https://github.com/mikeygee" target="_blank"><i class="icon-github3"></i></a>
+        <a href="https://www.linkedin.com/in/michaelcgee" target="_blank"><i class="icon-linkedin2"></i></a>
+        <a href="https://twitter.com/geeplusplus" target="_blank"><i class="icon-twitter"></i></a>
+    </div>
 </div>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<!--
-<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
--->
-<script type="text/javascript" src="/js/underscore-min.js"></script>
-<script type="text/template" id="gh-template">
-	<% _.each(context.items, function(item) { %>
-	<p>
-		<a href="<%= item.html_url %>" target="_blank"><span class="yellow"><%= item.owner.login %>/<%= item.name %></span></a> : <%= item.message %>
-		<span class="gh-date"><%= item.date %></span><br>
-	</p>
-	<% }); %>
-</script>
-<script type="text/javascript">
-// get latest activity from twitter and github
-$(document).ready(function() {
-
-$.getJSON("https://api.github.com/users/mikeygee/repos?callback=?", function(data) {
-	data = window.data = data.data;
-	data.sort(function(a,b) {
-		var d1 = new Date(a.pushed_at);
-		var d2 = new Date(b.pushed_at);
-		return d2 - d1
-	});
-	if(data.length > 3)
-		data = data.slice(0,3);
-
-	var count = 0;
-	for(var i = 0; i < data.length; i++) {
-		var repo = data[i];
-		repo.date = (new Date(repo.pushed_at)).toDateString().slice(4).replace(/\s/g,"&nbsp;");
-		$.ajax({
-			url: "https://api.github.com/repos/mikeygee/" + repo.name + "/commits",
-			type: "GET",
-			dataType: "jsonp",
-			index : i,
-			success: function(commits) {
-				data[this.index].message = commits.data[0].commit.message;
-				if(++count == data.length)
-					$(_.template($("#gh-template").html(), { items : data} , { variable : "context" })).appendTo("#gh-activity");
-			}
-		});
-	}
-});
-
-});
-</script>

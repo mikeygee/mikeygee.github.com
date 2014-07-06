@@ -1,95 +1,108 @@
 ---
 layout: default
-name: cv
+id: cv
 title: Mikey Gee | Front End Engineer | CV / Resume
 ---
 <div id="content-cv" class="container">
-	<div id="cv-left">
-	<div id="cv-header">
-		<a id="dlpdf" href="cv.pdf">download pdf</a>
-		<div id="filters">
-			<a filter="*" class="active">all</a>
-			<a filter=".education">education</a>
-			<a filter=".work">work</a>
-			<a filter=".project">projects</a>
-			<a filter=".skill">skills</a>
-		</div>
+    <div id="cv-tiles" class="col">
+        <div id="cv-header">
+            <div id="cv-filters">
+                <a filter="*" class="active">all</a>
+                <a filter=".education">education</a>
+                <a filter=".work">work</a>
+                <a filter=".project">projects</a>
+                <a filter=".skill">skills</a>
+                <a href="cv.pdf" target="_blank">pdf</a>
+            </div>
+            <br style="clear:both;">
+        </div>
+        <div id="isotope">
+            <div id="ucla" class="item education">
+                <div class="img-ucla"></div>
+            </div>
+            <div id="lab" class="item education">
+                <div class="img-lab"></div>
+            </div>
+            <div id="coursera" class="item education">
+                <div class="img-coursera"></div>
+            </div>
+            <div id="amgen" class="item work">
+                <div class="img-amgen"></div>
+            </div>
+            <div id="wdi" class="item work">
+                <div class="img-wdi"></div>
+            </div>
+            <div id="cis" class="item work">
+                <div class="img-cis"></div>
+            </div>
+            <div id="ou" class="item work">
+                <div class="img-omniupdate"></div>
+            </div>
+            <div id="blinktag" class="item work">
+                <div class="img-blinktag"></div>
+            </div>
+            <div id="yahoo" class="item work">
+                <div class="img-yahoo"></div>
+            </div>
+            <div id="robotag" class="item project">
+                <div class="img-robotag"></div>
+            </div>
+            <div id="picksmash" class="item project box">
+                picksmash	
+            </div>
+            <div id="mikeygeecom" class="item project box">
+                <span class="title">MG</span>	
+                <span class="description">mikeygee<span>
+            </div>
+            <div id="java" class="item skill">
+                <div class="img-java"></div>
+            </div>
+            <div id="php" class="item skill">
+                <div class="img-php"></div>
+            </div>
+            <div id="apple" class="item skill">
+                <div class="img-apple"></div>
+            </div>
+            <div id="windows" class="item skill">
+                <div class="img-windows"></div>
+            </div>
+            <div id="linux" class="item skill">
+                <div class="img-tux"></div>
+            </div>
+            <div id="javascript" class="item skill box">
+                <span class="title">Js</span><br>
+                <span class="description">Javascript<span>
+            </div>
+            <div id="c" class="item skill box">
+                <span class="title">C</span><br>
+                <span class="description">C/C++<span>
+            </div>
+            <div id="sql" class="item skill box">
+                <span class="title">SQL</span><br>
+                <span class="description">databases<span>
+            </div>
+            <div id="html" class="item skill box">
+                <span class="title">HC</span><br>
+                <span class="description">HTML/CSS<span>
+            </div>
+            <div id="vim" class="item skill">
+                <div class="img-vim"></div>
+            </div>
+            <div id="git" class="item skill">
+                <div class="img-git-logo"></div>
+            </div>
+            <div id="node" class="item skill">
+                <div class="img-nodejs"></div>
+            </div>
+            <div id="kjwedding" class="item project">
+                <div class="img-kjwedding"></div>
+            </div>
+        </div>
 	</div>
-	<div id="isotope">
-		<div id="ucla" class="item education">
-			<div class="img-ucla"></div>
-		</div>
-		<div id="lab" class="item education">
-			<div class="img-lab"></div>
-		</div>
-		<div id="coursera" class="item education">
-			<div class="img-coursera"></div>
-		</div>
-		<div id="amgen" class="item work">
-			<div class="img-amgen"></div>
-		</div>
-		<div id="wdi" class="item work">
-			<div class="img-wdi"></div>
-		</div>
-		<div id="cis" class="item work">
-			<div class="img-cis"></div>
-		</div>
-		<div id="ou" class="item work">
-			<div class="img-omniupdate"></div>
-		</div>
-		<div id="blinktag" class="item work">
-			<div class="img-blinktag"></div>
-		</div>
-		<div id="robotag" class="item project">
-			<div class="img-robotag"></div>
-		</div>
-		<div id="picksmash" class="item project box">
-			picksmash	
-		</div>
-		<div id="mikeygeecom" class="item project box">
-			mikeygee	
-		</div>
-		<div id="java" class="item skill">
-			<div class="img-java"></div>
-		</div>
-		<div id="php" class="item skill">
-			<div class="img-php"></div>
-		</div>
-		<div id="apple" class="item skill">
-			<div class="img-apple"></div>
-		</div>
-		<div id="windows" class="item skill">
-			<div class="img-windows"></div>
-		</div>
-		<div id="linux" class="item skill">
-			<div class="img-tux"></div>
-		</div>
-		<div id="javascript" class="item skill box">
-			<span class="title">Js</span><br>
-			<span class="description">Javascript<span>
-		</div>
-		<div id="c" class="item skill box">
-			<span class="title">C</span><br>
-			<span class="description">C/C++<span>
-		</div>
-		<div id="sql" class="item skill box">
-			<span class="title">SQL</span><br>
-			<span class="description">databases<span>
-		</div>
-		<div id="html" class="item skill box">
-			<span class="title">HC</span><br>
-			<span class="description">HTML/CSS<span>
-		</div>
-		<div id="vim" class="item skill">
-			<div class="img-vim"></div>
-		</div>
-		<div id="git" class="item skill">
-			<div class="img-git-logo"></div>
-		</div>
-	</div>
-	</div>
+    <div id="cv-details" class="col"></div>
+    <br style="clear:both;">
 </div>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <!--
 <script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
 -->
@@ -97,6 +110,7 @@ title: Mikey Gee | Front End Engineer | CV / Resume
 <script type="text/javascript" src="/js/underscore-min.js"></script>
 <script type="text/template" id="details-template">
 <div id="details">
+<div class="details-close"><a href="javascript:;">hide</a></div>
 <div class="details-title">
 <% if (context.link) { %>
 	<a href="<%= context.link %>" target="_blank"><%= context.title %></a>
@@ -119,24 +133,6 @@ title: Mikey Gee | Front End Engineer | CV / Resume
 </script>
 <script type="text/javascript">
 $(document).ready(function() {
-	var container = $("#isotope");
-	container.imagesLoaded(function() {
-		container.isotope({
-			itemSelector : ".item",
-			layoutMode : "masonry",
-			masonry: { columnWidth: 50 }
-		});
-		container.isotope("shuffle");
-	});
-
-	$("#filters a").click(function() {
-		$("#filters a").removeClass("active");
-		$(this).addClass("active");
-		var selector = $(this).attr("filter");
-		container.isotope({ filter: selector });
-		container.isotope("shuffle");
-	});
-
 	var items = {
 		"ucla" : {
 			"title" : "UCLA",
@@ -184,15 +180,22 @@ $(document).ready(function() {
 			"title" : "OmniUpdate, Inc.",
 			"subtitle" : ["Front End Web Developer", "Software Development", "Camarillo, CA"],
 			"link" : "http://omniupdate.com",
-			"dates" : "Nov 2011 - present",
-			"description" : "<p>At OmniUpdate, I work on the front end development of OU Campus, the leading web content management system for higher education. I focus on Javascript programming and HTML/CSS to build slick user interfaces and create a top notch user experience.</p><p>For the next major release, I have completely re-designed and re-architected the front end code using Backbone.js, jQuery, and handlebars templates. I also gave it a fresh new look using Twitter Bootstrap and additional custom styling with LESS.</p>"
+			"dates" : "Nov 2011 - Oct 2013",
+			"description" : "<p>At OmniUpdate, I worked on the front end development of OU Campus, the leading web content management system for higher education. I focused on Javascript programming and HTML/CSS to build slick user interfaces and create a top notch user experience.</p><p>For the next major release, I completely re-designed and re-architected the front end code using Backbone.js, jQuery, and handlebars templates. I also gave it a fresh new look using Twitter Bootstrap and additional custom styling with LESS.</p>"
 		},
 		"blinktag" : {
 			"title" : "Blinktag, Inc.",
 			"subtitle" : ["Consultant", "San Francisco, CA"],
 			"link" : "http://blinktag.com",
-			"dates" : "Oct 2011 - present",
+			"dates" : "Oct 2011 - Feb 2012",
 			"description" : "<p>Blinktag provides web development services in the fields of transportation and city planning. As a consultant, I help out with the development of various web projects.</p><p>For the <a href='http://tripgenie.org' target='_blank'>Tripgenie</a> project, I contributed a php script to import trip data from a spreadsheet into a Wordpress database. I also implemented the rate generation and comparison pages with php and JavaScript/jQuery.</p><p>On a project for <a href='http://511contracosta.org' target='_blank'>511 Contra Costa</a>, I enhanced an online children's book with better page animations and navigation. I used the <a href='https://github.com/suhinini/jPageFlipper' target='_blank'>jPageFlipper</a> library with some of my own <a href='https://github.com/mikeygee/jPageFlipper' target='_blank'>modifications</a> to create a canvas based flip book. Check it out - <a href='http://511contracosta.org/hydrogencars/' target='_blank'>Why Don't Hydrogen Cars Fly Away?</a></p>"
+		},
+		"yahoo" : {
+			"title" : "Yahoo Sports",
+			"subtitle" : ["Software Engineer", "Santa Monica, CA"],
+			"link" : "http://sports.yahoo.com",
+			"dates" : "Nov 2013 - current",
+			"description" : "<p>At Yahoo, I work on the front end development of Yahoo Sports, the leading sports site on the web. I work with HTML, CSS, and Javascript as well as custom frameworks on both PHP and node.js.</p>"
 		},
 		"robotag" : {
 			"title" : "RoboTag",
@@ -213,14 +216,7 @@ $(document).ready(function() {
 			"subtitle" : ["Web site"],
 			"link" : "http://mikeygee.com",
 			"dates" : "Aug 2011 - present",
-			"description" : "<p>mikeygee.com is my personal web site / blog / portfolio that you are looking at right now. It is built with the <a href='https://github.com/mojombo/jekyll' target='_blank'>Jekyll</a> static site generator via <a href='http://pages.github.com' target='_blank'>github pages</a>, which makes it real easy to check out the <a href='https://github.com/mikeygee/mikeygee.github.com' target='_blank'>source</a>. This CV uses the <a href='http://isotope.metafizzy.co/' target='_blank'>isotope</a> jquery plugin and <a href='http://documentcloud.github.com/underscore/' target='_blank'>underscore</a> micro templates.</p>"
-		},
-		"informatica" : {
-			"title" : "Informatica",
-			"subtitle" : ["PowerCenter developer and administrator"],
-			"link" : "http://www.informatica.com",
-			"dates" : "July 2006 - Jan 2011",
-			"description" : "<p>During my time at Amgen, I primarily worked with the Informatica PowerCenter data integration software, both as a developer and administrator. I had formal training and extensive hands on experience.</p><p>As a developer, I created hundreds of mappings and workflows to do automated ETL (extract, transform, load) jobs. Some of the jobs were for loading data marts, and others were for data quality checking, monitoring, and alerts.</p><p>As an administrator, I managed and configured the environment to support 100+ users. This involved things like setting up application servers and databases, user accounts and LDAP integration, user/group permissions, domains and repositories, logging and monitoring, daily backups, software updates, and troubleshooting with vendor support.</p>"
+			"description" : "<p>mikeygee.com is my personal web site / blog / portfolio that you are looking at right now. It is built with the <a href='https://github.com/mojombo/jekyll' target='_blank'>Jekyll</a> static site generator via <a href='http://pages.github.com' target='_blank'>github pages</a>, which makes it real easy to check out the <a href='https://github.com/mikeygee/mikeygee.github.com' target='_blank'>source</a>. This CV uses the <a href='http://isotope.metafizzy.co/' target='_blank'>isotope</a> jquery plugin and <a href='http://documentcloud.github.com/underscore/' target='_blank'>underscore</a> micro templates. It has been updated to be responsive and displays well on any device.</p>"
 		},
 		"sql" : {
 			"title" : "SQL",
@@ -233,7 +229,7 @@ $(document).ready(function() {
 			"subtitle" : ["Programming Language"],
 			"link" : "http://www.php.net",
 			"dates" : "2011",
-			"description" : "<p>To help with the picksmash project, I learned some PHP basics by doing a quick crash course on the official documentation. I contributed a couple of functions to scrape sports scores and odds from a web page (with the help of an <a href='http://simplehtmldom.sourceforge.net' target='_blank'>HTML parser</a>), and write it to a MySQL database. It was a fun <a href='https://github.com/mikeygee/miscellaneous/blob/master/nfl_scrape.php' target='_blank'>mini project</a>, and gave me a good overview of PHP.</p><p>For the Tripgenie project at Blinktag, I contributed a script to import trip data from a spreadsheet into a Wordpress database. I also implemented a few PHP pages within Wordpress to create a rate generation and comparison tool.</p>"
+			"description" : "<p>To help with the picksmash project, I learned some PHP basics by doing a quick crash course on the official documentation. I contributed a couple of functions to scrape sports scores and odds from a web page (with the help of an <a href='http://simplehtmldom.sourceforge.net' target='_blank'>HTML parser</a>), and write it to a MySQL database. It was a fun <a href='https://github.com/mikeygee/miscellaneous/blob/master/nfl_scrape.php' target='_blank'>mini project</a>, and gave me a good overview of PHP.</p><p>For the Tripgenie project at Blinktag, I contributed a script to import trip data from a spreadsheet into a Wordpress database. I also implemented a few PHP pages within Wordpress to create a rate generation and comparison tool.</p><p>At Yahoo, we use a custom PHP framework for our sports site and fantasy sports games."
 		},
 		"javascript" : {
 			"title" : "JavaScript",
@@ -257,7 +253,7 @@ $(document).ready(function() {
 			"title" : "HTML/CSS",
 			"subtitle" : ["Markup/Style Language"],
 			"dates" : "2010 - present",
-			"description" : "<p>I learned HTML and CSS by reading online documentation and hand coding my own web sites.</p><p>I am familiar with the latest standards including HTML5 and CSS3, and using polyfills for cross browser compatibility. I use browser development tools extensively to help with adjusting layout and style, and also to learn how other web sites accomplish their look and feel. I'm also familiar with <a href='http://lesscss.org' target='_blank'>LESS</a> and Twitter's <a href='http://twitter.github.com/bootstrap' target='_blank'>Bootstrap</a> framework for rapidly getting a design going.</p>"
+			"description" : "<p>I learned HTML and CSS by reading online documentation and hand coding my own web sites.</p><p>I am familiar with the latest standards including HTML5 and CSS3, using polyfills for cross browser compatibility, and responsive design for all devices. I use browser development tools extensively to help with adjusting layout and style, and also to learn how other web sites accomplish their look and feel. I'm also familiar with <a href='http://lesscss.org' target='_blank'>LESS</a> and Twitter's <a href='http://twitter.github.com/bootstrap' target='_blank'>Bootstrap</a> framework for rapidly getting a design going.</p>"
 		},
 		"apple" : {
 			"title" : "Apple",
@@ -291,24 +287,66 @@ $(document).ready(function() {
 			"dates" : "Jun 2011 - present",
 			"description" : "<p>I learned to use Git mostly from getting my code onto github and reading <a href='http://progit.org'>Pro Git</a>. It is also one of our core tools at OmniUpdate. I still get confused sometimes, but I'm pretty comfortable with the basics.</p>"
 		},
-		"cloud" : {
-			"title" : "Cloud",
-			"subtitle" : ["Application Hosting"],
-			"dates" : "2011",
-			"description" : "<p></p>"
+		"kjwedding" : {
+			"title" : "K+J Wedding",
+			"subtitle" : ["Web site"],
+			"dates" : "2014",
+			"link" : "http://wedding.kellyandjasten.us",
+			"description" : "<p>I collaborated with my sister to build her <a href='http://wedding.kellyandjasten.us'>wedding web site</a>. She focused on design and markup, and I handled the Javascript interactions, including animated scroll, scroll spying, RSVP to Google forms, and a parallax effect when navigating the slides.</p>"
+		},
+		"node" : {
+			"title" : "NodeJS",
+			"subtitle" : ["Server application platform"],
+			"dates" : "2013 - present",
+			"link" : "http://nodejs.org",
+			"description" : "<p>Node.js is the server platform I'm most familiar with. Coming from a front end background, I found it the easiest to understand and work with. At Yahoo, we have one of the largest installations of node, and I use it to develop applications for Yahoo Sports.</p>"
 		}
 	};
 
-	var templateDetails = _.template($("#details-template").html(), false, { variable : "context" });
-	var prevId;
-	$("#isotope div").mouseenter(function() {
-		var id = $(this).attr("id");
-		if(items[id] && id != prevId) {
-			$("#details").remove();
-			$(templateDetails(items[id])).appendTo("#content-cv").hide().fadeIn();
-			prevId = id;
-		}
+	var $isotope = $("#isotope"),
+        templateDetails = _.template($('#details-template').html(), false, { variable : 'context' }),
+        smallScreen = $(window).width() < 500,
+        $cvDetails = $('#cv-details'),
+        prevId,
+        hideDetails = function() {
+            if(smallScreen) {
+                $cvDetails.hide();   
+            }
+            $('#details').remove();
+            prevId = null;
+        };
+
+	$isotope.imagesLoaded(function() {
+		$isotope.isotope({
+			itemSelector : ".item",
+			layoutMode : "masonry",
+			masonry: { columnWidth: 50 }
+		});
+		$isotope.isotope("shuffle");
 	});
+
+	$("#cv-filters a[filter]").click(function() {
+		$("#cv-filters a").removeClass("active");
+		$(this).addClass("active");
+		var selector = $(this).attr("filter");
+		$isotope.isotope({ filter: selector });
+		$isotope.isotope("shuffle");
+        hideDetails();
+	});
+
+    $isotope.on('mouseenter', 'div', function() {
+        var $this = $(this),
+            id = $this.attr('id');
+        if(items[id] && id != prevId) {
+            $cvDetails.empty();
+            if(smallScreen)
+                $cvDetails.css('top', $this.outerHeight() + $this.offset().top).show();
+            $(templateDetails(items[id])).appendTo($cvDetails).hide().fadeIn();
+            prevId = id;
+        }
+    });
+
+    $cvDetails.on('click', '.details-close', hideDetails);
 
 });
 </script>

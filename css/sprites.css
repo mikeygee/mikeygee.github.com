@@ -1,4 +1,4 @@
-.img-amgen, .img-apple, .img-blinktag, .img-cis, .img-email-icon, .img-facebook-icon, .img-feed-icon, .img-git-logo, .img-github-icon, .img-github-logo, .img-google-icon, .img-icloud, .img-informatica, .img-java, .img-lab, .img-linkedin-icon, .img-me, .img-omniupdate, .img-php, .img-robotag, .img-tux, .img-twitter-icon, .img-twitter-logo, .img-ucla, .img-vim, .img-wdi, .img-windows, .img-coursera {
+.img-amgen, .img-apple, .img-blinktag, .img-cis, .img-email-icon, .img-facebook-icon, .img-feed-icon, .img-git-logo, .img-github-icon, .img-github-logo, .img-google-icon, .img-icloud, .img-java, .img-lab, .img-linkedin-icon, .img-me, .img-omniupdate, .img-php, .img-robotag, .img-tux, .img-twitter-icon, .img-twitter-logo, .img-ucla, .img-vim, .img-wdi, .img-windows, .img-coursera, .img-yahoo, .img-kjwedding, .img-nodejs {
 	background: url('/images/sprites.png') no-repeat;
 	display: inline-block;
 }
@@ -73,12 +73,6 @@
 	background-position: 0 -164px ;
 	width: 90px;
 	height: 90px;
-}
-
-.img-informatica {
-	background-position: -180px -340px ;
-	width: 130px;
-	height: 33px;
 }
 
 .img-java {
@@ -171,3 +165,18 @@
 	height: 17px;
 }
 
+.img-yahoo {
+	background-position: -1px -388px ;
+	width: 99px;
+	height: 34px;
+}
+.img-kjwedding {
+    background-position: -176px -339px;
+    width: 90px;
+    height: 64px;
+}
+.img-nodejs {
+    background-position: -274px -336px;
+    width: 90px;
+    height: 25px;
+}
