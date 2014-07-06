@@ -57,7 +57,9 @@
                 $themeLink.onclick = function () {
                     $themeLink.innerHTML = 'Switch to ' + theme + ' theme';
                     theme = (theme === 'light' ? 'dark' : 'light');
-                    localStorage && localStorage.setItem('theme', theme);
+                    try {
+                        localStorage && localStorage.setItem('theme', theme);
+                    } catch (e) { }
                     document.body.className = 'theme-' + theme;
                 }
             }
