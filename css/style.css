@@ -131,6 +131,7 @@ nav a.active, nav a.active:hover {
     min-height:100%;
 }
 #content-home .letter-box {
+    display: block;
     float:left;
     width:12.5%;
     padding:8px 0;
