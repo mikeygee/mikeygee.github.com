@@ -435,6 +435,9 @@ a#dlpdf {
 #content-post ul > li, #content-blog ul > li {
 	list-style:circle;
 }
+#content-post ul {
+    line-height: 150%;
+}
 
 @media (min-width: 900px) {
     .col {
