@@ -1,0 +1,40 @@
+{
+  "name": "mikeygee.com",
+  "private": true,
+  "description": "Mikey Gee's personal web site",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "gatsby develop -H $HOSTNAME -p 8000",
+    "develop": "gatsby develop",
+    "ghPages": "gh-pages -d public -b master -m \"gatsby build\"",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "serveMobile": "gatsby serve -H $HOSTNAME -p 9000",
+    "test": "echo \"No tests yet\""
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
+    "gatsby": "^2.13.73",
+    "gatsby-plugin-react-helmet": "^3.1.8",
+    "gatsby-plugin-styled-components": "^3.1.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1",
+    "react-icons": "^3.7.0",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1",
+    "prettier": "^1.18.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeygee/mikeygee.github.com"
+  },
+  "bugs": {
+    "url": "https://github.com/mikeygee/mikeygee.github.com/issues"
+  }
+}
