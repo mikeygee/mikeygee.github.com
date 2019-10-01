@@ -16,6 +16,7 @@ const dimmed = 'rgba(0, 0, 0, 0.65)';
 export const colors = {
     bgPrimary: white,
     bgSecondary: grayLight,
+    bgSection1: yellow,
     bgAccent: blue,
     bgSelected: blue,
     bgInverse: grayDark,
