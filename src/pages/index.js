@@ -6,6 +6,8 @@ import { colors, fonts, breakpoints } from '../styles';
 
 import { IoIosPin, IoLogoGithub } from 'react-icons/io';
 
+import HeadshotImg from '../images/headshotbw.png';
+
 const GlobalStyles = createGlobalStyle`
     body {
         margin: 0;
@@ -143,25 +145,53 @@ const Subtitle = styled.div`
         }
 `;
 
+const CenteredRow = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
 
-const About = styled.section`
+const StickyTitle = styled.div`
+    position: sticky;
+    top: 45px;
+    width: 50%;
+    height: calc(100vh - 45px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: ${fonts.monospace};
+    font-size: 48px;
+`;
+
+const Section = styled.section`
     display: flex;
     flex-direction: row;
-    > div:first-child {
-        position: sticky;
-        top: 45px;
+    > div {
         width: 50%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        padding: 40px;
+    }
+`;
+
+const About = styled(Section)`
+    > div:first-child {
         background-color: ${colors.bgSection1};
-        font-family: ${fonts.monospace};
-        font-size: 36px;
     }
     > div:nth-child(2) {
-        width: 50%;
-        padding: 0 20px;
+        img {
+            width: 50%;
+        }
+    }
+`;
+
+const Resume = styled(Section)`
+    > div:nth-child(2) {
+        background-color: ${colors.bgSection2};
+    }
+`;
+
+const Contact = styled(Section)`
+    > div:first-child {
+        background-color: ${colors.bgSection3};
     }
 `;
 
@@ -196,17 +226,24 @@ class Site extends React.Component {
                 </Nav>
                 <Spacer />
                 <About>
-                    <div>&lt;About /&gt;</div>
+                    <StickyTitle>&lt;About /&gt;</StickyTitle>
                     <div>
+                        <CenteredRow><img src={HeadshotImg} alt="Mikey Gee headshot" /></CenteredRow>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet mattis vulputate enim nulla aliquet porttitor. Sed egestas egestas fringilla phasellus. Nisl vel pretium lectus quam id leo in vitae turpis. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Amet mauris commodo quis imperdiet massa. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Tellus rutrum tellus pellentesque eu tincidunt tortor. Non blandit massa enim nec dui nunc mattis enim. Etiam erat velit scelerisque in dictum non consectetur. Libero volutpat sed cras ornare.</p>
                     </div>
                 </About>
-                <About>
-                    <div>&lt;Résumé /&gt;</div>
+                <Resume>
                     <div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet mattis vulputate enim nulla aliquet porttitor. Sed egestas egestas fringilla phasellus. Nisl vel pretium lectus quam id leo in vitae turpis. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Amet mauris commodo quis imperdiet massa. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Tellus rutrum tellus pellentesque eu tincidunt tortor. Non blandit massa enim nec dui nunc mattis enim. Etiam erat velit scelerisque in dictum non consectetur. Libero volutpat sed cras ornare.</p>
                     </div>
-                </About>
+                    <StickyTitle>&lt;Résumé /&gt;</StickyTitle>
+                </Resume>
+                <Contact>
+                    <StickyTitle>&lt;Contact /&gt;</StickyTitle>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet mattis vulputate enim nulla aliquet porttitor. Sed egestas egestas fringilla phasellus. Nisl vel pretium lectus quam id leo in vitae turpis. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Amet mauris commodo quis imperdiet massa. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Tellus rutrum tellus pellentesque eu tincidunt tortor. Non blandit massa enim nec dui nunc mattis enim. Etiam erat velit scelerisque in dictum non consectetur. Libero volutpat sed cras ornare.</p>
+                    </div>
+                </Contact>
             </div>
         );
     }

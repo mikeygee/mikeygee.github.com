@@ -17,6 +17,8 @@ export const colors = {
     bgPrimary: white,
     bgSecondary: grayLight,
     bgSection1: yellow,
+    bgSection2: green,
+    bgSection3: orange,
     bgAccent: blue,
     bgSelected: blue,
     bgInverse: grayDark,
