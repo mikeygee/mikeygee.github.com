@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 
 import { colors, fonts, breakpoints } from '../styles';
 
-import { IoIosPin, IoLogoGithub } from 'react-icons/io';
+import { IoIosPin, IoLogoGithub, IoIosMail, IoLogoTwitter, IoLogoLinkedin } from 'react-icons/io';
 
 import HeadshotImg from '../images/headshotbw.png';
 
@@ -70,7 +70,7 @@ const Nav = styled.ul`
             font-size: 3.5vw;
         }
         > a {
-            color: ${colors.link};
+            color: ${colors.linkInverse};
             font-weight: bold;
         }
     }
@@ -159,8 +159,11 @@ const StickyTitle = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: ${fonts.monospace};
-    font-size: 48px;
+    h1 {
+        font-family: ${fonts.monospace};
+        font-size: 48px;
+        font-weight: normal;
+    }
 `;
 
 const Section = styled.section`
@@ -168,7 +171,8 @@ const Section = styled.section`
     flex-direction: row;
     > div {
         width: 50%;
-        padding: 40px;
+        padding: 60px;
+        line-height: 1.5;
     }
 `;
 
@@ -193,6 +197,22 @@ const Contact = styled(Section)`
     > div:first-child {
         background-color: ${colors.bgSection3};
     }
+    > div:nth-child(2) {
+        height: calc(100vh - 45px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+`;
+
+const IconRow = styled.div`
+    display: flex;
+    align-items: center;
+    > a {
+        margin-left: 20px;
+        color: ${colors.link};
+    }
+    line-height: 3;
 `;
 
 class Site extends React.Component {
@@ -226,7 +246,7 @@ class Site extends React.Component {
                 </Nav>
                 <Spacer />
                 <About>
-                    <StickyTitle>&lt;About /&gt;</StickyTitle>
+                    <StickyTitle><h1>&lt;About /&gt;</h1></StickyTitle>
                     <div>
                         <CenteredRow><img src={HeadshotImg} alt="Mikey Gee headshot" /></CenteredRow>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet mattis vulputate enim nulla aliquet porttitor. Sed egestas egestas fringilla phasellus. Nisl vel pretium lectus quam id leo in vitae turpis. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Amet mauris commodo quis imperdiet massa. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Tellus rutrum tellus pellentesque eu tincidunt tortor. Non blandit massa enim nec dui nunc mattis enim. Etiam erat velit scelerisque in dictum non consectetur. Libero volutpat sed cras ornare.</p>
@@ -236,12 +256,32 @@ class Site extends React.Component {
                     <div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet mattis vulputate enim nulla aliquet porttitor. Sed egestas egestas fringilla phasellus. Nisl vel pretium lectus quam id leo in vitae turpis. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Amet mauris commodo quis imperdiet massa. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Tellus rutrum tellus pellentesque eu tincidunt tortor. Non blandit massa enim nec dui nunc mattis enim. Etiam erat velit scelerisque in dictum non consectetur. Libero volutpat sed cras ornare.</p>
                     </div>
-                    <StickyTitle>&lt;Résumé /&gt;</StickyTitle>
+                    <StickyTitle><h1>&lt;Résumé /&gt;</h1></StickyTitle>
                 </Resume>
                 <Contact>
-                    <StickyTitle>&lt;Contact /&gt;</StickyTitle>
+                    <StickyTitle><h1>&lt;Contact /&gt;</h1></StickyTitle>
                     <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet mattis vulputate enim nulla aliquet porttitor. Sed egestas egestas fringilla phasellus. Nisl vel pretium lectus quam id leo in vitae turpis. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Amet mauris commodo quis imperdiet massa. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Tellus rutrum tellus pellentesque eu tincidunt tortor. Non blandit massa enim nec dui nunc mattis enim. Etiam erat velit scelerisque in dictum non consectetur. Libero volutpat sed cras ornare.</p>
+                        <div>
+                            <p>The best way to reach me is by e-mail.</p>
+                            <p>I am available for short term work only (3 months or less). I am no longer seeking full time work. Please do not contact me regarding full time positions.</p>
+                            <IconRow>
+                                <IoIosMail size="30px"/>
+                                <a href="mailto:mikey@mikeygee.com" target="_blank">mikey@mikeygee.com</a>
+                            </IconRow>
+                            <IconRow>
+                                <IoLogoLinkedin size="30px"/>
+                                <a href="https://www.linkedin.com/in/michaelcgee" target="_blank">LinkedIn</a>
+                            </IconRow>
+                            <IconRow>
+                                <IoLogoGithub size="30px"/>
+                                <a href="https://github.com/mikeygee" target="_blank">mikeygee</a>
+                            </IconRow>
+                            <IconRow>
+                                <IoLogoTwitter size="30px"/>
+                                <a href="https://twitter.com/geeplusplus" target="_blank">geeplusplus</a>
+                            </IconRow>
+                        </div>
+                        <footer>© 2019 Mikey Gee</footer>
                     </div>
                 </Contact>
             </div>

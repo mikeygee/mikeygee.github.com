@@ -18,7 +18,7 @@ export const colors = {
     bgSecondary: grayLight,
     bgSection1: yellow,
     bgSection2: green,
-    bgSection3: orange,
+    bgSection3: purple,
     bgAccent: blue,
     bgSelected: blue,
     bgInverse: grayDark,
@@ -33,7 +33,8 @@ export const colors = {
     textAccent5: green,
     textAccent6: orange,
     textInverse: grayExtraLight,
-    link: blue,
+    link: pink,
+    linkInverse: blue,
     linkHover: yellow,
 };
 
