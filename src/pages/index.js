@@ -159,11 +159,24 @@ const StickyTitle = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
     h1 {
         font-family: ${fonts.monospace};
         font-size: 48px;
         font-weight: normal;
+        @media (${breakpoints.tablet}) {
+            font-size: 30px;
+            margin: 0;
+        }
     }
+    @media (${breakpoints.tablet}) {
+        height: auto;
+    }
+`;
+
+const Content = styled.div`
+    padding: 60px;
+    line-height: 1.5;
 `;
 
 const Section = styled.section`
@@ -171,8 +184,12 @@ const Section = styled.section`
     flex-direction: row;
     > div {
         width: 50%;
-        padding: 60px;
-        line-height: 1.5;
+    }
+    @media (${breakpoints.tablet}) {
+        flex-direction: column;
+        > div {
+            width: auto;
+        }
     }
 `;
 
@@ -190,6 +207,9 @@ const About = styled(Section)`
 const Resume = styled(Section)`
     > div:nth-child(2) {
         background-color: ${colors.bgSection2};
+        @media (${breakpoints.tablet}) {
+            order: -1;
+        }
     }
 `;
 
@@ -247,20 +267,20 @@ class Site extends React.Component {
                 <Spacer />
                 <About>
                     <StickyTitle><h1>&lt;About /&gt;</h1></StickyTitle>
-                    <div>
+                    <Content>
                         <CenteredRow><img src={HeadshotImg} alt="Mikey Gee headshot" /></CenteredRow>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet mattis vulputate enim nulla aliquet porttitor. Sed egestas egestas fringilla phasellus. Nisl vel pretium lectus quam id leo in vitae turpis. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Amet mauris commodo quis imperdiet massa. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Tellus rutrum tellus pellentesque eu tincidunt tortor. Non blandit massa enim nec dui nunc mattis enim. Etiam erat velit scelerisque in dictum non consectetur. Libero volutpat sed cras ornare.</p>
-                    </div>
+                    </Content>
                 </About>
                 <Resume>
-                    <div>
+                    <Content>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet mattis vulputate enim nulla aliquet porttitor. Sed egestas egestas fringilla phasellus. Nisl vel pretium lectus quam id leo in vitae turpis. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Amet mauris commodo quis imperdiet massa. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Tellus rutrum tellus pellentesque eu tincidunt tortor. Non blandit massa enim nec dui nunc mattis enim. Etiam erat velit scelerisque in dictum non consectetur. Libero volutpat sed cras ornare.</p>
-                    </div>
+                    </Content>
                     <StickyTitle><h1>&lt;Résumé /&gt;</h1></StickyTitle>
                 </Resume>
                 <Contact>
                     <StickyTitle><h1>&lt;Contact /&gt;</h1></StickyTitle>
-                    <div>
+                    <Content>
                         <div>
                             <p>The best way to reach me is by e-mail.</p>
                             <p>I am available for short term work only (3 months or less). I am no longer seeking full time work. Please do not contact me regarding full time positions.</p>
@@ -281,8 +301,8 @@ class Site extends React.Component {
                                 <a href="https://twitter.com/geeplusplus" target="_blank">geeplusplus</a>
                             </IconRow>
                         </div>
-                        <footer>© 2019 Mikey Gee</footer>
-                    </div>
+                        <footer>© 2020 Mikey Gee</footer>
+                    </Content>
                 </Contact>
             </div>
         );
