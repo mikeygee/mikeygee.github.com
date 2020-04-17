@@ -16,19 +16,21 @@
     "test": "echo \"No tests yet\""
   },
   "dependencies": {
-    "babel-plugin-styled-components": "^1.10.6",
-    "gatsby": "^2.13.73",
-    "gatsby-plugin-react-helmet": "^3.1.8",
-    "gatsby-plugin-styled-components": "^3.1.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "babel-plugin-styled-components": "^1.10.7",
+    "gatsby": "^2.20.22",
+    "gatsby-plugin-react-helmet": "^3.2.2",
+    "gatsby-plugin-styled-components": "^3.2.1",
+    "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-transformer-remark": "^2.7.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
-    "react-icons": "^3.7.0",
-    "styled-components": "^4.3.2"
+    "react-icons": "^3.9.0",
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
-    "gh-pages": "^2.1.1",
-    "prettier": "^1.18.2"
+    "gh-pages": "^2.2.0",
+    "prettier": "^1.19.1"
   },
   "repository": {
     "type": "git",

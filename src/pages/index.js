@@ -1,6 +1,7 @@
-import React from "react"
+import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components';
 import { Helmet } from 'react-helmet';
+import { Link } from 'gatsby';
 
 import { colors, fonts, breakpoints } from '../styles';
 
@@ -8,7 +9,7 @@ import { IoIosPin, IoLogoGithub, IoIosMail, IoLogoTwitter, IoLogoLinkedin } from
 
 import HeadshotImg from '../images/headshotbw.png';
 
-const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
     body {
         margin: 0;
         font-family: ${fonts.sansSerif};
@@ -34,44 +35,56 @@ const Home = styled.section`
     color: ${colors.textInverse};
 `;
 
-const Nav = styled.ul`
+const HomeLink = styled.a`
+    border: 2px solid;
+    border-radius: 4px;
+    padding: 0 4px;
+    color: ${colors.textAccent4};
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    span:first-child {
+        color: ${colors.textAccent1};
+    }
+    span:nth-child(2) {
+        color: ${colors.textAccent2};
+    }
+`;
+
+export const NavLink = styled.a`
+    text-transform: uppercase;
+    color: ${colors.linkInverse};
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+`;
+
+const Nav = styled.nav`
     position: sticky;
     top: 0px;
     padding: 12px 0;
-    margin: 0;
     margin-top: -80px;
     text-align: center;
     background-color: ${colors.bgInverse};
     z-index: 2;
-    > li {
-        display: inline-block;
-        list-style-type: none;
-        margin: 0 15px;
-        text-transform: uppercase;
-        font-size: 18px;
-        &:first-child {
-            border: 2px solid;
-            border-radius: 4px;
-            padding: 0 4px;
-            color: ${colors.textAccent4};
-            span:first-child {
-                color: ${colors.textAccent1};
+    ul {
+        margin: 0;
+        > li {
+            display: inline-block;
+            list-style-type: none;
+            margin: 0 15px;
+            &:nth-child(2n+3) {
+                margin: 0;
+                color: ${colors.textInverse};
             }
-            span:nth-child(2) {
-                color: ${colors.textAccent2};
+            @media (${breakpoints.phone}) {
+                margin: 0 8px;
+                font-size: 3.5vw;
             }
-        }
-        &:nth-child(2n+3) {
-            margin: 0;
-            color: ${colors.textInverse};
-        }
-        @media (${breakpoints.phone}) {
-            margin: 0 8px;
-            font-size: 3.5vw;
-        }
-        > a {
-            color: ${colors.linkInverse};
-            font-weight: bold;
+            &:first-child > a {
+                color: ${colors.textAccent4};
+            }
         }
     }
 `;
@@ -235,6 +248,20 @@ const IconRow = styled.div`
     line-height: 3;
 `;
 
+export const MG = ({ link, to }) => (
+    <HomeLink as={link ? Link : null} to={to}>
+        <span>M</span><span>G</span>
+    </HomeLink>
+);
+
+const SectionHeader = ({ title }) => (
+    <StickyTitle><h1>&lt;{title} /&gt;</h1></StickyTitle>
+);
+
+export const Footer = () => (
+    <footer>© 2020 Mikey Gee</footer>
+);
+
 class Site extends React.Component {
     render() {
         return (
@@ -255,18 +282,20 @@ class Site extends React.Component {
                     <Subtitle>Los Angeles, CA</Subtitle>
                 </Home>
                 <Nav>
-                    <li><a><span>M</span><span>G</span></a></li>
-                    <li><a>About</a></li>
-                    <li>|</li>
-                    <li><a>Resume</a></li>
-                    <li>|</li>
-                    <li><a>Contact</a></li>
-                    <li>|</li>
-                    <li><a>Blog</a></li>
+                    <ul>
+                        <li><MG /></li>
+                        <li><NavLink>About</NavLink></li>
+                        <li>|</li>
+                        <li><NavLink>Resume</NavLink></li>
+                        <li>|</li>
+                        <li><NavLink>Contact</NavLink></li>
+                        <li>|</li>
+                        <li><NavLink as={Link} to="/blog">Blog</NavLink></li>
+                    </ul>
                 </Nav>
                 <Spacer />
                 <About>
-                    <StickyTitle><h1>&lt;About /&gt;</h1></StickyTitle>
+                    <SectionHeader title="About" />
                     <Content>
                         <CenteredRow><img src={HeadshotImg} alt="Mikey Gee headshot" /></CenteredRow>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet mattis vulputate enim nulla aliquet porttitor. Sed egestas egestas fringilla phasellus. Nisl vel pretium lectus quam id leo in vitae turpis. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Amet mauris commodo quis imperdiet massa. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Tellus rutrum tellus pellentesque eu tincidunt tortor. Non blandit massa enim nec dui nunc mattis enim. Etiam erat velit scelerisque in dictum non consectetur. Libero volutpat sed cras ornare.</p>
@@ -276,10 +305,10 @@ class Site extends React.Component {
                     <Content>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet mattis vulputate enim nulla aliquet porttitor. Sed egestas egestas fringilla phasellus. Nisl vel pretium lectus quam id leo in vitae turpis. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Amet mauris commodo quis imperdiet massa. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Tellus rutrum tellus pellentesque eu tincidunt tortor. Non blandit massa enim nec dui nunc mattis enim. Etiam erat velit scelerisque in dictum non consectetur. Libero volutpat sed cras ornare.</p>
                     </Content>
-                    <StickyTitle><h1>&lt;Résumé /&gt;</h1></StickyTitle>
+                    <SectionHeader title="Résumé" />
                 </Resume>
                 <Contact>
-                    <StickyTitle><h1>&lt;Contact /&gt;</h1></StickyTitle>
+                    <SectionHeader title="Contact" />
                     <Content>
                         <div>
                             <p>The best way to reach me is by e-mail.</p>
@@ -301,7 +330,7 @@ class Site extends React.Component {
                                 <a href="https://twitter.com/geeplusplus" target="_blank">geeplusplus</a>
                             </IconRow>
                         </div>
-                        <footer>© 2020 Mikey Gee</footer>
+                        <Footer />
                     </Content>
                 </Contact>
             </div>
