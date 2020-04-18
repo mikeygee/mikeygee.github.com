@@ -33,6 +33,7 @@ exports.onCreateNode = ({ node, actions }) => {
     }
 }
 
+const path = require('path');
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
     const result = await graphql(`
@@ -40,11 +41,28 @@ exports.createPages = async ({ graphql, actions }) => {
             allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/src\\/posts/" }}) {
                 edges {
                     node {
-                        fileAbsolutePath
+                        id
+                        fields {
+                            longDate
+                            slug
+                        }
+                        frontmatter {
+                            title
+                        }
+                        html
+                        timeToRead
                     }
                 }
             }
         }
     `);
-    // console.log('result', JSON.stringify(result, null, 4));
+    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        createPage({
+            path: node.fields.slug,
+            component: path.resolve('./src/templates/BlogPost.js'),
+            context: {
+                id: node.id
+            }
+        });
+    });
 }

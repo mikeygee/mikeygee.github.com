@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { Link, graphql } from 'gatsby';
@@ -29,8 +29,8 @@ const Header = styled.header`
     }
 `;
 
-const Posts = styled.section`
-    margin: 85px auto 40px;
+export const Posts = styled.section`
+    margin: 65px auto 20px;
     max-width: 720px;
     padding: 0 20px;
     font-family: ${fonts.serif};
@@ -41,6 +41,15 @@ const Posts = styled.section`
             text-decoration: underline;
         }
     }
+    pre {
+        background-color: ${colors.bgSecondary};
+        padding: 14px;
+    }
+    code {
+        font-family: ${fonts.monospace};
+        font-size: 12px;
+        white-space: pre-wrap;
+    }
     footer {
         font-family: ${fonts.sansSerif};
     }
@@ -50,6 +59,7 @@ const Archive = styled.section`
     margin: 40px 0;
     h2 {
         font-family: ${fonts.monospace};
+        font-weight: normal;
     }
     ul {
         margin: 0;
@@ -70,24 +80,41 @@ const Card = styled.div`
         color: ${colors.textSecondary};
         margin-left: 4px;
     }
+    margin-bottom: 40px;
 `;
 
 const Separator = styled.hr`
     margin: 40px 0;
 `;
 
-const PostPreview = ({ fields = {}, excerpt, timeToRead, frontmatter = {} }) => {
+export const BlogHeader = () => (
+    <Header>
+        <div>
+            <span><MG link={true} to="/"/></span>
+            <NavLink as="span">Blog</NavLink>
+        </div>
+    </Header>
+); 
+
+export const Post = ({ fields = {}, excerpt, timeToRead, frontmatter = {}, isPreview, html }) => {
+    const title = isPreview ? (
+        <Link to={fields.slug}>{frontmatter.title}</Link>
+    ) : frontmatter.title;
+    const postFooter = isPreview ? (
+        <div>
+            { timeToRead > 1 ? (
+                <Link to={fields.slug}>Continue reading...</Link>
+            ) : null }
+            <Separator />
+        </div>
+    ) : null;
+    const content = isPreview ? excerpt : html;
     return (
         <Card>
-            <h2><Link to={fields.slug}>{frontmatter.title}</Link></h2>
+            <h2>{title}</h2>
             <h4>{fields.longDate} <small>{timeToRead} min read</small></h4>
-            <div dangerouslySetInnerHTML={{__html: excerpt}} />
-            {
-                timeToRead > 1 ? (
-                    <Link to={fields.slug}>Continue reading...</Link>
-                ) : null
-            }
-            <Separator />
+            <div dangerouslySetInnerHTML={{__html: content}} />
+            {postFooter}
         </Card>
     );
 };
@@ -110,18 +137,13 @@ class Blog extends React.Component {
             let node = edge.node;
             archivePosts.push(<ArchivePost key={`archive${i}`} {...node} />);
             if (i < PREVIEW_LIMIT) {
-                postPreviews.push(<PostPreview key={`post${i}`} {...node} />);
+                postPreviews.push(<Post key={`post${i}`} isPreview={true} {...node} />);
             }
         });
         return (
             <div>
                 <GlobalStyles />
-                <Header>
-                    <div>
-                        <span><MG link={true} to="/"/></span>
-                        <NavLink as="span">Blog</NavLink>
-                    </div>
-                </Header>
+                <BlogHeader />
                 <Posts>
                     {postPreviews}
                     <Archive>
