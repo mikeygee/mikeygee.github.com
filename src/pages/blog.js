@@ -50,6 +50,11 @@ export const Posts = styled.section`
         font-size: 12px;
         white-space: pre-wrap;
     }
+    iframe[src*=youtube] {
+        width: 100%;
+        height: 57vw;
+        max-height: 383px;
+    }
     footer {
         font-family: ${fonts.sansSerif};
     }
@@ -65,9 +70,9 @@ const Archive = styled.section`
         margin: 0;
         padding: 0;
         > li {
-            display: block;
-            span {
-                display: inline-block;
+            display: flex;
+            flex-direction: row;
+            > div {
                 min-width: 110px;
             }
         }
@@ -121,8 +126,8 @@ export const Post = ({ fields = {}, excerpt, timeToRead, frontmatter = {}, isPre
 
 const ArchivePost = ({ fields = {}, frontmatter = {} }) => (
     <li>
-        <span>{fields.shortDate}</span>
-        <Link to={fields.slug}>{frontmatter.title}</Link>
+        <div>{fields.shortDate}</div>
+        <div><Link to={fields.slug}>{frontmatter.title}</Link></div>
     </li>
 );
 

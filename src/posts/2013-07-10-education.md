@@ -5,7 +5,7 @@ title: the future of education
 
 My all time favorite TED Talk is [Salman Khan on education](http://youtu.be/gM95HHI4gLk) from 2 years ago.
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/gM95HHI4gLk?rel=0" frameborder="0" allowfullscreen="true"> </iframe>
+<iframe src="//www.youtube.com/embed/gM95HHI4gLk?rel=0" frameborder="0" allowfullscreen="true"> </iframe>
 
 His book [The One World Schoolhouse](http://amzn.com/1455508381) is also a great read. With the technology we have available to us today, there is absolutely no reason to continue with our fundamentally flawed school system.
 
