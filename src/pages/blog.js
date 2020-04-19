@@ -1,12 +1,11 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 
-import { colors, fonts, breakpoints } from '../styles';
+import { colors, fonts, breakpoints, GlobalStyles } from '../styles';
 
 import {
-    GlobalStyles,
     MG,
     NavLink,
     Footer
@@ -42,12 +41,9 @@ export const Posts = styled.section`
         }
     }
     pre {
-        background-color: ${colors.bgSecondary};
-        padding: 14px;
+        overflow: hidden;
     }
     code {
-        font-family: ${fonts.monospace};
-        font-size: 12px;
         white-space: pre-wrap;
     }
     iframe[src*=youtube] {
@@ -60,7 +56,7 @@ export const Posts = styled.section`
     }
 `;
 
-const Archive = styled.section`
+export const Archive = styled.section`
     margin: 40px 0;
     h2 {
         font-family: ${fonts.monospace};
@@ -81,6 +77,12 @@ const Archive = styled.section`
 
 const Card = styled.div`
     line-height: 1.45;
+    h2 { font-size: 2em; }
+    h4 { font-size: 1.2em; }
+    blockquote {
+        padding: 0 1em;
+        border-left: .25em solid ${colors.quoteBorder};
+    }
     small {
         color: ${colors.textSecondary};
         margin-left: 4px;
@@ -124,7 +126,7 @@ export const Post = ({ fields = {}, excerpt, timeToRead, frontmatter = {}, isPre
     );
 };
 
-const ArchivePost = ({ fields = {}, frontmatter = {} }) => (
+export const ArchivePost = ({ fields = {}, frontmatter = {} }) => (
     <li>
         <div>{fields.shortDate}</div>
         <div><Link to={fields.slug}>{frontmatter.title}</Link></div>

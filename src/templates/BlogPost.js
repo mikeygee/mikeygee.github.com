@@ -3,10 +3,9 @@ import styled, { createGlobalStyle } from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 
-import { colors, fonts, breakpoints } from '../styles';
+import { colors, fonts, breakpoints, GlobalStyles } from '../styles';
 
 import {
-    GlobalStyles,
     Footer
 } from '../pages/index';
 

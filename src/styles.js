@@ -1,3 +1,5 @@
+import { createGlobalStyle } from 'styled-components';
+
 // color pallete
 const pink = '#f92672';
 const redLight = '#dd7373';
@@ -6,8 +8,9 @@ const blue = '#66d9ef';
 const green = '#a6e22e';
 const yellow = '#e6db74';
 const orange = '#fd971f';
-const grayExtraLight = '#f5f5f5';
-const grayLight = '#eee';
+const grayLightest = '#f5f5f5';
+const grayLighter = '#eee';
+const grayLight = '#ddd';
 const grayMedium = '#777';
 const grayDark = '#292929';
 const white = '#fff';
@@ -15,10 +18,11 @@ const dimmed = 'rgba(0, 0, 0, 0.65)';
 
 export const colors = {
     bgPrimary: white,
-    bgSecondary: grayLight,
+    bgSecondary: grayLighter,
     bgSection1: yellow,
     bgSection2: green,
-    bgSection3: purple,
+    bgSection3: orange,
+    bgSection4: purple,
     bgAccent: blue,
     bgSelected: blue,
     bgInverse: grayDark,
@@ -32,7 +36,8 @@ export const colors = {
     textAccent4: yellow,
     textAccent5: green,
     textAccent6: orange,
-    textInverse: grayExtraLight,
+    textInverse: grayLightest,
+    quoteBorder: grayLight,
     link: pink,
     linkInverse: blue,
     linkHover: yellow,
@@ -48,3 +53,23 @@ export const fonts = {
     serif: "Charter, Georgia, 'Times New Roman', serif",
     monospace: "Menlo, Consolas, 'Courier New', monospace"
 };
+
+export const GlobalStyles = createGlobalStyle`
+    body {
+        margin: 0;
+        font-family: ${fonts.sansSerif};
+        box-sizing: border-box;
+        *, *:before, *:after
+        {
+            box-sizing: inherit;
+        }
+        color: ${colors.textPrimary};
+        @media (${breakpoints.phone}) {
+            font-size: 13px;
+        }
+        footer {
+            text-align: center;
+            font-size: 13px;
+        }
+    }
+`;

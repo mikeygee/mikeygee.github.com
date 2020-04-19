@@ -1,33 +1,17 @@
 import React from 'react'
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 
-import { colors, fonts, breakpoints } from '../styles';
+import { colors, fonts, breakpoints, GlobalStyles } from '../styles';
 
 import { IoIosPin, IoLogoGithub, IoIosMail, IoLogoTwitter, IoLogoLinkedin } from 'react-icons/io';
 
 import HeadshotImg from '../images/headshotbw.png';
 
-export const GlobalStyles = createGlobalStyle`
-    body {
-        margin: 0;
-        font-family: ${fonts.sansSerif};
-        box-sizing: border-box;
-        *, *:before, *:after
-        {
-            box-sizing: inherit;
-        }
-        color: ${colors.textPrimary};
-        @media (${breakpoints.phone}) {
-            font-size: 13px;
-        }
-        footer {
-            text-align: center;
-            font-size: 13px;
-        }
-    }
-`;
+import { Post, Archive, ArchivePost } from './blog';
+
+const PREVIEW_LIMIT = 10;
 
 const Home = styled.section`
     display: flex;
@@ -74,6 +58,7 @@ const Nav = styled.nav`
     z-index: 2;
     ul {
         margin: 0;
+        padding: 0;
         > li {
             display: inline-block;
             list-style-type: none;
@@ -234,11 +219,14 @@ const Contact = styled(Section)`
     > div:first-child {
         background-color: ${colors.bgSection3};
     }
+`;
+
+const Blog = styled(Section)`
     > div:nth-child(2) {
-        height: calc(100vh - 45px);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        background-color: ${colors.bgSection4};
+        @media (${breakpoints.tablet}) {
+            order: -1;
+        }
     }
 `;
 
@@ -252,8 +240,38 @@ const IconRow = styled.div`
     line-height: 3;
 `;
 
+export const BlogPosts = styled.section`
+    max-width: 680px;
+    margin: 0 auto;
+    font-family: ${fonts.serif};
+    a {
+        color: ${colors.link};
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    pre {
+        background-color: ${colors.bgSecondary};
+        padding: 14px;
+    }
+    code {
+        font-family: ${fonts.monospace};
+        font-size: 12px;
+        white-space: pre-wrap;
+    }
+    iframe[src*=youtube] {
+        width: 100%;
+        height: 30vw;
+        max-height: 383px;
+    }
+    footer {
+        font-family: ${fonts.sansSerif};
+    }
+`;
+
 export const MG = ({ link, to }) => (
-    <HomeLink as={link ? Link : null} to={to}>
+    <HomeLink>
         <span>M</span><span>G</span>
     </HomeLink>
 );
@@ -267,7 +285,27 @@ export const Footer = () => (
 );
 
 class Site extends React.Component {
+    componentDidMount() {
+        console.log('did mount', window.location);
+    }
+    shouldComponentUpdate(nextProps) {
+        console.log('should update', window.location);
+        return false;
+    }
     render() {
+        const { data } = this.props;
+        console.log(data);
+        const { edges } = data.allMarkdownRemark;
+        const postPreviews = [];
+        const archivePosts = [];
+        edges.forEach((edge = {}, i) => {
+            let node = edge.node;
+            archivePosts.push(<ArchivePost key={`archive${i}`} {...node} />);
+            if (i < PREVIEW_LIMIT) {
+                postPreviews.push(<Post key={`post${i}`} isPreview={true} {...node} />);
+            }
+        });
+
         return (
             <div>
                 <GlobalStyles />
@@ -290,11 +328,11 @@ class Site extends React.Component {
                         <li><MG /></li>
                         <li><NavLink href="#about">About</NavLink></li>
                         <li>|</li>
-                        <li><NavLink href="#resume">Resume</NavLink></li>
+                        <li><NavLink href="#resume">Résumé</NavLink></li>
                         <li>|</li>
                         <li><NavLink href="#contact">Contact</NavLink></li>
                         <li>|</li>
-                        <li><NavLink as={Link} to="/blog">Blog</NavLink></li>
+                        <li><NavLink href="#blog">Blog</NavLink></li>
                     </ul>
                 </Nav>
                 <Spacer />
@@ -316,32 +354,65 @@ class Site extends React.Component {
                 <Contact name="contact">
                     <SectionHeader title="Contact" />
                     <Content>
-                        <div>
-                            <p>The best way to reach me is by e-mail.</p>
-                            <p>I am available for short term work only (3 months or less). I am no longer seeking full time work. Please do not contact me regarding full time positions.</p>
-                            <IconRow>
-                                <IoIosMail size="30px"/>
-                                <a href="mailto:mikey@mikeygee.com" target="_blank">mikey@mikeygee.com</a>
-                            </IconRow>
-                            <IconRow>
-                                <IoLogoLinkedin size="30px"/>
-                                <a href="https://www.linkedin.com/in/michaelcgee" target="_blank">LinkedIn</a>
-                            </IconRow>
-                            <IconRow>
-                                <IoLogoGithub size="30px"/>
-                                <a href="https://github.com/mikeygee" target="_blank">mikeygee</a>
-                            </IconRow>
-                            <IconRow>
-                                <IoLogoTwitter size="30px"/>
-                                <a href="https://twitter.com/geeplusplus" target="_blank">geeplusplus</a>
-                            </IconRow>
-                        </div>
-                        <Footer />
+                        <p>The best way to reach me is by e-mail.</p>
+                        <p>I am available for short term work only (3 months or less). I am no longer seeking full time work. Please do not contact me regarding full time positions.</p>
+                        <IconRow>
+                            <IoIosMail size="30px"/>
+                            <a href="mailto:mikey@mikeygee.com" target="_blank">mikey@mikeygee.com</a>
+                        </IconRow>
+                        <IconRow>
+                            <IoLogoLinkedin size="30px"/>
+                            <a href="https://www.linkedin.com/in/michaelcgee" target="_blank">LinkedIn</a>
+                        </IconRow>
+                        <IconRow>
+                            <IoLogoGithub size="30px"/>
+                            <a href="https://github.com/mikeygee" target="_blank">mikeygee</a>
+                        </IconRow>
+                        <IconRow>
+                            <IoLogoTwitter size="30px"/>
+                            <a href="https://twitter.com/geeplusplus" target="_blank">geeplusplus</a>
+                        </IconRow>
                     </Content>
                 </Contact>
+                <Blog name="blog">
+                    <Content>
+                        <BlogPosts>
+                            {postPreviews}
+                            <Archive>
+                                <h2>&lt;Archive /&gt;</h2>
+                                <ul>
+                                    {archivePosts}
+                                </ul>
+                            </Archive>
+                            <Footer />
+                        </BlogPosts>
+                    </Content>
+                    <SectionHeader title="Blog" />
+                </Blog>
             </div>
         );
     }
 }
+
+export const query = graphql`
+{
+    allMarkdownRemark(sort: {fields: fileAbsolutePath, order: DESC}, filter: {fileAbsolutePath: {regex: "/src\\/posts/"}}) {
+        edges {
+            node {
+                excerpt(format: HTML, pruneLength: 2000)
+                timeToRead
+                frontmatter {
+                    title
+                }
+                fields {
+                    longDate
+                    shortDate
+                    slug
+                }
+            }
+        }
+    }
+}
+`;
 
 export default Site;

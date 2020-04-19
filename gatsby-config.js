@@ -14,6 +14,9 @@ module.exports = {
             resolve: 'gatsby-transformer-remark',
             options: {
                 excerpt_separator: '<!--break-->',
+                plugins: [
+                    'gatsby-remark-prismjs',
+                ],
             }
         },
         'gatsby-plugin-styled-components',
