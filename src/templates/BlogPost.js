@@ -6,11 +6,11 @@ import { Link, graphql } from 'gatsby';
 import { colors, fonts, breakpoints, GlobalStyles } from '../styles';
 
 import {
+    Nav,
     Footer
-} from '../pages/index';
+} from '../components';
 
 import {
-    BlogHeader,
     Posts,
     Post
 } from '../pages/blog';
@@ -22,7 +22,7 @@ class BlogPost extends React.Component {
         return (
             <div>
                 <GlobalStyles />
-                <BlogHeader />
+                <Nav />
                 <Posts>
                     <Post {...markdownRemark} />
                     <Footer />

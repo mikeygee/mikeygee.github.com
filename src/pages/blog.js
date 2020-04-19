@@ -6,10 +6,11 @@ import { Link, graphql } from 'gatsby';
 import { colors, fonts, breakpoints, GlobalStyles } from '../styles';
 
 import {
-    MG,
     NavLink,
     Footer
 } from './index';
+
+import { HomeLogo } from '../components';
 
 const PREVIEW_LIMIT = 10;
 
@@ -97,7 +98,7 @@ const Separator = styled.hr`
 export const BlogHeader = () => (
     <Header>
         <div>
-            <span><MG link={true} to="/"/></span>
+            <span><HomeLogo to="/"/></span>
             <NavLink as="span">Blog</NavLink>
         </div>
     </Header>
