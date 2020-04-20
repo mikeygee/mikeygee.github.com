@@ -71,8 +71,8 @@ export const GlobalStyles = createGlobalStyle`
             text-align: center;
             font-size: 13px;
             padding: 16px;
-            background-color: ${colors.bgSecondary};
-            border-top: 1px solid ${colors.borderPrimary};
+            background-color: ${colors.bgInverse};
+            color: ${colors.textInverse}
         }
     }
 `;

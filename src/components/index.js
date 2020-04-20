@@ -77,7 +77,7 @@ class NavLink extends React.Component {
         if (isRoot) {
             e.preventDefault();
             const target = document.querySelector(`#${to}`);
-            target.scrollIntoView({ behavior: 'smooth'});
+            window.scrollTo({ top: target.offsetTop - 45, behavior: 'smooth' });
         }
     }
     render() {
@@ -146,12 +146,6 @@ export const BlogContainer = styled.section`
             text-decoration: underline;
         }
     }
-`;
-
-export const PostContainer = styled(BlogContainer)`
-    margin: 65px auto 20px;
-    max-width: 720px;
-    padding: 0 20px;
 `;
 
 export const Post = ({ fields = {}, excerpt, timeToRead, frontmatter = {}, isPreview, html }) => {
