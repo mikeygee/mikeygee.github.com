@@ -87,12 +87,21 @@ class NavLink extends React.Component {
     }
 }
 
+const scrollToTop = e => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
 export const Nav = ({ type, isRoot }) => {
     const NavComponent = (type === 'sticky' ? StyledNav : StyledFixedNav);
+    const homeLogoProps = {
+        to: isRoot ? null : '/',
+        onClick: isRoot ? scrollToTop : null
+    };
     return (
         <NavComponent>
             <ul>
-                <li><HomeLogo to={isRoot ? null : '/'} /></li>
+                <li><HomeLogo {...homeLogoProps} /></li>
                 <li><NavLink to="about" isRoot={isRoot}>About</NavLink></li>
                 <li>|</li>
                 <li><NavLink to="resume" isRoot={isRoot}>Résumé</NavLink></li>
