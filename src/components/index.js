@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import { colors, breakpoints } from '../styles';
+import { colors, breakpoints, fonts } from '../styles';
 
 const StyledHomeLogo = styled.a`
     border: 2px solid;
@@ -78,7 +78,6 @@ class NavLink extends React.Component {
             e.preventDefault();
             const target = document.querySelector(`#${to}`);
             target.scrollIntoView({ behavior: 'smooth'});
-            setTimeout(() => target.focus(), 1500);
         }
     }
     render() {
@@ -105,6 +104,104 @@ export const Nav = ({ type, isRoot }) => {
         </NavComponent>
     );
 };
+
+const StyledPost = styled.div`
+    line-height: 1.45;
+    margin-bottom: 40px;
+    h2 { font-size: 1.5em; }
+    h4 { font-size: 1.2em; }
+    blockquote {
+        padding: 0 1em;
+        border-left: .25em solid ${colors.quoteBorder};
+    }
+    small {
+        color: ${colors.textSecondary};
+        margin-left: 4px;
+    }
+    pre {
+        overflow: hidden;
+    }
+    code {
+        white-space: pre-wrap;
+    }
+    iframe[src*=youtube] {
+        width: 100%;
+        height: 57vw;
+        max-height: 383px;
+    }
+`;
+
+const Separator = styled.hr`
+    margin: 40px 0;
+`;
+
+export const BlogContainer = styled.section`
+    margin: 0 auto;
+    max-width: 680px;
+    font-family: ${fonts.serif};
+    a {
+        color: ${colors.link};
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+`;
+
+export const PostContainer = styled(BlogContainer)`
+    margin: 65px auto 20px;
+    max-width: 720px;
+    padding: 0 20px;
+`;
+
+export const Post = ({ fields = {}, excerpt, timeToRead, frontmatter = {}, isPreview, html }) => {
+    const title = isPreview ? (
+        <Link to={fields.slug}>{frontmatter.title}</Link>
+    ) : frontmatter.title;
+    const postFooter = isPreview ? (
+        <div>
+            { timeToRead > 1 ? (
+                <Link to={fields.slug}>Continue reading...</Link>
+            ) : null }
+            <Separator />
+        </div>
+    ) : null;
+    const content = isPreview ? excerpt : html;
+    return (
+        <StyledPost>
+            <h2>{title}</h2>
+            <h4>{fields.longDate} <small>{timeToRead} min read</small></h4>
+            <div dangerouslySetInnerHTML={{__html: content}} />
+            {postFooter}
+        </StyledPost>
+    );
+};
+
+export const Archive = styled.section`
+    margin: 40px 0;
+    h2 {
+        font-family: ${fonts.monospace};
+        font-weight: normal;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        > li {
+            display: flex;
+            flex-direction: row;
+            > div {
+                min-width: 110px;
+            }
+        }
+    }
+`;
+
+export const ArchivePost = ({ fields = {}, frontmatter = {} }) => (
+    <li>
+        <div>{fields.shortDate}</div>
+        <div><Link to={fields.slug}>{frontmatter.title}</Link></div>
+    </li>
+);
 
 export const Footer = () => (
     <footer>© 2020 Mikey Gee</footer>

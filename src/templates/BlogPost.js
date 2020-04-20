@@ -1,19 +1,15 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
 import { Helmet } from 'react-helmet';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import { colors, fonts, breakpoints, GlobalStyles } from '../styles';
+import { GlobalStyles } from '../styles';
 
 import {
     Nav,
+    PostContainer,
+    Post,
     Footer
 } from '../components';
-
-import {
-    Posts,
-    Post
-} from '../pages/blog';
 
 class BlogPost extends React.Component {
     render() {
@@ -23,10 +19,10 @@ class BlogPost extends React.Component {
             <div>
                 <GlobalStyles />
                 <Nav />
-                <Posts>
+                <PostContainer>
                     <Post {...markdownRemark} />
-                    <Footer />
-                </Posts>
+                </PostContainer>
+                <Footer />
             </div>
         );
     }

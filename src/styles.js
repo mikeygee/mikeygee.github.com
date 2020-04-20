@@ -2,7 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 
 // color pallete
 const pink = '#f92672';
-const redLight = '#dd7373';
 const purple = '#ae81ff';
 const blue = '#66d9ef';
 const green = '#a6e22e';
@@ -28,6 +27,7 @@ export const colors = {
     bgInverse: grayDark,
     bgHover: grayLight,
     bgOverlay: dimmed,
+    borderPrimary: grayLight,
     textPrimary: grayDark,
     textSecondary: grayMedium,
     textAccent1: pink,
@@ -70,6 +70,9 @@ export const GlobalStyles = createGlobalStyle`
         footer {
             text-align: center;
             font-size: 13px;
+            padding: 16px;
+            background-color: ${colors.bgSecondary};
+            border-top: 1px solid ${colors.borderPrimary};
         }
     }
 `;

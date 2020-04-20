@@ -1,16 +1,22 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import { colors, fonts, breakpoints, GlobalStyles } from '../styles';
 
-import { IoIosPin, IoLogoGithub, IoIosMail, IoLogoTwitter, IoLogoLinkedin } from 'react-icons/io';
+import { IoLogoGithub, IoIosMail, IoLogoTwitter, IoLogoLinkedin } from 'react-icons/io';
 
 import HeadshotImg from '../images/headshotbw.png';
 
-import { Post, Archive, ArchivePost } from './blog';
-import { HomeLogo, Nav, Footer } from '../components';
+import {
+    Nav,
+    BlogContainer,
+    Post,
+    Archive,
+    ArchivePost,
+    Footer,
+} from '../components';
 
 const PREVIEW_LIMIT = 10;
 
@@ -197,36 +203,6 @@ const IconRow = styled.div`
     line-height: 3;
 `;
 
-export const BlogPosts = styled.section`
-    max-width: 680px;
-    margin: 0 auto;
-    font-family: ${fonts.serif};
-    a {
-        color: ${colors.link};
-        text-decoration: none;
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-    pre {
-        background-color: ${colors.bgSecondary};
-        padding: 14px;
-    }
-    code {
-        font-family: ${fonts.monospace};
-        font-size: 12px;
-        white-space: pre-wrap;
-    }
-    iframe[src*=youtube] {
-        width: 100%;
-        height: 30vw;
-        max-height: 383px;
-    }
-    footer {
-        font-family: ${fonts.sansSerif};
-    }
-`;
-
 const SectionHeader = ({ title }) => (
     <StickyTitle><h1>&lt;{title} /&gt;</h1></StickyTitle>
 );
@@ -312,7 +288,7 @@ class Site extends React.Component {
                 </Contact>
                 <Blog id="blog">
                     <Content>
-                        <BlogPosts>
+                        <BlogContainer>
                             {postPreviews}
                             <Archive>
                                 <h2>&lt;Archive /&gt;</h2>
@@ -320,11 +296,11 @@ class Site extends React.Component {
                                     {archivePosts}
                                 </ul>
                             </Archive>
-                            <Footer />
-                        </BlogPosts>
+                        </BlogContainer>
                     </Content>
                     <SectionHeader title="Blog" />
                 </Blog>
+                <Footer />
             </div>
         );
     }
