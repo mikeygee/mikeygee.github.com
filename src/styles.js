@@ -67,6 +67,13 @@ export const GlobalStyles = createGlobalStyle`
         @media (${breakpoints.phone}) {
             font-size: 13px;
         }
+        a {
+            color: ${colors.link};
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
         footer {
             text-align: center;
             font-size: 13px;

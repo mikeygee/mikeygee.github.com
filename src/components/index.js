@@ -35,6 +35,7 @@ const StyledNav = styled.nav`
     text-align: center;
     background-color: ${colors.bgInverse};
     z-index: 2;
+    min-height: 45px;
     ul {
         margin: 0;
         padding: 0;
@@ -148,13 +149,6 @@ export const BlogContainer = styled.section`
     margin: 0 auto;
     max-width: 680px;
     font-family: ${fonts.serif};
-    a {
-        color: ${colors.link};
-        text-decoration: none;
-        &:hover {
-            text-decoration: underline;
-        }
-    }
 `;
 
 export const Post = ({ fields = {}, excerpt, timeToRead, frontmatter = {}, isPreview, html }) => {
