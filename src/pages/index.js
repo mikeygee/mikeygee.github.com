@@ -11,6 +11,7 @@ import HeadshotImg from '../images/headshotbw.png';
 import YSports from '../images/ysports.png';
 
 import {
+    CenteredRow,
     Nav,
     BlogContainer,
     Post,
@@ -18,6 +19,7 @@ import {
     ArchivePost,
     Footer,
 } from '../components';
+import ResumeContent from '../components/Resume.js';
 
 const PREVIEW_LIMIT = 10;
 
@@ -29,14 +31,6 @@ const Home = styled.section`
     align-items: center;
     background-color: ${colors.bgInverse};
     color: ${colors.textInverse};
-`;
-
-export const NavLink = styled.a`
-    text-transform: uppercase;
-    color: ${colors.linkInverse};
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
 `;
 
 const Spacer = styled.div`
@@ -108,12 +102,6 @@ const Subtitle = styled.div`
         }
 `;
 
-const CenteredRow = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`;
-
 const StickyTitle = styled.div`
     position: sticky;
     top: 45px;
@@ -139,6 +127,12 @@ const StickyTitle = styled.div`
 const Content = styled.div`
     padding: 60px;
     line-height: 1.5;
+    @media (${breakpoints.tablet}) {
+        padding: 40px;
+    }
+    @media (${breakpoints.phone}) {
+        padding: 20px;
+    }
 `;
 
 const Section = styled.section`
@@ -183,38 +177,6 @@ const Resume = styled(Section)`
     }
 `;
 
-const ResumeItem = styled.div`
-    display: flex;
-    flex-direction: row;
-    small {
-        color: ${colors.textSecondary};
-    }
-    img {
-        width: 80px;
-    }
-    > div:first-child {
-        text-align: center;
-    }
-    > div:nth-child(2) {
-        margin-left: 20px;
-        h3, h4 {
-            margin: 0;
-        }
-        h4 {
-            font-weight: normal;
-            small {
-                margin-left: 4px;
-            }
-        }
-        ul {
-            margin: 8px 0 0;
-            padding-left: 16px;
-            list-style-type: circle;
-            font-size: 0.8em;
-        }
-    }
-`;
-
 const Contact = styled(Section)`
     > div:first-child {
         background-color: ${colors.bgSection3};
@@ -242,10 +204,6 @@ const IconRow = styled.div`
 
 const SectionHeader = ({ children }) => (
     <StickyTitle><h1>&lt;{children} /&gt;</h1></StickyTitle>
-);
-
-const SectionSubHeader = ({ children }) => (
-    <h2>&lt;{children} /&gt;</h2>
 );
 
 class Site extends React.Component {
@@ -296,27 +254,7 @@ class Site extends React.Component {
                 </About>
                 <Resume id="resume">
                     <Content>
-                        <SectionSubHeader>Work</SectionSubHeader>
-                        <ResumeItem>
-                            <div>
-                                <img src={YSports} alt="Yahoo Sports" />
-                                <div><small>2013-2019</small></div>
-                            </div>
-                            <div>
-                                <h3>Software Engineer</h3>
-                                <h4><a href="https://sports.yahoo.com" target="_blank" rel="noopener noreferrer">Yahoo Sports</a> <small>Playa Vista, CA</small></h4>
-                                <ul>
-                                    <li>Front end development for <a href="https://sports.yahoo.com" target="_blank" rel="noopener noreferrer">Yahoo Sports</a> and <a href="https://sports.yahoo.com/fantasy/" target="_blank" rel="noopener noreferrer">Yahoo Fantasy</a></li>
-                                    <li>Worked on several web and native applications, including <a href="https://sports.yahoo.com/dailyfantasy" target="_blank" rel="noopener noreferrer">Daily Fantasy</a>, <a href="https://football.fantasysports.yahoo.com/pickem" target="_blank" rel="noopener noreferrer">Football Pickem</a>, <a href="https://football.fantasysports.yahoo.com/survival/" target="_blank" rel="noopener noreferrer">Survival Football</a>, <a href="https://sports.yahoo.com/fantasyslate/" target="_blank" rel="noopener noreferrer">Fantasy Slate</a>, Fantasy Live Draft App, and internal admin tools.</li>
-                                    <li>Integrated <a href="https://reactnative.dev/" rel="noopener noreferrer">React Native</a> into the native <a href="https://mobile.yahoo.com/sports" target="_blank" rel="noopener noreferrer">Yahoo Sports</a> and <a href="https://mobile.yahoo.com/fantasy" target="_blank" rel="noopener noreferrer">Yahoo Fantasy</a> mobile apps</li>
-                                    <li>CI/CD with <a href="https://screwdriver.cd/" target="_blank" rel="noopener noreferrer">Screwdriver</a>, unit testing with <a href="https://jestjs.io/" target="_blank" rel="noopener noreferrer">Jest</a> / <a href="https://mochajs.org/" target="_blank" rel="noopener noreferrer">Mocha</a> / <a href="https://enzymejs.github.io/enzyme/ " target="_blank" rel="noopener noreferrer">Enzyme</a>, functional testing with <a href="https://www.selenium.dev/" target="_blank" rel="noopener noreferrer">Selenium</a> / <a href="https://www.protractortest.org/" target="_blank" rel="noopener noreferrer">Protractor</a></li>
-                                </ul>
-                            </div>
-                        </ResumeItem>
-                        <SectionSubHeader>Projects</SectionSubHeader>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet mattis vulputate enim nulla aliquet porttitor. Sed egestas egestas fringilla phasellus. Nisl vel pretium lectus quam id leo in vitae turpis. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Amet mauris commodo quis imperdiet massa. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Tellus rutrum tellus pellentesque eu tincidunt tortor. Non blandit massa enim nec dui nunc mattis enim. Etiam erat velit scelerisque in dictum non consectetur. Libero volutpat sed cras ornare.</p>
-                        <SectionSubHeader>Skills</SectionSubHeader>
-                        <SectionSubHeader>Education</SectionSubHeader>
+                        <ResumeContent />
                     </Content>
                     <SectionHeader>Résumé</SectionHeader>
                 </Resume>

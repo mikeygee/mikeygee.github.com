@@ -4,6 +4,12 @@ import { Link } from 'gatsby';
 
 import { colors, breakpoints, fonts } from '../styles';
 
+export const CenteredRow = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
 const StyledHomeLogo = styled.a`
     border: 2px solid;
     border-radius: 4px;
@@ -28,9 +34,11 @@ export const HomeLogo = ({ to, onClick }) => (
 );
 
 const StyledNav = styled.nav`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: sticky;
     top: 0;
-    padding: 12px 0;
     margin-top: -80px;
     text-align: center;
     background-color: ${colors.bgInverse};
@@ -42,14 +50,13 @@ const StyledNav = styled.nav`
         > li {
             display: inline-block;
             list-style-type: none;
-            margin: 0 15px;
+            margin: 0 1em;
+            @media (${breakpoints.phone}) {
+                margin: 0 0.5em;
+            }
             &:nth-child(2n+3) {
                 margin: 0;
                 color: ${colors.textInverse};
-            }
-            @media (${breakpoints.phone}) {
-                margin: 0 8px;
-                font-size: 3.5vw;
             }
             &:first-child > a {
                 color: ${colors.textAccent4};
@@ -57,9 +64,12 @@ const StyledNav = styled.nav`
             a {
                 text-transform: uppercase;
                 color: ${colors.linkInverse};
-                font-size: 18px;
+                font-size: 1.1em;
                 font-weight: bold;
                 text-decoration: none;
+                @media (${breakpoints.phone}) {
+                    font-size: 0.8em;
+                }
             }
         }
     }
@@ -114,6 +124,10 @@ export const Nav = ({ type, isRoot }) => {
         </NavComponent>
     );
 };
+
+export const SectionSubHeader = ({ children }) => (
+    <h2>&lt;{children} /&gt;</h2>
+);
 
 const StyledPost = styled.div`
     line-height: 1.45;

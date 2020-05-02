@@ -44,7 +44,7 @@ export const colors = {
 };
 
 export const breakpoints = {
-    phone: 'max-width: 560px',
+    phone: 'max-width: 415px',
     tablet: 'max-width: 800px',
 };
 
