@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 
-import { colors, breakpoints } from '../styles';
+import { colors } from '../styles';
+import { convertLinks } from '../utils';
 
 import YSportsLogo from '../images/ysports.png';
 import OULogo from '../images/ou.png';
@@ -14,7 +15,7 @@ import CourseraLogo from '../images/coursera.jpeg';
 import LABLogo from '../images/lab.jpg';
 
 import { GrBitcoin } from 'react-icons/gr';
-import { AiFillRobot } from 'react-icons/ai';
+import { AiOutlineRobot } from 'react-icons/ai';
 import { IoIosStarOutline, IoIosStarHalf, IoIosStar } from 'react-icons/io';
 
 import { CenteredRow, SectionSubHeader } from './index';
@@ -85,7 +86,7 @@ const ResumeItem = styled.div`
 
 const RESUME_DATA = [
     {
-        title: 'Work',
+        title: 'Employment',
         items: [
             {
                 title: 'Software Engineer',
@@ -177,7 +178,7 @@ const RESUME_DATA = [
                 ]
             },
             {
-                title: 'mikeygee.com',
+                title: '[mikeygee.com](https://github.com/mikeygee/mikeygee.github.com)',
                 imageComponent: MGLogo,
                 dates: '2011-2020',
                 description: [
@@ -187,7 +188,7 @@ const RESUME_DATA = [
             },
             {
                 title: '[RoboTag](https://mikeygee.com/RoboTag)',
-                imageComponent: <AiFillRobot size={`${IMAGE_WIDTH}px`} />,
+                imageComponent: <AiOutlineRobot size={`${IMAGE_WIDTH}px`} />,
                 dates: '2011',
                 description: [
                     'Proof of concept, head to head AI strategy game for programmers',
@@ -205,7 +206,7 @@ const RESUME_DATA = [
                 description: [
                     'JavaScript, HTML, CSS',
                     '[React](https://reactjs.org), [React Native](https://reactnative.dev), [Redux](https://redux.js.org), [Backbone.js](https://backbonejs.org), [jQuery](https://jquery.com)',
-                    '[vim](https://www.vim.org), MacOS'
+                    '[vim](https://www.vim.org)'
                 ],
             },
             {
@@ -214,7 +215,7 @@ const RESUME_DATA = [
                 description: [
                     'php, Java, SQL',
                     '[Node.js](https://nodejs.org), [Fluxible](https://fluxible.io), [Atomic CSS](https://acss.io), [Styled Components](https://styled-components.com/), [Gatsby](https://www.gatsbyjs.org), [graphql](https://graphql.org), [Dust.js](https://www.dustjs.com), [Handlebars.js](http://handlebarsjs.com), [YUI](https://yuilibrary.com), [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools), [Jest](https://jestjs.io), [Mocha](https://mochajs.org), [Enzyme](https://enzymejs.github.io/enzyme), [Selenium](https://www.selenium.dev), [Protractor](https://www.protractortest.org), [Screwdriver](https://screwdriver.cd), [Microsoft App Center](https://appcenter.ms), [Informatica Powercenter](https://www.informatica.com/products/data-integration/powercenter.html)',
-                    '[git](https://git-scm.com), [VSCode](https://code.visualstudio.com), [Atom](https://atom.io), [Virtual Box](https://www.virtualbox.org), Unix/Linux', 
+                    '[git](https://git-scm.com), [VSCode](https://code.visualstudio.com), [Atom](https://atom.io), [Virtual Box](https://www.virtualbox.org), MacOS, Unix/Linux', 
                 ],
             },
             {
@@ -263,21 +264,6 @@ const RESUME_DATA = [
     },
 ];
 
-function convertLinks (str = '') {
-    const links = str.match(/\[[\w\s./,]+\]\([\w:/.-]+\)/g);
-    let text;
-    let href;
-    if (links) {
-        links.forEach((link) => {
-            text = link.match(/\[([\w\s./,]+)\]/);
-            href = link.match(/\(([\w:/.-]+)\)/);
-            str = str.replace(link, `<a href="${href[1]}" target="_blank" rel="noopener noreferrer">${text[1]}</a>`);
-        });
-        return str;
-    }
-    return str;
-}
-
 export default () => (
     <div>
     {
@@ -288,7 +274,7 @@ export default () => (
                     <SectionSubHeader>{sectionTitle}</SectionSubHeader>
                     {
                         (section.items || []).map((item, i) => {
-                            let { image, imageComponent, alt, title, dates, description, company } = item;
+                            let { image, imageComponent, alt, title, dates, description, company, location } = item;
                             if (image) {
                                 imageComponent = <img src={image} alt={alt} />;
                             }
@@ -305,6 +291,9 @@ export default () => (
                                         { company ? (
                                             <h4 dangerouslySetInnerHTML={{__html: convertLinks(company)}} />
                                         ) : null }
+                                        { location ? (
+                                            <div><small>{location}</small></div>
+                                        ) : null}
                                         <ul>
                                         {
                                             description.map((bullet, j) => (

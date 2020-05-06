@@ -44,8 +44,8 @@ export const colors = {
 };
 
 export const breakpoints = {
-    phone: 'max-width: 415px',
-    tablet: 'max-width: 800px',
+    phone: 'max-width: 479px',
+    tablet: 'max-width: 900px',
 };
 
 export const fonts = {
@@ -74,12 +74,9 @@ export const GlobalStyles = createGlobalStyle`
                 text-decoration: underline;
             }
         }
-        footer {
-            text-align: center;
-            font-size: 13px;
-            padding: 16px;
-            background-color: ${colors.bgInverse};
-            color: ${colors.textInverse}
+        blockquote {
+            padding: 0 1em;
+            border-left: .25em solid ${colors.quoteBorder};
         }
     }
 `;

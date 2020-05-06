@@ -4,6 +4,8 @@ import { Link } from 'gatsby';
 
 import { colors, breakpoints, fonts } from '../styles';
 
+import { IoLogoGithub } from 'react-icons/io';
+
 export const CenteredRow = styled.div`
     display: flex;
     justify-content: center;
@@ -40,26 +42,38 @@ const StyledNav = styled.nav`
     position: sticky;
     top: 0;
     margin-top: -80px;
-    text-align: center;
     background-color: ${colors.bgInverse};
     z-index: 2;
     min-height: 45px;
     ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin: 0;
         padding: 0;
         > li {
-            display: inline-block;
+            display: flex;
+            align-items: center;
             list-style-type: none;
-            margin: 0 1em;
+            margin: 0 0.5em;
             @media (${breakpoints.phone}) {
-                margin: 0 0.5em;
+                margin: 0 0.25em;
             }
-            &:nth-child(2n+3) {
-                margin: 0;
-                color: ${colors.textInverse};
+            &:first-child {
+                margin-right: 1.6em;
+                @media (${breakpoints.phone}) {
+                    margin-right: 0.8em;
+                }
+                > a {
+                    color: ${colors.textAccent4};
+                }
             }
-            &:first-child > a {
-                color: ${colors.textAccent4};
+            &:nth-child(n+2):nth-child(-n+4) {
+                border-right: 1px solid ${colors.textInverse};
+                padding-right: 1em;
+                @media (${breakpoints.phone}) {
+                    padding-right: 0.5em;
+                }
             }
             a {
                 text-transform: uppercase;
@@ -68,7 +82,7 @@ const StyledNav = styled.nav`
                 font-weight: bold;
                 text-decoration: none;
                 @media (${breakpoints.phone}) {
-                    font-size: 0.8em;
+                    font-size: 0.85em;
                 }
             }
         }
@@ -114,19 +128,26 @@ export const Nav = ({ type, isRoot }) => {
             <ul>
                 <li><HomeLogo {...homeLogoProps} /></li>
                 <li><NavLink to="about" isRoot={isRoot}>About</NavLink></li>
-                <li>|</li>
-                <li><NavLink to="resume" isRoot={isRoot}>Résumé</NavLink></li>
-                <li>|</li>
+                <li><NavLink to="work" isRoot={isRoot}>Work</NavLink></li>
                 <li><NavLink to="contact" isRoot={isRoot}>Contact</NavLink></li>
-                <li>|</li>
                 <li><NavLink to="blog" isRoot={isRoot}>Blog</NavLink></li>
             </ul>
         </NavComponent>
     );
 };
 
+const StyledSectionSubHeader = styled.h2`
+    font-family: ${fonts.monospace};
+    font-size: 1.6em;
+    font-weight: normal;
+    margin: 2em 0 0.5em;
+    @media (${breakpoints.tablet}) {
+        font-size: 1.2em;
+    }
+`;
+
 export const SectionSubHeader = ({ children }) => (
-    <h2>&lt;{children} /&gt;</h2>
+    <StyledSectionSubHeader>&lt;{children}&gt;</StyledSectionSubHeader>
 );
 
 const StyledPost = styled.div`
@@ -134,10 +155,6 @@ const StyledPost = styled.div`
     margin-bottom: 40px;
     h2 { font-size: 1.5em; }
     h4 { font-size: 1.2em; }
-    blockquote {
-        padding: 0 1em;
-        border-left: .25em solid ${colors.quoteBorder};
-    }
     small {
         color: ${colors.textSecondary};
         margin-left: 4px;
@@ -214,6 +231,25 @@ export const ArchivePost = ({ fields = {}, frontmatter = {} }) => (
     </li>
 );
 
+const StyledFooter = styled.footer`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    padding: 1em;
+    background-color: ${colors.bgInverse};
+    color: ${colors.textInverse};
+    > span {
+        margin: 0 0.5em;
+        a {
+            color: ${colors.textInverse};
+        }
+    }
+`;
+
 export const Footer = () => (
-    <footer>© 2020 Mikey Gee</footer>
+    <StyledFooter>
+        <span>© 2020 Mikey Gee</span>
+        <span><a href="https://github.com/mikeygee/mikeygee.github.com" target="_blank" rel="noopener noreferrer"><IoLogoGithub size="2em" /></a></span>
+    </StyledFooter>
 );

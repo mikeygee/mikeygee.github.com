@@ -7,19 +7,17 @@ import { colors, fonts, breakpoints, GlobalStyles } from '../styles';
 
 import { IoIosPin, IoLogoGithub, IoIosMail, IoLogoTwitter, IoLogoLinkedin } from 'react-icons/io';
 
-import HeadshotImg from '../images/headshotbw.png';
-import YSports from '../images/ysports.png';
-
 import {
-    CenteredRow,
     Nav,
+    SectionSubHeader,
     BlogContainer,
     Post,
     Archive,
     ArchivePost,
     Footer,
 } from '../components';
-import ResumeContent from '../components/Resume.js';
+import AboutContent from '../components/About.js';
+import WorkContent from '../components/Work.js';
 
 const PREVIEW_LIMIT = 10;
 
@@ -117,6 +115,7 @@ const StickyTitle = styled.div`
         font-weight: normal;
         @media (${breakpoints.tablet}) {
             font-size: 1.5em;
+            margin: 0.5em 0;
         }
     }
     @media (${breakpoints.tablet}) {
@@ -138,6 +137,7 @@ const Content = styled.div`
 const Section = styled.section`
     display: flex;
     flex-direction: row;
+    min-height: calc(100vh - 45px);
     > div {
         width: 50%;
     }
@@ -160,19 +160,11 @@ const About = styled(Section)`
     }
 `;
 
-const Resume = styled(Section)`
+const Work = styled(Section)`
     > div:nth-child(2) {
         background-color: ${colors.bgSection2};
         @media (${breakpoints.tablet}) {
             order: -1;
-        }
-    }
-    h2 {
-        font-family: ${fonts.monospace};
-        font-size: 1.5em;
-        font-weight: normal;
-        @media (${breakpoints.tablet}) {
-            font-size: 1.2em;
         }
     }
 `;
@@ -207,9 +199,6 @@ const SectionHeader = ({ children }) => (
 );
 
 class Site extends React.Component {
-    componentDidMount() {
-        console.log('did mount', window.location);
-    }
     render() {
         const { data } = this.props;
         console.log(data);
@@ -246,18 +235,15 @@ class Site extends React.Component {
                 <About id="about">
                     <SectionHeader>About</SectionHeader>
                     <Content>
-                        <CenteredRow><img src={HeadshotImg} alt="Mikey Gee headshot" /></CenteredRow>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet mattis vulputate enim nulla aliquet porttitor. Sed egestas egestas fringilla phasellus. Nisl vel pretium lectus quam id leo in vitae turpis. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Amet mauris commodo quis imperdiet massa. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Tellus rutrum tellus pellentesque eu tincidunt tortor. Non blandit massa enim nec dui nunc mattis enim. Etiam erat velit scelerisque in dictum non consectetur. Libero volutpat sed cras ornare.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet mattis vulputate enim nulla aliquet porttitor. Sed egestas egestas fringilla phasellus. Nisl vel pretium lectus quam id leo in vitae turpis. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Amet mauris commodo quis imperdiet massa. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Tellus rutrum tellus pellentesque eu tincidunt tortor. Non blandit massa enim nec dui nunc mattis enim. Etiam erat velit scelerisque in dictum non consectetur. Libero volutpat sed cras ornare.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet mattis vulputate enim nulla aliquet porttitor. Sed egestas egestas fringilla phasellus. Nisl vel pretium lectus quam id leo in vitae turpis. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Amet mauris commodo quis imperdiet massa. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Tellus rutrum tellus pellentesque eu tincidunt tortor. Non blandit massa enim nec dui nunc mattis enim. Etiam erat velit scelerisque in dictum non consectetur. Libero volutpat sed cras ornare.</p>
+                        <AboutContent />
                     </Content>
                 </About>
-                <Resume id="resume">
+                <Work id="work">
                     <Content>
-                        <ResumeContent />
+                        <WorkContent />
                     </Content>
-                    <SectionHeader>Résumé</SectionHeader>
-                </Resume>
+                    <SectionHeader>Work</SectionHeader>
+                </Work>
                 <Contact id="contact">
                     <SectionHeader>Contact</SectionHeader>
                     <Content>
@@ -265,19 +251,19 @@ class Site extends React.Component {
                         <p>I am currently available for short term (3 months or less) or part time work only. There is no need to contact me regarding full time positions. If you have a smaller project or something not too time sensitive, I'd be happy to discuss working together.</p>
                         <IconRow>
                             <IoIosMail size="30px"/>
-                            <a href="mailto:mikey@mikeygee.com" target="_blank">mikey@mikeygee.com</a>
+                            <a href="mailto:mikey@mikeygee.com" target="_blank" rel="noopener noreferrer">mikey@mikeygee.com</a>
                         </IconRow>
                         <IconRow>
                             <IoLogoLinkedin size="30px"/>
-                            <a href="https://www.linkedin.com/in/michaelcgee" target="_blank">LinkedIn</a>
+                            <a href="https://www.linkedin.com/in/michaelcgee" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                         </IconRow>
                         <IconRow>
                             <IoLogoGithub size="30px"/>
-                            <a href="https://github.com/mikeygee" target="_blank">mikeygee</a>
+                            <a href="https://github.com/mikeygee" target="_blank" rel="noopener noreferrer">mikeygee</a>
                         </IconRow>
                         <IconRow>
                             <IoLogoTwitter size="30px"/>
-                            <a href="https://twitter.com/geeplusplus" target="_blank">geeplusplus</a>
+                            <a href="https://twitter.com/geeplusplus" target="_blank" rel="noopener noreferrer">geeplusplus</a>
                         </IconRow>
                     </Content>
                 </Contact>
@@ -286,7 +272,7 @@ class Site extends React.Component {
                         <BlogContainer>
                             {postPreviews}
                             <Archive>
-                                <h2>&lt;Archive /&gt;</h2>
+                                <SectionSubHeader>Archive</SectionSubHeader>
                                 <ul>
                                     {archivePosts}
                                 </ul>
