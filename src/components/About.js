@@ -198,48 +198,50 @@ const EmojiContainer = styled(CenteredBlock)`
     font-size: 2em;
 `;
 
-export default () => {
-    return (
-        <AboutContent>
-            <CenteredBlock><img src={HeadshotImg} alt="Mikey Gee headshot" /></CenteredBlock>
-            <p>Hello! I'm Mikey Gee, a software engineer by trade, and a lifelong resident of Los Angeles, California.</p>
-            <p>I discovered computer programming in high school, and knew right away I had found my calling. There is something magical about writing code and watching it work that fascinates me more than anything else. I currently specialize in front end development with the React ecosystem.</p>
-            <p>My other interests include sports (basketball, running, cycling, snowboarding / skiing), mindfulness, nature, animals, reading (non-fiction), movies / shows, investing, homes, and ₿itcoin.</p>
-            <p>I believe a healthy body and mind are the keys to making the most of our short lives. My top priorities each day are exercise, meditation, and reading. On a larger scale, I believe that individual freedom and non-aggression are the principles that lead to the best possible societies.</p>
-            <blockquote>
-                <i>
-                Do you want to change the world? How about beginning with yourself? How about being transformed yourself first? But how do you achieve that? Through observation. Through understanding. With no interference or judgment on your part. Because what you judge, you cannot understand.
-                <p>What you are aware of you are in control of; what you are not aware of is in control of you.</p>
-                </i>
-                <p>Anthony De Mello</p>
-            </blockquote>
-            <EmojiContainer>
-                💻 🏀 🚴‍♂️ 🏃‍♂️ 🏂 🏔 🐈 🧘‍♂️ 📖 🎬 📺 📈 🏠
-            </EmojiContainer>
-            <SectionSubHeader>Favorites</SectionSubHeader>
-            {
-                FAVORITES_DATA.map(({ icon: Icon, list, title }, i) => (
-                    <IconRow key={`favorite${i}`}>
-                        <div><Icon size="4em" /></div>
-                        <ul>
-                        {
-                            list.map((item, j) => (
-                                <li key={`${title + j}`}>
-                                    <span dangerouslySetInnerHTML={{__html: convertLinks(item)}} />
-                                    {
-                                        j === (list.length - 1) ? null : (
-                                            <span>&bull;</span>
-                                        )
-                                    }
-                                </li> 
-                            ))
-                        }
-                        </ul>
-                    </IconRow>
-                ))
-            }
-            <SectionSubHeader>Playlist</SectionSubHeader>
-            <iframe src={SPOTIFY_PLAYLIST} width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-        </AboutContent>
-    );
-}
+export default () => (
+    <AboutContent>
+        <CenteredBlock><img src={HeadshotImg} alt="Mikey Gee headshot" /></CenteredBlock>
+        <p>Hello! I'm Mikey Gee, a software engineer by trade, and a lifelong resident of Los Angeles, California.</p>
+        <p>I discovered computer programming in high school, and knew right away I had found my calling. There is something magical about writing code and watching it work that fascinates me more than anything else. I currently specialize in front end development with the React ecosystem.</p>
+        <p>My other interests include sports (basketball, running, cycling, snowboarding / skiing), mindfulness, nature, animals, reading (non-fiction), movies / shows, investing, homes, and ₿itcoin.</p>
+        <p>I believe a healthy body and mind are the keys to making the most of our short lives. My top priorities each day are exercise, meditation, and reading. Politically, I believe that individual freedom and non-aggression are the principles that lead to the best possible large scale societies.</p>
+        <blockquote>
+            <i>
+            Do you want to change the world? How about beginning with yourself? How about being transformed yourself first? But how do you achieve that? Through observation. Through understanding. With no interference or judgment on your part. Because what you judge, you cannot understand.
+            <p>What you are aware of you are in control of; what you are not aware of is in control of you.</p>
+            </i>
+            <p>Anthony De Mello</p>
+        </blockquote>
+        <blockquote>
+            <i><a href="https://www.youtube.com/watch?v=KmDYXaaT9sA&t=16m21s" target="_blank" rel="noopener noreferrer">Work hard, be kind, and amazing things will happen.</a></i>
+            <p>Conan O'Brien</p>
+        </blockquote>
+        <EmojiContainer>
+            💻 🏀 🚴‍♂️ 🏃‍♂️ 🏂 🏔 🐈 🧘‍♂️ 📖 🎬 📺 📈 🏠
+        </EmojiContainer>
+        <SectionSubHeader>Favorites</SectionSubHeader>
+        {
+            FAVORITES_DATA.map(({ icon: Icon, list, title }, i) => (
+                <IconRow key={`favorite${i}`}>
+                    <div><Icon size="4em" /></div>
+                    <ul>
+                    {
+                        list.map((item, j) => (
+                            <li key={`${title + j}`}>
+                                <span dangerouslySetInnerHTML={{__html: convertLinks(item)}} />
+                                {
+                                    j === (list.length - 1) ? null : (
+                                        <span>&bull;</span>
+                                    )
+                                }
+                            </li> 
+                        ))
+                    }
+                    </ul>
+                </IconRow>
+            ))
+        }
+        <SectionSubHeader>Playlist</SectionSubHeader>
+        <iframe src={SPOTIFY_PLAYLIST} width="280" height="380" frameborder="0" allowtransparency="true"></iframe>
+    </AboutContent>
+);

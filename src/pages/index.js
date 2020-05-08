@@ -50,7 +50,7 @@ const Title = styled.div`
         width: 7vw;
         max-height: 50px;
         max-width: 50px;
-        font-size: 24px;
+        font-size: 1.5em;
         font-weight: bold;
         &:nth-child(1) {
             color: ${colors.textAccent1};
@@ -88,7 +88,7 @@ const Title = styled.div`
 
 const Subtitle = styled.div`
     font-family: ${fonts.monospace};
-    font-size: 18px;
+    font-size: 1.1em;
     letter-spacing: 2px;
     text-align: center;
     margin-top: 20px;
@@ -108,7 +108,6 @@ const StickyTitle = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 20px;
     h1 {
         font-family: ${fonts.monospace};
         font-size: 3em;
@@ -124,13 +123,10 @@ const StickyTitle = styled.div`
 `;
 
 const Content = styled.div`
-    padding: 60px;
+    padding: 2.5em;
     line-height: 1.5;
-    @media (${breakpoints.tablet}) {
-        padding: 40px;
-    }
     @media (${breakpoints.phone}) {
-        padding: 20px;
+        padding: 2em;
     }
 `;
 
@@ -188,7 +184,7 @@ const IconRow = styled.div`
     display: flex;
     align-items: center;
     > a {
-        margin-left: 20px;
+        margin-left: 1.2em;
         color: ${colors.link};
     }
     line-height: 3;
@@ -201,7 +197,6 @@ const SectionHeader = ({ children }) => (
 class Site extends React.Component {
     render() {
         const { data } = this.props;
-        console.log(data);
         const { edges } = data.allMarkdownRemark;
         const postPreviews = [];
         const archivePosts = [];

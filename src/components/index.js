@@ -17,7 +17,7 @@ const StyledHomeLogo = styled.a`
     border-radius: 4px;
     padding: 0 4px;
     color: ${colors.textAccent4};
-    font-size: 18px;
+    font-size: 1.1em;
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
@@ -91,7 +91,6 @@ const StyledNav = styled.nav`
 
 const StyledFixedNav = styled(StyledNav)`
     position: fixed;
-    padding: 12px 20px;
     width: 100%;
     margin-top: 0;
 `;
@@ -157,7 +156,7 @@ const StyledPost = styled.div`
     h4 { font-size: 1.2em; }
     small {
         color: ${colors.textSecondary};
-        margin-left: 4px;
+        margin-left: 0.25em;
     }
     pre {
         overflow: hidden;
@@ -219,6 +218,9 @@ export const Archive = styled.section`
             flex-direction: row;
             > div {
                 min-width: 110px;
+                @media (${breakpoints.phone}) {
+                    min-width: 95px;
+                }
             }
         }
     }

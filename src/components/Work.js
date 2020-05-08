@@ -62,7 +62,7 @@ const ResumeItem = styled.div`
         text-align: center;
     }
     > div:nth-child(2) {
-        margin-left: 20px;
+        margin-left: 1.2em;
         h3 {
             font-size: 1em;
         }
@@ -71,13 +71,10 @@ const ResumeItem = styled.div`
         }
         h4 {
             font-weight: normal;
-            small {
-                margin-left: 4px;
-            }
         }
         ul {
-            margin: 4px 0 0;
-            padding-left: 16px;
+            margin: 0.25em 0 0;
+            padding-left: 1em;
             list-style-type: circle;
             font-size: 0.8em;
         }

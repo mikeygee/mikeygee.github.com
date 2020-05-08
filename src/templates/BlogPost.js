@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 
-import { GlobalStyles } from '../styles';
+import { GlobalStyles, breakpoints } from '../styles';
 
 import {
     Nav,
@@ -14,8 +14,11 @@ import {
 
 const Container = styled.div`
     min-height: calc(100vh - 113px);
-    padding: 0 20px;
+    padding: 0 2em;
     margin-top: 65px;
+    @media (${breakpoints.phone}) {
+        min-height: calc(100vh - 109px);
+    }
 `;
 
 class BlogPost extends React.Component {
