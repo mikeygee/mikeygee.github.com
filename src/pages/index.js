@@ -21,7 +21,7 @@ import WorkContent from '../components/Work.js';
 
 const PREVIEW_LIMIT = 10;
 
-const Home = styled.section`
+export const Home = styled.section`
     display: flex;
     flex-direction: column;
     height: 100vh;
