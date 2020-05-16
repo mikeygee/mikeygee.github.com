@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 
 import { colors, fonts, breakpoints, GlobalStyles } from '../styles';
 
-import { IoIosPin, IoLogoGithub, IoIosMail, IoLogoTwitter, IoLogoLinkedin } from 'react-icons/io';
+import { IoLogoGithub, IoIosMail, IoLogoTwitter, IoLogoLinkedin } from 'react-icons/io';
 
 import {
     Nav,
@@ -211,6 +211,9 @@ class Site extends React.Component {
         return (
             <div>
                 <GlobalStyles />
+                <Helmet>
+                    <title>Mikey Gee | Software Engineer | Los Angeles, CA</title>
+                </Helmet>
                 <Home>
                     <Title>
                         <span><span>m</span></span>

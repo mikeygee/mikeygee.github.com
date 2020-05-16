@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 
-import { MdMovie, MdFormatListBulleted } from 'react-icons/md';
+import { MdMovie } from 'react-icons/md';
 import {
     IoIosBook,
     IoIosMic,
@@ -17,7 +17,6 @@ import HeadshotImg from '../images/headshotbw.png';
 import { convertLinks } from '../utils';
 
 import {
-    CenteredRow,
     SectionSubHeader,
 } from './index';
 

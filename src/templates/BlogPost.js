@@ -27,6 +27,9 @@ class BlogPost extends React.Component {
         const { markdownRemark } = data;
         return (
             <div>
+                <Helmet>
+                    <title>Mikey Gee | {markdownRemark.frontmatter.title}</title>
+                </Helmet>
                 <Nav />
                 <Container>
                     <GlobalStyles />
