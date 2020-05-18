@@ -95,7 +95,7 @@ const StyledFixedNav = styled(StyledNav)`
     margin-top: 0;
 `;
 
-class NavLink extends React.Component {
+export class NavLink extends React.Component {
     handleClick = e => {
         const { isRoot, to } = this.props;
         if (isRoot) {

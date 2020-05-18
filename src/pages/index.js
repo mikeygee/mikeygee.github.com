@@ -5,10 +5,11 @@ import { graphql } from 'gatsby';
 
 import { colors, fonts, breakpoints, GlobalStyles } from '../styles';
 
-import { IoLogoGithub, IoIosMail, IoLogoTwitter, IoLogoLinkedin } from 'react-icons/io';
+import { IoLogoGithub, IoIosMail, IoLogoTwitter, IoLogoLinkedin, IoIosArrowRoundDown } from 'react-icons/io';
 
 import {
     Nav,
+    NavLink,
     SectionSubHeader,
     BlogContainer,
     Post,
@@ -190,6 +191,10 @@ const IconRow = styled.div`
     line-height: 3;
 `;
 
+const ArchiveLink = styled.div`
+    text-align: right;
+`;
+
 const SectionHeader = ({ children }) => (
     <StickyTitle><h1>&lt;{children} /&gt;</h1></StickyTitle>
 );
@@ -268,8 +273,9 @@ class Site extends React.Component {
                 <Blog id="blog">
                     <Content>
                         <BlogContainer>
+                            <ArchiveLink><NavLink to="archive" isRoot={true}>Archive / Index</NavLink></ArchiveLink>
                             {postPreviews}
-                            <Archive>
+                            <Archive id="archive">
                                 <SectionSubHeader>Archive</SectionSubHeader>
                                 <ul>
                                     {archivePosts}

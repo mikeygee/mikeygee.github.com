@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 import { colors } from '../styles';
 import { convertLinks } from '../utils';
@@ -14,7 +15,7 @@ import UCLAScriptLogo from '../images/ucla.png';
 import CourseraLogo from '../images/coursera.jpeg';
 import LABLogo from '../images/lab.jpg';
 
-import { GrBitcoin } from 'react-icons/gr';
+import { GrBitcoin, GrDocumentPdf } from 'react-icons/gr';
 import { AiOutlineRobot } from 'react-icons/ai';
 import { IoIosStarOutline, IoIosStarHalf, IoIosStar } from 'react-icons/io';
 
@@ -79,6 +80,9 @@ const ResumeItem = styled.div`
             font-size: 0.8em;
         }
     }
+`;
+const PdfDownload = styled.div`
+    float: right;
 `;
 
 const RESUME_DATA = [
@@ -149,7 +153,7 @@ const RESUME_DATA = [
             },
             {
                 title: 'Undergraduate Intern',
-                company: '[Walt Disney Imagineering](https://waltdisneyimagineering.com)',
+                company: '[Walt Disney Imagineering](https://sites.disney.com/waltdisneyimagineering)',
                 image: WDILogo,
                 alt: 'Walt Disney Imagineering logo',
                 location: 'Anaheim, CA',
@@ -263,6 +267,7 @@ const RESUME_DATA = [
 
 export default () => (
     <div>
+        <PdfDownload><a href="/resume.pdf" target="_blank" rel="noopener noreferrer"><GrDocumentPdf size="1.5em" /></a></PdfDownload>
     {
         RESUME_DATA.map((section) => {
             const sectionTitle = section.title;
