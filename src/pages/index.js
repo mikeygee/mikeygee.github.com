@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 
 import { colors, fonts, breakpoints, GlobalStyles } from '../styles';
 
-import { IoLogoGithub, IoIosMail, IoLogoTwitter, IoLogoLinkedin, IoIosArrowRoundDown } from 'react-icons/io';
+import { IoLogoGithub, IoIosMail, IoLogoTwitter, IoLogoLinkedin } from 'react-icons/io';
 
 import {
     Nav,
@@ -33,7 +33,7 @@ export const Home = styled.section`
 `;
 
 const Spacer = styled.div`
-    height: 40px;
+    height: 100px;
     background-color: ${colors.bgInverse};
 `;
 

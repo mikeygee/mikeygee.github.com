@@ -51,7 +51,7 @@ export const breakpoints = {
 export const fonts = {
     sansSerif: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
     serif: "Charter, Georgia, 'Times New Roman', serif",
-    monospace: "Menlo, Consolas, 'Courier New', monospace"
+    monospace: "Menlo, Consolas, monospace"
 };
 
 export const GlobalStyles = createGlobalStyle`

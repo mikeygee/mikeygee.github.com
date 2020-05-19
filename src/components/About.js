@@ -216,7 +216,19 @@ export default () => (
             <p>Conan O'Brien</p>
         </blockquote>
         <EmojiContainer>
-            💻 🏀 🚴‍♂️ 🏃‍♂️ 🏂 🏔 🐈 🧘‍♂️ 📖 🎬 📺 📈 🏠
+            <span role="img" aria-label="laptop">💻</span>
+            <span role="img" aria-label="basketball">🏀</span>
+            <span role="img" aria-label="cycling">🚴‍♂️</span>
+            <span role="img" aria-label="run">🏃‍♂️</span>
+            <span role="img" aria-label="snowboard">🏂</span>
+            <span role="img" aria-label="mountain">🏔</span>
+            <span role="img" aria-label="cat">🐈</span>
+            <span role="img" aria-label="meditate">🧘‍♂️</span>
+            <span role="img" aria-label="book">📖</span>
+            <span role="img" aria-label="movie">🎬</span>
+            <span role="img" aria-label="tv">📺</span>
+            <span role="img" aria-label="finance">📈</span>
+            <span role="img" aria-label="home">🏠</span>
         </EmojiContainer>
         <SectionSubHeader>Favorites</SectionSubHeader>
         {
@@ -241,6 +253,6 @@ export default () => (
             ))
         }
         <SectionSubHeader>Playlist</SectionSubHeader>
-        <iframe src={SPOTIFY_PLAYLIST} width="280" height="380" frameborder="0" allowtransparency="true"></iframe>
+        <iframe src={SPOTIFY_PLAYLIST} title="Spotify playlist" width="280" height="380" frameborder="0" allowtransparency="true"></iframe>
     </AboutContent>
 );

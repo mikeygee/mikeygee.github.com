@@ -41,7 +41,7 @@ const StyledNav = styled.nav`
     align-items: center;
     position: sticky;
     top: 0;
-    margin-top: -80px;
+    margin-top: -140px;
     background-color: ${colors.bgInverse};
     z-index: 2;
     min-height: 45px;
