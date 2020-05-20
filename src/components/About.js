@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
 
-import { MdMovie } from 'react-icons/md';
 import {
     IoIosBook,
+    IoIosFilm,
     IoIosMic,
     IoIosMusicalNotes,
     IoIosRestaurant,
@@ -30,7 +30,7 @@ const SPOTIFY_PLAYLIST = 'https://embed.spotify.com/?uri=spotify:user:geeplusplu
 const FAVORITES_DATA = [
     {
         title: 'Movies',
-        icon: MdMovie,
+        icon: IoIosFilm,
         list: [
             `[Pulp Fiction](${IMDB_PREFIX}tt0110912)`,
             `[Memento](${IMDB_PREFIX}tt0209144)`,
@@ -133,6 +133,7 @@ const FAVORITES_DATA = [
         title: 'Stocks',
         icon: IoIosTrendingUp,
         list: [
+            `[₿TC](${YFINANCE_PREFIX}BTC-USD)`,
             `[AAPL](${YFINANCE_PREFIX}AAPL)`,
             `[AMZN](${YFINANCE_PREFIX}AMZN)`,
             `[MSFT](${YFINANCE_PREFIX}MSFT)`,
