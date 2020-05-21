@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
@@ -26,7 +26,9 @@ export default () => (
         <div>
             <h1>404: Page not found</h1>
             <p>Sorry! This page may have moved or no longer exists.</p>
-            <p><Link to="/">Return home</Link></p>
+            <p>
+                <Link to="/">Return home</Link>
+            </p>
         </div>
         <Footer />
     </Styled404>

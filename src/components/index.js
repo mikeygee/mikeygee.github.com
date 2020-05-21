@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
@@ -31,7 +31,8 @@ const StyledHomeLogo = styled.a`
 
 export const HomeLogo = ({ to, onClick }) => (
     <StyledHomeLogo as={to ? Link : null} to={to} onClick={onClick}>
-        <span>M</span><span>G</span>
+        <span>M</span>
+        <span>G</span>
     </StyledHomeLogo>
 );
 
@@ -68,7 +69,7 @@ const StyledNav = styled.nav`
                     color: ${colors.textAccent4};
                 }
             }
-            &:nth-child(n+2):nth-child(-n+4) {
+            &:nth-child(n + 2):nth-child(-n + 4) {
                 border-right: 1px solid ${colors.textInverse};
                 padding-right: 1em;
                 @media (${breakpoints.phone}) {
@@ -103,11 +104,15 @@ export class NavLink extends React.Component {
             const target = document.querySelector(`#${to}`);
             window.scrollTo({ top: target.offsetTop - 45, behavior: 'smooth' });
         }
-    }
+    };
     render() {
         const { isRoot, to, children } = this.props;
         const href = `${isRoot ? '' : '/'}#${to}`;
-        return <a href={href} onClick={this.handleClick}>{children}</a>
+        return (
+            <a href={href} onClick={this.handleClick}>
+                {children}
+            </a>
+        );
     }
 }
 
@@ -117,19 +122,37 @@ const scrollToTop = e => {
 };
 
 export const Nav = ({ type, isRoot }) => {
-    const NavComponent = (type === 'sticky' ? StyledNav : StyledFixedNav);
+    const NavComponent = type === 'sticky' ? StyledNav : StyledFixedNav;
     const homeLogoProps = {
         to: isRoot ? null : '/',
-        onClick: isRoot ? scrollToTop : null
+        onClick: isRoot ? scrollToTop : null,
     };
     return (
         <NavComponent>
             <ul>
-                <li><HomeLogo {...homeLogoProps} /></li>
-                <li><NavLink to="about" isRoot={isRoot}>About</NavLink></li>
-                <li><NavLink to="work" isRoot={isRoot}>Work</NavLink></li>
-                <li><NavLink to="contact" isRoot={isRoot}>Contact</NavLink></li>
-                <li><NavLink to="blog" isRoot={isRoot}>Blog</NavLink></li>
+                <li>
+                    <HomeLogo {...homeLogoProps} />
+                </li>
+                <li>
+                    <NavLink to="about" isRoot={isRoot}>
+                        About
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to="work" isRoot={isRoot}>
+                        Work
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to="contact" isRoot={isRoot}>
+                        Contact
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to="blog" isRoot={isRoot}>
+                        Blog
+                    </NavLink>
+                </li>
             </ul>
         </NavComponent>
     );
@@ -152,8 +175,12 @@ export const SectionSubHeader = ({ children }) => (
 const StyledPost = styled.div`
     line-height: 1.45;
     margin-bottom: 40px;
-    h2 { font-size: 1.5em; }
-    h4 { font-size: 1.2em; }
+    h2 {
+        font-size: 1.5em;
+    }
+    h4 {
+        font-size: 1.2em;
+    }
     small {
         color: ${colors.textSecondary};
         margin-left: 0.25em;
@@ -164,7 +191,7 @@ const StyledPost = styled.div`
     code {
         white-space: pre-wrap;
     }
-    iframe[src*=youtube] {
+    iframe[src*='youtube'] {
         width: 100%;
         height: 57vw;
         max-height: 383px;
@@ -181,15 +208,24 @@ export const BlogContainer = styled.section`
     font-family: ${fonts.serif};
 `;
 
-export const Post = ({ fields = {}, excerpt, timeToRead, frontmatter = {}, isPreview, html }) => {
+export const Post = ({
+    fields = {},
+    excerpt,
+    timeToRead,
+    frontmatter = {},
+    isPreview,
+    html,
+}) => {
     const title = isPreview ? (
         <Link to={fields.slug}>{frontmatter.title}</Link>
-    ) : frontmatter.title;
+    ) : (
+        frontmatter.title
+    );
     const postFooter = isPreview ? (
         <div>
-            { timeToRead > 1 ? (
+            {timeToRead > 1 ? (
                 <Link to={fields.slug}>Continue reading...</Link>
-            ) : null }
+            ) : null}
             <Separator />
         </div>
     ) : null;
@@ -197,8 +233,10 @@ export const Post = ({ fields = {}, excerpt, timeToRead, frontmatter = {}, isPre
     return (
         <StyledPost>
             <h2>{title}</h2>
-            <h4>{fields.longDate} <small>{timeToRead} min read</small></h4>
-            <div dangerouslySetInnerHTML={{__html: content}} />
+            <h4>
+                {fields.longDate} <small>{timeToRead} min read</small>
+            </h4>
+            <div dangerouslySetInnerHTML={{ __html: content }} />
             {postFooter}
         </StyledPost>
     );
@@ -229,7 +267,9 @@ export const Archive = styled.section`
 export const ArchivePost = ({ fields = {}, frontmatter = {} }) => (
     <li>
         <div>{fields.shortDate}</div>
-        <div><Link to={fields.slug}>{frontmatter.title}</Link></div>
+        <div>
+            <Link to={fields.slug}>{frontmatter.title}</Link>
+        </div>
     </li>
 );
 
@@ -252,6 +292,14 @@ const StyledFooter = styled.footer`
 export const Footer = () => (
     <StyledFooter>
         <span>© 2020 Mikey Gee</span>
-        <span><a href="https://github.com/mikeygee/mikeygee.github.com" target="_blank" rel="noopener noreferrer"><IoLogoGithub size="2em" /></a></span>
+        <span>
+            <a
+                href="https://github.com/mikeygee/mikeygee.github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <IoLogoGithub size="2em" />
+            </a>
+        </span>
     </StyledFooter>
 );

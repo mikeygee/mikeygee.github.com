@@ -5,12 +5,7 @@ import { graphql } from 'gatsby';
 
 import { GlobalStyles, breakpoints } from '../styles';
 
-import {
-    Nav,
-    BlogContainer,
-    Post,
-    Footer
-} from '../components';
+import { Nav, BlogContainer, Post, Footer } from '../components';
 
 const Container = styled.div`
     min-height: calc(100vh - 113px);
@@ -28,7 +23,9 @@ class BlogPost extends React.Component {
         return (
             <div>
                 <Helmet>
-                    <title>Mikey Gee | {markdownRemark.frontmatter.title}</title>
+                    <title>
+                        Mikey Gee | {markdownRemark.frontmatter.title}
+                    </title>
                 </Helmet>
                 <Nav />
                 <Container>
@@ -44,18 +41,18 @@ class BlogPost extends React.Component {
 }
 
 export const query = graphql`
-query($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-        fields {
-            longDate
+    query($id: String!) {
+        markdownRemark(id: { eq: $id }) {
+            fields {
+                longDate
+            }
+            frontmatter {
+                title
+            }
+            html
+            timeToRead
         }
-        frontmatter {
-            title
-        }
-        html
-        timeToRead
     }
-}
 `;
 
 export default BlogPost;

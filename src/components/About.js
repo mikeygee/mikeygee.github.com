@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 
 import {
@@ -16,16 +16,14 @@ import HeadshotImg from '../images/headshotbw.png';
 
 import { convertLinks } from '../utils';
 
-import {
-    SectionSubHeader,
-} from './index';
-
+import { SectionSubHeader } from './index';
 
 const IMDB_PREFIX = 'https://www.imdb.com/title/';
 const YFINANCE_PREFIX = 'https://finance.yahoo.com/quote/';
 const SPOTIFY_PREFIX = 'https://open.spotify.com/';
 const AMAZON_PREFIX = 'https://amzn.com/';
-const SPOTIFY_PLAYLIST = 'https://embed.spotify.com/?uri=spotify:user:geeplusplus:playlist:4zDFe7Bk8TALE71x3s4OpB';
+const SPOTIFY_PLAYLIST =
+    'https://embed.spotify.com/?uri=spotify:user:geeplusplus:playlist:4zDFe7Bk8TALE71x3s4OpB';
 
 const FAVORITES_DATA = [
     {
@@ -43,8 +41,8 @@ const FAVORITES_DATA = [
             `[Monsters Inc](${IMDB_PREFIX}tt0198781)`,
             `[Tangled](${IMDB_PREFIX}tt0398286)`,
             `[Wreck It Ralph](${IMDB_PREFIX}tt1772341)`,
-            `[Vertigo](${IMDB_PREFIX}tt0052357)`
-        ]
+            `[Vertigo](${IMDB_PREFIX}tt0052357)`,
+        ],
     },
     {
         title: 'Shows',
@@ -65,7 +63,7 @@ const FAVORITES_DATA = [
             `[Rick and Morty](${IMDB_PREFIX}tt2861424)`,
             `[Better Call Saul](${IMDB_PREFIX}tt3032476)`,
             `[Survivor](${IMDB_PREFIX}tt0239195)`,
-        ]
+        ],
     },
     {
         title: 'Music',
@@ -81,7 +79,7 @@ const FAVORITES_DATA = [
             `[Regina Spektor](${SPOTIFY_PREFIX}artist/3z6Gk257P9jNcZbBXJNX5i)`,
             `[Rilo Kiley](${SPOTIFY_PREFIX}artist/2cevwbv7ISD92VMNLYLHZA)`,
             `[The Beatles](${SPOTIFY_PREFIX}artist/3WrFJ7ztbogyGnTHbHJFl2)`,
-        ]
+        ],
     },
     {
         title: 'Podcasts',
@@ -100,7 +98,7 @@ const FAVORITES_DATA = [
             `[Invest Like the Best](${SPOTIFY_PREFIX}show/22fi0RqfoBACCuQDv97wFO)`,
             `[We Study Billionaires](${SPOTIFY_PREFIX}show/28RHOkXkuHuotUrkCdvlOP)`,
             `[Binge Mode](${SPOTIFY_PREFIX}show/6u8aqT4yaqnXiAwSHQP0NN)`,
-        ]
+        ],
     },
     {
         title: 'Books',
@@ -117,7 +115,7 @@ const FAVORITES_DATA = [
             `[The Bitcoin Standard](${AMAZON_PREFIX}1119473861)`,
             `[The Internet of Money](${AMAZON_PREFIX}1537000454)`,
             `[The Book of Basketball](${AMAZON_PREFIX}0345520106)`,
-        ]
+        ],
     },
     {
         title: 'Teams',
@@ -127,7 +125,7 @@ const FAVORITES_DATA = [
             '[Kings](https://www.nhl.com/kings)',
             '[Dodgers](https://www.mlb.com/dodgers)',
             '[UCLA Bruins](https://uclabruins.com)',
-        ]
+        ],
     },
     {
         title: 'Stocks',
@@ -145,7 +143,7 @@ const FAVORITES_DATA = [
             `[VZ](${YFINANCE_PREFIX}VZ)`,
             `[DIS](${YFINANCE_PREFIX}DIS)`,
             `[BABA](${YFINANCE_PREFIX}BABA)`,
-        ]
+        ],
     },
     {
         title: 'Food',
@@ -158,7 +156,7 @@ const FAVORITES_DATA = [
             `[Jersey Mike's](https://www.jerseymikes.com)`,
             `[Trader Joe's](https://www.traderjoes.com)`,
             '[Costco](https://www.costco.com)',
-        ]
+        ],
     },
 ];
 
@@ -200,60 +198,127 @@ const EmojiContainer = styled(CenteredBlock)`
 
 export default () => (
     <AboutContent>
-        <CenteredBlock><img src={HeadshotImg} alt="Mikey Gee headshot" /></CenteredBlock>
-        <p>Hello! I'm Mikey Gee, a software engineer by trade, and a lifelong resident of Los Angeles, California.</p>
-        <p>I discovered computer programming in high school, and knew right away I had found my calling. There is something magical about writing code and watching it work that fascinates me more than anything else. I currently specialize in front end development with the React ecosystem.</p>
-        <p>My other interests include sports (basketball, running, cycling, snowboarding / skiing), mindfulness, nature, animals, reading (non-fiction), movies / shows, investing, homes, and ₿itcoin.</p>
-        <p>I believe a healthy body and mind are the keys to making the most of our short lives. My top priorities each day are exercise, meditation, and reading. Politically, I believe that individual freedom and non-aggression are the principles that lead to the best possible large scale societies.</p>
+        <CenteredBlock>
+            <img src={HeadshotImg} alt="Mikey Gee headshot" />
+        </CenteredBlock>
+        <p>
+            Hello! I'm Mikey Gee, a software engineer by trade, and a lifelong
+            resident of Los Angeles, California.
+        </p>
+        <p>
+            I discovered computer programming in high school, and knew right
+            away I had found my calling. There is something magical about
+            writing code and watching it work that fascinates me more than
+            anything else. I currently specialize in front end development with
+            the React ecosystem.
+        </p>
+        <p>
+            My other interests include sports (basketball, running, cycling,
+            snowboarding / skiing), mindfulness, nature, animals, reading
+            (non-fiction), movies / shows, investing, homes, and ₿itcoin.
+        </p>
+        <p>
+            I believe a healthy body and mind are the keys to making the most of
+            our short lives. My top priorities each day are exercise,
+            meditation, and reading. Politically, I believe that individual
+            freedom and non-aggression are the principles that lead to the best
+            possible large scale societies.
+        </p>
         <blockquote>
             <i>
-            Do you want to change the world? How about beginning with yourself? How about being transformed yourself first? But how do you achieve that? Through observation. Through understanding. With no interference or judgment on your part. Because what you judge, you cannot understand.
-            <p>What you are aware of you are in control of; what you are not aware of is in control of you.</p>
+                Do you want to change the world? How about beginning with
+                yourself? How about being transformed yourself first? But how do
+                you achieve that? Through observation. Through understanding.
+                With no interference or judgment on your part. Because what you
+                judge, you cannot understand.
+                <p>
+                    What you are aware of you are in control of; what you are
+                    not aware of is in control of you.
+                </p>
             </i>
             <p>Anthony De Mello</p>
         </blockquote>
         <blockquote>
-            <i><a href="https://www.youtube.com/watch?v=KmDYXaaT9sA&t=16m21s" target="_blank" rel="noopener noreferrer">Work hard, be kind, and amazing things will happen.</a></i>
+            <i>
+                <a
+                    href="https://www.youtube.com/watch?v=KmDYXaaT9sA&t=16m21s"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Work hard, be kind, and amazing things will happen.
+                </a>
+            </i>
             <p>Conan O'Brien</p>
         </blockquote>
         <EmojiContainer>
-            <span role="img" aria-label="laptop">💻</span>
-            <span role="img" aria-label="basketball">🏀</span>
-            <span role="img" aria-label="cycling">🚴‍♂️</span>
-            <span role="img" aria-label="run">🏃‍♂️</span>
-            <span role="img" aria-label="snowboard">🏂</span>
-            <span role="img" aria-label="mountain">🏔</span>
-            <span role="img" aria-label="cat">🐈</span>
-            <span role="img" aria-label="meditate">🧘‍♂️</span>
-            <span role="img" aria-label="book">📖</span>
-            <span role="img" aria-label="movie">🎬</span>
-            <span role="img" aria-label="tv">📺</span>
-            <span role="img" aria-label="finance">📈</span>
-            <span role="img" aria-label="home">🏠</span>
+            <span role="img" aria-label="laptop">
+                💻
+            </span>
+            <span role="img" aria-label="basketball">
+                🏀
+            </span>
+            <span role="img" aria-label="cycling">
+                🚴‍♂️
+            </span>
+            <span role="img" aria-label="run">
+                🏃‍♂️
+            </span>
+            <span role="img" aria-label="snowboard">
+                🏂
+            </span>
+            <span role="img" aria-label="mountain">
+                🏔
+            </span>
+            <span role="img" aria-label="cat">
+                🐈
+            </span>
+            <span role="img" aria-label="meditate">
+                🧘‍♂️
+            </span>
+            <span role="img" aria-label="book">
+                📖
+            </span>
+            <span role="img" aria-label="movie">
+                🎬
+            </span>
+            <span role="img" aria-label="tv">
+                📺
+            </span>
+            <span role="img" aria-label="finance">
+                📈
+            </span>
+            <span role="img" aria-label="home">
+                🏠
+            </span>
         </EmojiContainer>
         <SectionSubHeader>Favorites</SectionSubHeader>
-        {
-            FAVORITES_DATA.map(({ icon: Icon, list, title }, i) => (
-                <IconRow key={`favorite${i}`}>
-                    <div><Icon size="4em" /></div>
-                    <ul>
-                    {
-                        list.map((item, j) => (
-                            <li key={`${title + j}`}>
-                                <span dangerouslySetInnerHTML={{__html: convertLinks(item)}} />
-                                {
-                                    j === (list.length - 1) ? null : (
-                                        <span>&bull;</span>
-                                    )
-                                }
-                            </li> 
-                        ))
-                    }
-                    </ul>
-                </IconRow>
-            ))
-        }
+        {FAVORITES_DATA.map(({ icon: Icon, list, title }, i) => (
+            <IconRow key={`favorite${i}`}>
+                <div>
+                    <Icon size="4em" />
+                </div>
+                <ul>
+                    {list.map((item, j) => (
+                        <li key={`${title + j}`}>
+                            <span
+                                dangerouslySetInnerHTML={{
+                                    __html: convertLinks(item),
+                                }}
+                            />
+                            {j === list.length - 1 ? null : <span>&bull;</span>}
+                        </li>
+                    ))}
+                </ul>
+            </IconRow>
+        ))}
         <SectionSubHeader>Playlist</SectionSubHeader>
-        <iframe src={SPOTIFY_PLAYLIST} title="Spotify playlist" width="280" height="380" frameborder="0" allowtransparency="true"></iframe>
+        <iframe
+            src={SPOTIFY_PLAYLIST}
+            title="Spotify playlist"
+            width="280"
+            height="380"
+            frameborder="0"
+            allowtransparency="true"
+        ></iframe>
     </AboutContent>
 );

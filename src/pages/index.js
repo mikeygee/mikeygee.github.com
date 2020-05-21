@@ -1,11 +1,16 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 
 import { colors, fonts, breakpoints, GlobalStyles } from '../styles';
 
-import { IoLogoGithub, IoIosMail, IoLogoTwitter, IoLogoLinkedin } from 'react-icons/io';
+import {
+    IoLogoGithub,
+    IoIosMail,
+    IoLogoTwitter,
+    IoLogoLinkedin,
+} from 'react-icons/io';
 
 import {
     Nav,
@@ -77,7 +82,7 @@ const Title = styled.div`
         &:nth-child(8) {
             color: ${colors.textAccent1};
         }
-        &:nth-child(-n+5) > span {
+        &:nth-child(-n + 5) > span {
             margin-bottom: 3px;
         }
         @media (${breakpoints.phone}) {
@@ -96,9 +101,9 @@ const Subtitle = styled.div`
     &:last-child {
         margin-top: 6px;
     }
-        @media (${breakpoints.phone}) {
-            font-size: 3.5vw;
-        }
+    @media (${breakpoints.phone}) {
+        font-size: 3.5vw;
+    }
 `;
 
 const StickyTitle = styled.div`
@@ -196,7 +201,9 @@ const ArchiveLink = styled.div`
 `;
 
 const SectionHeader = ({ children }) => (
-    <StickyTitle><h1>&lt;{children} /&gt;</h1></StickyTitle>
+    <StickyTitle>
+        <h1>&lt;{children} /&gt;</h1>
+    </StickyTitle>
 );
 
 class Site extends React.Component {
@@ -209,7 +216,9 @@ class Site extends React.Component {
             let node = edge.node;
             archivePosts.push(<ArchivePost key={`archive${i}`} {...node} />);
             if (i < PREVIEW_LIMIT) {
-                postPreviews.push(<Post key={`post${i}`} isPreview={true} {...node} />);
+                postPreviews.push(
+                    <Post key={`post${i}`} isPreview={true} {...node} />
+                );
             }
         });
 
@@ -217,15 +226,27 @@ class Site extends React.Component {
             <div>
                 <GlobalStyles />
                 <Helmet>
-                    <title>Mikey Gee | Software Engineer | Los Angeles, CA</title>
+                    <title>
+                        Mikey Gee | Software Engineer | Los Angeles, CA
+                    </title>
                 </Helmet>
                 <Home>
                     <Title>
-                        <span><span>m</span></span>
-                        <span><span>i</span></span>
-                        <span><span>k</span></span>
-                        <span><span>e</span></span>
-                        <span><span>y</span></span>
+                        <span>
+                            <span>m</span>
+                        </span>
+                        <span>
+                            <span>i</span>
+                        </span>
+                        <span>
+                            <span>k</span>
+                        </span>
+                        <span>
+                            <span>e</span>
+                        </span>
+                        <span>
+                            <span>y</span>
+                        </span>
                         <span>G</span>
                         <span>E</span>
                         <span>E</span>
@@ -251,35 +272,67 @@ class Site extends React.Component {
                     <SectionHeader>Contact</SectionHeader>
                     <Content>
                         <p>The best way to reach me is by e-mail.</p>
-                        <p>I am currently available for short term (3 months or less) or part time work only. There is no need to contact me regarding full time positions. If you have a smaller project or something not too time sensitive, I'd be happy to discuss working together.</p>
+                        <p>
+                            I am currently available for short term (3 months or
+                            less) or part time work only. There is no need to
+                            contact me regarding full time positions. If you
+                            have a smaller project or something not too time
+                            sensitive, I'd be happy to discuss working together.
+                        </p>
                         <IconRow>
-                            <IoIosMail size="30px"/>
-                            <a href="mailto:mikey@mikeygee.com" target="_blank" rel="noopener noreferrer">mikey@mikeygee.com</a>
+                            <IoIosMail size="30px" />
+                            <a
+                                href="mailto:mikey@mikeygee.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                mikey@mikeygee.com
+                            </a>
                         </IconRow>
                         <IconRow>
-                            <IoLogoLinkedin size="30px"/>
-                            <a href="https://www.linkedin.com/in/michaelcgee" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            <IoLogoLinkedin size="30px" />
+                            <a
+                                href="https://www.linkedin.com/in/michaelcgee"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                LinkedIn
+                            </a>
                         </IconRow>
                         <IconRow>
-                            <IoLogoGithub size="30px"/>
-                            <a href="https://github.com/mikeygee" target="_blank" rel="noopener noreferrer">mikeygee</a>
+                            <IoLogoGithub size="30px" />
+                            <a
+                                href="https://github.com/mikeygee"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                mikeygee
+                            </a>
                         </IconRow>
                         <IconRow>
-                            <IoLogoTwitter size="30px"/>
-                            <a href="https://twitter.com/geeplusplus" target="_blank" rel="noopener noreferrer">geeplusplus</a>
+                            <IoLogoTwitter size="30px" />
+                            <a
+                                href="https://twitter.com/geeplusplus"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                geeplusplus
+                            </a>
                         </IconRow>
                     </Content>
                 </Contact>
                 <Blog id="blog">
                     <Content>
                         <BlogContainer>
-                            <ArchiveLink><NavLink to="archive" isRoot={true}>Archive / Index</NavLink></ArchiveLink>
+                            <ArchiveLink>
+                                <NavLink to="archive" isRoot={true}>
+                                    Archive / Index
+                                </NavLink>
+                            </ArchiveLink>
                             {postPreviews}
                             <Archive id="archive">
                                 <SectionSubHeader>Archive</SectionSubHeader>
-                                <ul>
-                                    {archivePosts}
-                                </ul>
+                                <ul>{archivePosts}</ul>
                             </Archive>
                         </BlogContainer>
                     </Content>
@@ -292,24 +345,27 @@ class Site extends React.Component {
 }
 
 export const query = graphql`
-{
-    allMarkdownRemark(sort: {fields: fileAbsolutePath, order: DESC}, filter: {fileAbsolutePath: {regex: "/src\\/posts/"}}) {
-        edges {
-            node {
-                excerpt(format: HTML, pruneLength: 2000)
-                timeToRead
-                frontmatter {
-                    title
-                }
-                fields {
-                    longDate
-                    shortDate
-                    slug
+    {
+        allMarkdownRemark(
+            sort: { fields: fileAbsolutePath, order: DESC }
+            filter: { fileAbsolutePath: { regex: "/src/posts/" } }
+        ) {
+            edges {
+                node {
+                    excerpt(format: HTML, pruneLength: 2000)
+                    timeToRead
+                    frontmatter {
+                        title
+                    }
+                    fields {
+                        longDate
+                        shortDate
+                        slug
+                    }
                 }
             }
         }
     }
-}
 `;
 
 export default Site;
