@@ -191,7 +191,7 @@ const RESUME_DATA = [
                 title:
                     '[mikeygee.com](https://github.com/mikeygee/mikeygee.github.com)',
                 imageComponent: MGLogo,
-                dates: '2011-2020',
+                dates: '2011-2024',
                 description: [
                     'The web site you are looking at right now',
                     'Initially built with [Jekyll](https://jekyllrb.com), now converted to [Gatsby](https://www.gatsbyjs.org)',

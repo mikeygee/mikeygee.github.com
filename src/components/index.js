@@ -69,7 +69,7 @@ const StyledNav = styled.nav`
                     color: ${colors.textAccent4};
                 }
             }
-            &:nth-child(n + 2):nth-child(-n + 4) {
+            &:nth-child(n + 2):nth-child(-n + 3) {
                 border-right: 1px solid ${colors.textInverse};
                 padding-right: 1em;
                 @media (${breakpoints.phone}) {
@@ -146,11 +146,6 @@ export const Nav = ({ type, isRoot }) => {
                 <li>
                     <NavLink to="contact" isRoot={isRoot}>
                         Contact
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="blog" isRoot={isRoot}>
-                        Blog
                     </NavLink>
                 </li>
             </ul>
@@ -291,7 +286,7 @@ const StyledFooter = styled.footer`
 
 export const Footer = () => (
     <StyledFooter>
-        <span>© 2020 Mikey Gee</span>
+        <span>© 2024 Mikey Gee</span>
         <span>
             <a
                 href="https://github.com/mikeygee/mikeygee.github.com"

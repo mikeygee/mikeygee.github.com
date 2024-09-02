@@ -21,10 +21,9 @@ import { SectionSubHeader } from './index';
 const IMDB_PREFIX = 'https://www.imdb.com/title/';
 const YFINANCE_PREFIX = 'https://finance.yahoo.com/quote/';
 const SPOTIFY_PREFIX = 'https://open.spotify.com/';
-const AMAZON_PREFIX = 'https://amzn.com/';
+const AMAZON_PREFIX = 'https://a.co/d/';
 const SPOTIFY_PLAYLIST =
-    'https://embed.spotify.com/?uri=spotify:user:geeplusplus:playlist:4zDFe7Bk8TALE71x3s4OpB';
-
+    'https://open.spotify.com/embed/playlist/4zDFe7Bk8TALE71x3s4OpB?utm_source=generator&theme=0';
 const FAVORITES_DATA = [
     {
         title: 'Movies',
@@ -54,12 +53,12 @@ const FAVORITES_DATA = [
             `[Game of Thrones](${IMDB_PREFIX}tt0944947)`,
             `[The Office](${IMDB_PREFIX}tt0386676)`,
             `[Fargo](${IMDB_PREFIX}tt2802850)`,
+            `[The Boys](${IMDB_PREFIX}tt1190634)`,
             `[Black Mirror](${IMDB_PREFIX}tt2085059)`,
             `[Buffy the Vampire Slayer](${IMDB_PREFIX}tt0118276)`,
             `[Angel](${IMDB_PREFIX}tt0162065)`,
             `[Curb Your Enthusiasm](${IMDB_PREFIX}tt0264235)`,
             `[The League](${IMDB_PREFIX}tt1480684)`,
-            `[It's Always Sunny in Philadelphia](${IMDB_PREFIX}tt0472954)`,
             `[Rick and Morty](${IMDB_PREFIX}tt2861424)`,
             `[Better Call Saul](${IMDB_PREFIX}tt3032476)`,
             `[Survivor](${IMDB_PREFIX}tt0239195)`,
@@ -85,36 +84,32 @@ const FAVORITES_DATA = [
         title: 'Podcasts',
         icon: IoIosMic,
         list: [
-            `[The Bill Simmons Podcast](${SPOTIFY_PREFIX}show/07SjDmKb9iliEzpNcN2xGD)`,
-            `[Laker Film Room](${SPOTIFY_PREFIX}show/3GLZS643oOSWRo9e6DOVwV)`,
-            `[Revisionist History](${SPOTIFY_PREFIX}show/2LOJaYKijiwNefCvzczyib)`,
-            `[The Tim Ferriss Show](${SPOTIFY_PREFIX}show/5qSUyCrk9KR69lEiXbjwXM)`,
-            `[Joe Rogan Experience](http://podcasts.joerogan.net/)`,
+            `[Joe Rogan Experience](${SPOTIFY_PREFIX}show/4rOoJ6Egrf8K2IrywzwOMk)`,
+            `[Lex Fridman Podcast](${SPOTIFY_PREFIX}show/2MAi0BvDc6GTFvKFPXnkCL)`,
+            `[Part of the Problem](${SPOTIFY_PREFIX}show/4PDjBO99JcroatAr4AKeXG)`,
+            `[All In](${SPOTIFY_PREFIX}show/2IqXAVFR4e0Bmyjsdc8QzF)`,
             `[Naval](${SPOTIFY_PREFIX}show/7qZAVw03FuurfYnWIWwkHY)`,
-            `[The Mindful Kind](${SPOTIFY_PREFIX}show/5O5tlazpUSpflbc1jAY0ci)`,
+            `[ToKCast](${SPOTIFY_PREFIX}show/6q5iPRQthC8Tk8XOri70lv)`,
+            `[What is Money?](${SPOTIFY_PREFIX}show/25LPvm8EewBGyfQQ1abIsE)`,
             `[What Bitcoin Did](${SPOTIFY_PREFIX}show/0mWUJuONiilW5JSBBFZ0s7)`,
-            `[The Pomp Podcast](${SPOTIFY_PREFIX}show/2QwpFjzJ0ZteqmMqw2xIfA)`,
-            `[Stephan Livera Podcast](${SPOTIFY_PREFIX}show/3mFUF9kSYpvrCGWLbskRr8)`,
-            `[Invest Like the Best](${SPOTIFY_PREFIX}show/22fi0RqfoBACCuQDv97wFO)`,
-            `[We Study Billionaires](${SPOTIFY_PREFIX}show/28RHOkXkuHuotUrkCdvlOP)`,
-            `[Binge Mode](${SPOTIFY_PREFIX}show/6u8aqT4yaqnXiAwSHQP0NN)`,
+            `[The Bitcoin Standard Podcast](${SPOTIFY_PREFIX}show/691nFDIWWmhFFAz7xp3wAr)`,
+            `[The Bill Simmons Podcast](${SPOTIFY_PREFIX}show/07SjDmKb9iliEzpNcN2xGD)`,
+            `[Laker Film Room](${SPOTIFY_PREFIX}show/3GLZS643oOSWRo9e6DOVwV)`
         ],
     },
     {
         title: 'Books',
         icon: IoIosBook,
         list: [
-            `[Sapiens](${AMAZON_PREFIX}0062316117)`,
-            `[Awareness](${AMAZON_PREFIX}0385249373)`,
-            `[Atomic Habits](${AMAZON_PREFIX}0735211299)`,
-            `[The Life-changing Magic of Tidying Up](${AMAZON_PREFIX}1607747308)`,
-            `[Waking Up](${AMAZON_PREFIX}1451636024)`,
-            `[The 4 Hour Work Week](${AMAZON_PREFIX}0307465357)`,
-            `[How to Stop Worrying and Start Living](${AMAZON_PREFIX}9388423380)`,
-            `[Antifragile](${AMAZON_PREFIX}0812979680)`,
-            `[The Bitcoin Standard](${AMAZON_PREFIX}1119473861)`,
-            `[The Internet of Money](${AMAZON_PREFIX}1537000454)`,
-            `[The Book of Basketball](${AMAZON_PREFIX}0345520106)`,
+            `[Awareness](${AMAZON_PREFIX}7CSbuaJ)`,
+            `[The Way to Love](${AMAZON_PREFIX}cbhDMUO)`,
+            `[The Bitcoin Standard](${AMAZON_PREFIX}7unHtkv)`,
+            `[Broken Money](${AMAZON_PREFIX}0tIf1KS)`,
+            `[The Internet of Money](${AMAZON_PREFIX}fTqpJyr)`,
+            `[Sapiens](${AMAZON_PREFIX}ibMDR7R)`,
+            `[Atomic Habits](${AMAZON_PREFIX}clJNqt9)`,
+            `[The Life-changing Magic of Tidying Up](${AMAZON_PREFIX}2z2gSZe)`,
+            `[The 4 Hour Work Week](${AMAZON_PREFIX}1IQ1Lqn)`
         ],
     },
     {
@@ -132,6 +127,7 @@ const FAVORITES_DATA = [
         icon: IoIosTrendingUp,
         list: [
             `[₿TC](${YFINANCE_PREFIX}BTC-USD)`,
+            `[MSTR](${YFINANCE_PREFIX}MSTR)`,
             `[AAPL](${YFINANCE_PREFIX}AAPL)`,
             `[AMZN](${YFINANCE_PREFIX}AMZN)`,
             `[MSFT](${YFINANCE_PREFIX}MSFT)`,
@@ -140,9 +136,6 @@ const FAVORITES_DATA = [
             `[NVDA](${YFINANCE_PREFIX}NVDA)`,
             `[TSLA](${YFINANCE_PREFIX}TSLA)`,
             `[COST](${YFINANCE_PREFIX}COST)`,
-            `[VZ](${YFINANCE_PREFIX}VZ)`,
-            `[DIS](${YFINANCE_PREFIX}DIS)`,
-            `[BABA](${YFINANCE_PREFIX}BABA)`,
         ],
     },
     {
@@ -202,8 +195,7 @@ export default () => (
             <img src={HeadshotImg} alt="Mikey Gee headshot" />
         </CenteredBlock>
         <p>
-            Hello! I'm Mikey Gee, a software engineer by trade, and a lifelong
-            resident of Los Angeles, California.
+            Hello! I'm Mikey Gee, a software engineer currently splitting time between the Las Vegas and Los Angeles areas.
         </p>
         <p>
             I discovered computer programming in high school, and knew right
@@ -313,12 +305,15 @@ export default () => (
         ))}
         <SectionSubHeader>Playlist</SectionSubHeader>
         <iframe
-            src={SPOTIFY_PLAYLIST}
-            title="Spotify playlist"
-            width="280"
-            height="380"
-            frameborder="0"
-            allowtransparency="true"
+          title="Spotify Playlist"
+          style={{borderRadius: "12px"}}
+          src={SPOTIFY_PLAYLIST}
+          width="100%"
+          height="352"
+          frameBorder="0"
+          allowFullScreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
         ></iframe>
     </AboutContent>
 );

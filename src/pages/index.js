@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
-import { graphql } from 'gatsby';
 
 import { colors, fonts, breakpoints, GlobalStyles } from '../styles';
 
@@ -14,18 +13,10 @@ import {
 
 import {
     Nav,
-    NavLink,
-    SectionSubHeader,
-    BlogContainer,
-    Post,
-    Archive,
-    ArchivePost,
     Footer,
 } from '../components';
 import AboutContent from '../components/About.js';
 import WorkContent from '../components/Work.js';
-
-const PREVIEW_LIMIT = 10;
 
 export const Home = styled.section`
     display: flex;
@@ -98,9 +89,6 @@ const Subtitle = styled.div`
     letter-spacing: 2px;
     text-align: center;
     margin-top: 20px;
-    &:last-child {
-        margin-top: 6px;
-    }
     @media (${breakpoints.phone}) {
         font-size: 3.5vw;
     }
@@ -177,14 +165,6 @@ const Contact = styled(Section)`
     }
 `;
 
-const Blog = styled(Section)`
-    > div:nth-child(2) {
-        background-color: ${colors.bgSection4};
-        @media (${breakpoints.tablet}) {
-            order: -1;
-        }
-    }
-`;
 
 const IconRow = styled.div`
     display: flex;
@@ -196,10 +176,6 @@ const IconRow = styled.div`
     line-height: 3;
 `;
 
-const ArchiveLink = styled.div`
-    text-align: right;
-`;
-
 const SectionHeader = ({ children }) => (
     <StickyTitle>
         <h1>&lt;{children} /&gt;</h1>
@@ -208,26 +184,12 @@ const SectionHeader = ({ children }) => (
 
 class Site extends React.Component {
     render() {
-        const { data } = this.props;
-        const { edges } = data.allMarkdownRemark;
-        const postPreviews = [];
-        const archivePosts = [];
-        edges.forEach((edge = {}, i) => {
-            let node = edge.node;
-            archivePosts.push(<ArchivePost key={`archive${i}`} {...node} />);
-            if (i < PREVIEW_LIMIT) {
-                postPreviews.push(
-                    <Post key={`post${i}`} isPreview={true} {...node} />
-                );
-            }
-        });
-
         return (
             <div>
                 <GlobalStyles />
                 <Helmet>
                     <title>
-                        Mikey Gee | Software Engineer | Los Angeles, CA
+                        Mikey Gee | Software Engineer
                     </title>
                 </Helmet>
                 <Home>
@@ -252,7 +214,6 @@ class Site extends React.Component {
                         <span>E</span>
                     </Title>
                     <Subtitle>&lt;Software Engineer /&gt;</Subtitle>
-                    <Subtitle>Los Angeles, CA</Subtitle>
                 </Home>
                 <Nav type="sticky" isRoot={true} />
                 <Spacer />
@@ -321,51 +282,10 @@ class Site extends React.Component {
                         </IconRow>
                     </Content>
                 </Contact>
-                <Blog id="blog">
-                    <Content>
-                        <BlogContainer>
-                            <ArchiveLink>
-                                <NavLink to="archive" isRoot={true}>
-                                    Archive / Index
-                                </NavLink>
-                            </ArchiveLink>
-                            {postPreviews}
-                            <Archive id="archive">
-                                <SectionSubHeader>Archive</SectionSubHeader>
-                                <ul>{archivePosts}</ul>
-                            </Archive>
-                        </BlogContainer>
-                    </Content>
-                    <SectionHeader>Blog</SectionHeader>
-                </Blog>
                 <Footer />
             </div>
         );
     }
 }
-
-export const query = graphql`
-    {
-        allMarkdownRemark(
-            sort: { fields: fileAbsolutePath, order: DESC }
-            filter: { fileAbsolutePath: { regex: "/src/posts/" } }
-        ) {
-            edges {
-                node {
-                    excerpt(format: HTML, pruneLength: 2000)
-                    timeToRead
-                    frontmatter {
-                        title
-                    }
-                    fields {
-                        longDate
-                        shortDate
-                        slug
-                    }
-                }
-            }
-        }
-    }
-`;
 
 export default Site;
