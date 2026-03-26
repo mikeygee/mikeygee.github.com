@@ -124,6 +124,12 @@ const Content = styled.div`
     }
 `;
 
+const CenteredContent = styled(Content)`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+`;
+
 const Section = styled.section`
     display: flex;
     flex-direction: row;
@@ -231,15 +237,7 @@ class Site extends React.Component {
                 </Work>
                 <Contact id="contact">
                     <SectionHeader>Contact</SectionHeader>
-                    <Content>
-                        <p>The best way to reach me is by e-mail.</p>
-                        <p>
-                            I am currently available for short term (3 months or
-                            less) or part time work only. There is no need to
-                            contact me regarding full time positions. If you
-                            have a smaller project or something not too time
-                            sensitive, I'd be happy to discuss working together.
-                        </p>
+                    <CenteredContent>
                         <IconRow>
                             <IoIosMail size="30px" />
                             <a
@@ -280,7 +278,7 @@ class Site extends React.Component {
                                 geeplusplus
                             </a>
                         </IconRow>
-                    </Content>
+                    </CenteredContent>
                 </Contact>
                 <Footer />
             </div>

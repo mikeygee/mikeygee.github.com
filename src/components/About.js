@@ -211,9 +211,9 @@ export default () => (
         </p>
         <p>
             I believe a healthy body and mind are the keys to making the most of
-            our short lives. My top priorities each day are exercise,
+            life. My top priorities each day are exercise,
             meditation, and reading. Politically, I believe that individual
-            freedom and non-aggression are the principles that lead to the best
+            freedom, property rights, and non-aggression are the principles that lead to the best
             possible large scale societies.
         </p>
         <blockquote>

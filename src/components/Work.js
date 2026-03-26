@@ -14,9 +14,8 @@ import UCLAScriptLogo from '../images/ucla.png';
 import CourseraLogo from '../images/coursera.jpeg';
 import LABLogo from '../images/lab.jpg';
 
-import { GrBitcoin, GrDocumentPdf } from 'react-icons/gr';
+import { GrBitcoin } from 'react-icons/gr';
 import { AiOutlineRobot } from 'react-icons/ai';
-import { IoIosStarOutline, IoIosStarHalf, IoIosStar } from 'react-icons/io';
 
 import { CenteredRow, SectionSubHeader } from './index';
 
@@ -85,9 +84,6 @@ const ResumeItem = styled.div`
             font-size: 0.8em;
         }
     }
-`;
-const PdfDownload = styled.div`
-    float: right;
 `;
 
 const RESUME_DATA = [
@@ -209,38 +205,6 @@ const RESUME_DATA = [
         ],
     },
     {
-        title: 'Skills',
-        items: [
-            {
-                title: 'Advanced level',
-                imageComponent: <IoIosStar size={`${IMAGE_WIDTH}px`} />,
-                description: [
-                    'JavaScript, HTML, CSS',
-                    '[React](https://reactjs.org), [React Native](https://reactnative.dev), [Redux](https://redux.js.org), [Backbone.js](https://backbonejs.org), [jQuery](https://jquery.com)',
-                    '[vim](https://www.vim.org)',
-                ],
-            },
-            {
-                title: 'Intermediate',
-                imageComponent: <IoIosStarHalf size={`${IMAGE_WIDTH}px`} />,
-                description: [
-                    'php, Java, SQL',
-                    '[Node.js](https://nodejs.org), [Fluxible](https://fluxible.io), [Atomic CSS](https://acss.io), [Styled Components](https://styled-components.com/), [Gatsby](https://www.gatsbyjs.org), [graphql](https://graphql.org), [Dust.js](https://www.dustjs.com), [Handlebars.js](http://handlebarsjs.com), [YUI](https://yuilibrary.com), [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools), [Jest](https://jestjs.io), [Mocha](https://mochajs.org), [Enzyme](https://enzymejs.github.io/enzyme), [Selenium](https://www.selenium.dev), [Protractor](https://www.protractortest.org), [Screwdriver](https://screwdriver.cd), [Microsoft App Center](https://appcenter.ms), [Informatica Powercenter](https://www.informatica.com/products/data-integration/powercenter.html)',
-                    '[git](https://git-scm.com), [VSCode](https://code.visualstudio.com), [Atom](https://atom.io), [Virtual Box](https://www.virtualbox.org), MacOS, Unix/Linux',
-                ],
-            },
-            {
-                title: 'Basics / Prior experience',
-                imageComponent: <IoIosStarOutline size={`${IMAGE_WIDTH}px`} />,
-                description: [
-                    'C/C++, Objective-C, Swift, XML/XSL',
-                    '[webpack](https://webpack.js.org), [babel](https://babeljs.io), [Storybook](https://storybook.js.org), [Jekyll](https://jekyllrb.com)',
-                    '[Xcode](https://developer.apple.com/xcode), [Android Studio](https://developer.android.com/studio), [MySQL](https://www.mysql.com), [MongoDB](https://www.mongodb.com), Windows',
-                ],
-            },
-        ],
-    },
-    {
         title: 'Education',
         items: [
             {
@@ -276,11 +240,6 @@ const RESUME_DATA = [
 
 export default () => (
     <div>
-        <PdfDownload>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                <GrDocumentPdf size="1.5em" />
-            </a>
-        </PdfDownload>
         {RESUME_DATA.map(section => {
             const sectionTitle = section.title;
             return (

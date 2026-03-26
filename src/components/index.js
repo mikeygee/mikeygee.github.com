@@ -286,7 +286,7 @@ const StyledFooter = styled.footer`
 
 export const Footer = () => (
     <StyledFooter>
-        <span>© 2024 Mikey Gee</span>
+        <span>© 2026 Mikey Gee</span>
         <span>
             <a
                 href="https://github.com/mikeygee/mikeygee.github.com"
