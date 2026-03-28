@@ -23,7 +23,7 @@ bun install
 ### Build the static site
 
 ```bash
-npm run build
+bun run build
 ```
 
 This generates `public/index.html` with all styles inlined and assets copied to `public/assets/`.
@@ -66,6 +66,8 @@ The `public/` directory is ready to deploy. The site is currently deployed to Gi
 To deploy:
 
 ```bash
-npm run build
+bun run build
 # Push the public/ directory to your hosting
+# For github pages, use gh-pages module
+bun run ghPages
 ```
