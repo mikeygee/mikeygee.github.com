@@ -1,18 +1,26 @@
 // parse markdown style links from strings
 export function convertLinks(str = '') {
-    const links = str.match(/\[[^\[]+\]\([\w:/.-]+\)/g);
-    let text;
-    let href;
-    if (links) {
-        links.forEach(link => {
-            text = link.match(/\[([^\[]+)\]/);
-            href = link.match(/\(([\w:/.-]+)\)/);
-            str = str.replace(
-                link,
-                `<a href="${href[1]}" target="_blank" rel="noopener noreferrer">${text[1]}</a>`
-            );
-        });
-        return str;
-    }
+  const links = str.match(/\[[^\[]+\]\([\w:/.-]+\)/g);
+  let text;
+  let href;
+  if (links) {
+    links.forEach(link => {
+      text = link.match(/\[([^\[]+)\]/);
+      href = link.match(/\(([\w:/.-]+)\)/);
+      str = str.replace(
+        link,
+        `<a href="${href[1]}" target="_blank" rel="noopener noreferrer">${text[1]}</a>`
+      );
+    });
     return str;
+  }
+  return str;
+}
+
+export function imagePath(filename) {
+  return `assets/images/${filename}`;
+}
+
+export function docPath(filename) {
+  return `assets/docs/${filename}`;
 }

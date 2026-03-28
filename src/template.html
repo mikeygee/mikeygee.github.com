@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mikey Gee | Software Engineer</title>
+    <meta name="description" content="Mikey Gee - Software Engineer">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W1NWZF5SJ4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-W1NWZF5SJ4");
+    </script>
+    <!-- Styles -->
+     {{styles}}
+</head>
+<body>
+  {{body}}
+    <script>
+      const nav = document.querySelector('nav');
+      nav.addEventListener('click', function(e) {
+        const link = e.target.closest('a[href^="#"]');
+        if (!link) return;
+        
+        const href = link.getAttribute('href');
+        if (href === '#') {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+        
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          window.scrollTo({ top: target.offsetTop - 45, behavior: 'smooth' });
+        }
+      });
+    </script>
+</body>
+</html>
