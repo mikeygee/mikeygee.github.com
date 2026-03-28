@@ -68,6 +68,8 @@ const buildHTML = async () => {
 
     // Write the HTML file
     await Bun.write(join(PUBLIC_DIR, 'index.html'), templateStr);
+    // Write CNAME file for github pages to work with my domain
+    await Bun.write(join(PUBLIC_DIR, 'CNAME'), 'mikeygee.com');
     console.log('✓ Generated public/index.html');
 
   } catch (error) {
